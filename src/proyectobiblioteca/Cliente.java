@@ -8,16 +8,18 @@ public class Cliente {
     private String nombreCompleto;
     private String tipoIdentificacion;
     private String identificacion;
+    private String tipoUsuario;
 
     public Cliente() {
     }
 
-    public Cliente(String nombreUnico, String contraseña, String nombreCompleto, String tipoIdentificacion, String identificacion) {
+    public Cliente(String nombreUnico, String contraseña, String nombreCompleto, String tipoIdentificacion, String identificacion, String tipoUsuario) {
         this.nombreUnico = nombreUnico;
         this.contraseña = contraseña;
         this.nombreCompleto = nombreCompleto;
         this.tipoIdentificacion = tipoIdentificacion;
         this.identificacion = identificacion;
+        this.tipoUsuario = tipoUsuario;
     }
 
     public String getNombreUnico() {
@@ -60,9 +62,23 @@ public class Cliente {
         this.identificacion = identificacion;
     }
 
+    /**
+     * @return the tipoUsuario
+     */
+    public String getTipoUsuario() {
+        return tipoUsuario;
+    }
+
+    /**
+     * @param tipoUsuario the tipoUsuario to set
+     */
+    public void setTipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
+
     @Override
     public String toString() {
-        return "Cliente{" + "nombreUnico=" + nombreUnico + ", contrase\u00f1a=" + contraseña + ", nombreCompleto=" + nombreCompleto + ", tipoIdentificacion=" + tipoIdentificacion + ", identificacion=" + identificacion + '}';
+        return "Cliente{" + "nombreUnico=" + nombreUnico + ", contrase\u00f1a=" + contraseña + ", nombreCompleto=" + nombreCompleto + ", tipoIdentificacion=" + tipoIdentificacion + ", identificacion=" + identificacion + ", tipoUsuario=" + tipoUsuario + '}';
     }
     
 }

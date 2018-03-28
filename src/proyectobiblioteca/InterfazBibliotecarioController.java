@@ -19,14 +19,27 @@ public class InterfazBibliotecarioController implements Initializable {
     @FXML
     private void accionBoton(ActionEvent event) throws IOException {
         
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("InterfazAgregar.fxml"));
-        Scene tableViewScene = new Scene(tableViewParent);
+        Parent parent = FXMLLoader.load(getClass().getResource("InterfazAgregar.fxml"));
+        Scene scene = new Scene(parent);
         //Esta linea obtiene la informacion del Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(tableViewScene);
+        window.setScene(scene);
         window.show();
         
     }
+    
+    @FXML
+    private void botonModificar(ActionEvent event) throws IOException {
+        
+        Parent parent = FXMLLoader.load(getClass().getResource("InterfazModificar.fxml"));
+        Scene scene = new Scene(parent);
+        //Esta linea obtiene la informacion del Stage
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(scene);
+        window.show();
+        
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
