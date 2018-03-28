@@ -23,8 +23,7 @@ import javafx.stage.Stage;
 
 public class FXMLDocumentController implements Initializable {
     
-    @FXML
-    private static List lista;
+    
     @FXML
     private TextField txfUsuario;
     @FXML
@@ -37,9 +36,10 @@ public class FXMLDocumentController implements Initializable {
 //        Image img = new Image("/imagen/agregarUsuario.png");
 //        btnAgregar.setGraphic(new ImageView(img));
         //Bibliotecario permanente
-        List<Bibliotecario> lista = new ArrayList<Bibliotecario>();
+        
+        List<Bibliotecario> listaBibliotecario = new ArrayList<Bibliotecario>();
         Bibliotecario bl = new Bibliotecario("bibliotecario01", "1234", "Juan Solano", "Nacional", "123456789");
-        lista.add(bl);
+        listaBibliotecario.add(bl);
         
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
@@ -54,6 +54,8 @@ public class FXMLDocumentController implements Initializable {
         } else {
             System.out.println("Usuario invalido");
         }
+        
+        System.out.println(listaBibliotecario.toString());
         
     }
     
