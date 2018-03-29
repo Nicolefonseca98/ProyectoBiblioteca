@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="398.0" prefWidth="583.0" style="-fx-background-color: #99CCCC;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="proyectobiblioteca.InterfazAgregarObraController">
    <children>
-      <Label layoutX="269.0" layoutY="6.0" text="Agregar obra" />
+      <Label layoutX="256.0" layoutY="6.0" text="Agregar obra" />
       <Label layoutX="14.0" layoutY="39.0" text="Tipo de obra" />
       <ComboBox layoutX="11.0" layoutY="56.0" prefHeight="25.0" prefWidth="207.0" />
       <Label layoutX="14.0" layoutY="81.0" text="Título" />
