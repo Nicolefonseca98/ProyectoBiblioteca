@@ -48,6 +48,7 @@ public class Logica {
             
         }
         
+        
         System.out.println(listaCliente.toString());
 
     }
