@@ -79,4 +79,16 @@ public class Logica extends Listas{
         return null;
     }
     
+    public void borrarUsuario(String nombreUsuario) {
+
+        if (existeUsuario(nombreUsuario)) {
+            Cliente c = (Cliente) getCliente(nombreUsuario);
+
+            clienteLista.remove(c);
+        }
+        
+        System.out.println(clienteLista.toString());
+        
+    } //Fin borrarUsuario()
+ 
 }
