@@ -1,5 +1,5 @@
 
-package proyectobiblioteca;
+package Dominio;
 
 
 public class Autor extends Cliente{

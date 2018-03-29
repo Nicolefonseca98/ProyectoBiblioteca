@@ -1,6 +1,10 @@
 
 package proyectobiblioteca;
 
+import Dominio.Cliente;
+import Dominio.Bibliotecario;
+import Dominio.Autor;
+import Dominio.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 
