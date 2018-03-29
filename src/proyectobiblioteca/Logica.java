@@ -7,10 +7,6 @@ import java.util.List;
 
 public class Logica {
     
-    //Listas de cada tipo de usuario
-    static List<Usuario> listaUsuario = new ArrayList<Usuario>();
-    static List<Bibliotecario> listaBibliotecario = new ArrayList<Bibliotecario>();
-    static List<Autor> listaAutor = new ArrayList<Autor>();
     static List<Cliente> listaCliente = new ArrayList<Cliente>();
     
     
@@ -18,32 +14,25 @@ public class Logica {
         
         /*
         * Cada condición compara el tipo de usuario que se ingresa 
-        * y lo guarda en su lista respectiva
+        * y lo guarda en la Lista listaCliente
         */
         
         if (tipoUsuario.equalsIgnoreCase("Usuario")){
-            Usuario u = new Usuario(nombreUnico, contraseña, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
-            listaUsuario.add(u);
+            Cliente c = new Usuario(nombreUnico, contraseña, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
+            listaCliente.add(c);
             
         }
         else if(tipoUsuario.equalsIgnoreCase("Autor")) {
-            Autor a = new Autor(nombreUnico, contraseña, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
-            listaAutor.add(a);
+            Cliente c = new Autor(nombreUnico, contraseña, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
+            listaCliente.add(c);
             
         }
         else if(tipoUsuario.equalsIgnoreCase("Bibliotecario")) {
-            Bibliotecario b = new Bibliotecario(nombreUnico, contraseña, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
-            listaBibliotecario.add(b);
+            Cliente c = new Bibliotecario(nombreUnico, contraseña, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
+            listaCliente.add(c);
             
         }
         
-        /*
-        * Agrega cada lista a la lista general
-        * ListaCliente
-        */
-        listaCliente.addAll(listaUsuario);
-        listaCliente.addAll(listaAutor);
-        listaCliente.addAll(listaBibliotecario);
         System.out.println(listaCliente.toString()); 
                
     }
