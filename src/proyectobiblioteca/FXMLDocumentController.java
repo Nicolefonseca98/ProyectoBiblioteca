@@ -22,7 +22,6 @@ import javafx.stage.Stage;
 
 public class FXMLDocumentController implements Initializable {
     
-    
     @FXML
     private TextField txfUsuario;
     @FXML

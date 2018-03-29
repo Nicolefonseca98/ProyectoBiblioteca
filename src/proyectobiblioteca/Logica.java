@@ -61,7 +61,7 @@ public class Logica {
                 return true;
             }
         }
-        
+        System.out.println(listaCliente.toString());
         return false;
         
     }
