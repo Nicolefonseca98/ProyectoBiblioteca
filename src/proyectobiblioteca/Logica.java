@@ -8,10 +8,10 @@ import java.util.List;
 public class Logica {
     
     //Listas de cada tipo de usuario
-    List<Usuario> listaUsuario = new ArrayList<Usuario>();
-    List<Bibliotecario> listaBibliotecario = new ArrayList<Bibliotecario>();
-    List<Autor> listaAutor = new ArrayList<Autor>();
-    List<Cliente> listaCliente = new ArrayList<Cliente>();
+    static List<Usuario> listaUsuario = new ArrayList<Usuario>();
+    static List<Bibliotecario> listaBibliotecario = new ArrayList<Bibliotecario>();
+    static List<Autor> listaAutor = new ArrayList<Autor>();
+    static List<Cliente> listaCliente = new ArrayList<Cliente>();
     
     
     public void agregarUsuario(String nombreUnico, String contraseña, String nombreCompleto, String tipoIdentificacion, String identificacion, String tipoUsuario) {

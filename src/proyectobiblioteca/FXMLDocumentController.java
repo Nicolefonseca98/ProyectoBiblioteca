@@ -17,7 +17,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 
@@ -29,13 +28,12 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private PasswordField txfContraseña;
     @FXML private Button btnAgregar;
+    static List<Bibliotecario> listaBibliotecario = new ArrayList<Bibliotecario>();
     
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
      
         //Bibliotecario permanente
-       
-        List<Bibliotecario> listaBibliotecario = new ArrayList<Bibliotecario>();
         Bibliotecario bl = new Bibliotecario("bibliotecario01", "1234", "Juan Solano", "Nacional", "123456789", "Biblitecario");
         listaBibliotecario.add(bl);
         
@@ -44,6 +42,7 @@ public class FXMLDocumentController implements Initializable {
         //Esta linea obtiene la informacion del Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.getIcons().add(new Image("/imagen/libros.png")); 
+        
          //Verifica datos del usuario
         if (txfUsuario.getText().equals(bl.getNombreUnico()) && (txfContraseña.getText().equals(bl.getContraseña()))) {
 

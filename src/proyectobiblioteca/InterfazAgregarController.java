@@ -1,8 +1,11 @@
 
 package proyectobiblioteca;
 
+import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
@@ -29,6 +32,7 @@ public class InterfazAgregarController implements Initializable {
                         choiceBox1.getValue().toString(), txfIdentificacion.getText(), choiceBox2.getValue().toString());
         lbMensaje.setText("Usuario añadido");
     }
+ 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

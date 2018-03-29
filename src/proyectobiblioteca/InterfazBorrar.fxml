@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="403.0" style="-fx-background-color: #99CCCC;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="proyectobiblioteca.InterfazBorrarController">
+   <children>
+      <Label layoutX="147.0" layoutY="64.0" text="Borrar Usuario" />
+      <Label layoutX="112.0" layoutY="121.0" text="Buscar por nombre de usuario" />
+      <TextField fx:id="txfBuscar" layoutX="118.0" layoutY="170.0" />
+      <Button layoutX="168.0" layoutY="220.0" mnemonicParsing="false" onAction="#botonBorrar" text="Borrar" />
+      <Label layoutX="234.0" layoutY="207.0" prefHeight="17.0" prefWidth="120.0" />
+   </children>
+</AnchorPane>

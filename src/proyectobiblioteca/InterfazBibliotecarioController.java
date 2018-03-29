@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 
@@ -24,6 +25,7 @@ public class InterfazBibliotecarioController implements Initializable {
         //Esta linea obtiene la informacion del Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(scene);
+        window.getIcons().add(new Image("/imagen/libros.png")); 
         window.show();
         
     }
@@ -35,6 +37,20 @@ public class InterfazBibliotecarioController implements Initializable {
         Scene scene = new Scene(parent);
         //Esta linea obtiene la informacion del Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.getIcons().add(new Image("/imagen/libros.png")); 
+        window.setScene(scene);
+        window.show();
+        
+    }
+    
+    @FXML
+    private void botonBorrar (ActionEvent event) throws IOException {
+        
+        Parent parent = FXMLLoader.load(getClass().getResource("InterfazBorrar.fxml"));
+        Scene scene = new Scene(parent);
+        //Esta linea obtiene la informacion del Stage
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.getIcons().add(new Image("/imagen/libros.png")); 
         window.setScene(scene);
         window.show();
         
