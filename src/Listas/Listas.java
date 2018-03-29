@@ -5,22 +5,13 @@
  */
 package Listas;
 
-import java.util.LinkedList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-
-/**
- *
- * @author Wilmata
- */
 public class Listas {
-    public static ObservableList<Object> usuarioLista = FXCollections.observableArrayList();
-   
-    public static ObservableList<Object> bibliotecarioLista = FXCollections.observableArrayList();
     
-    public static ObservableList<Object> autorLista = FXCollections.observableArrayList();
-    
+    public static ObservableList<Object> clienteLista = FXCollections.observableArrayList();
+     
     public static ObservableList<Object> libroLista = FXCollections.observableArrayList();
     
     public static ObservableList<Object> revistaLista = FXCollections.observableArrayList();

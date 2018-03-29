@@ -2,10 +2,9 @@
 package proyectobiblioteca;
 
 import Dominio.Bibliotecario;
+import Listas.Listas;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,21 +20,21 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 
-public class FXMLDocumentController implements Initializable {
+public class FXMLDocumentController extends Listas implements Initializable {
     
     @FXML
     private TextField txfUsuario;
     @FXML
     private PasswordField txfContraseña;
     @FXML private Button btnAgregar;
-    static List<Bibliotecario> listaBibliotecario = new ArrayList<Bibliotecario>();
+    
     
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
      
         //Bibliotecario permanente
         Bibliotecario bl = new Bibliotecario("bibliotecario01", "1234", "Juan Solano", "Nacional", "123456789", "Biblitecario");
-        listaBibliotecario.add(bl);
+        clienteLista.add(bl);
         
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));
         Scene scene = new Scene(parent);
@@ -53,7 +52,7 @@ public class FXMLDocumentController implements Initializable {
             System.out.println("Usuario invalido");
         }
        
-        System.out.println(listaBibliotecario.toString());
+        System.out.println(clienteLista.toString());
         
     }
     

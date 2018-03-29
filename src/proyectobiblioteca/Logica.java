@@ -5,14 +5,11 @@ import Dominio.Cliente;
 import Dominio.Bibliotecario;
 import Dominio.Autor;
 import Dominio.Usuario;
-import java.util.ArrayList;
-import java.util.List;
+import Listas.Listas;
 
 
-public class Logica {
-    
-    static List<Cliente> listaCliente = new ArrayList<Cliente>();
-    
+public class Logica extends Listas{
+       
     
     public void agregarUsuario(String nombreUnico, String contraseña, String nombreCompleto, String tipoIdentificacion, String identificacion, String tipoUsuario) {
         
@@ -23,22 +20,22 @@ public class Logica {
         
         if (tipoUsuario.equalsIgnoreCase("Usuario")){
             Cliente c = new Usuario(nombreUnico, contraseña, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
-            listaCliente.add(c);
+            clienteLista.add(c);
             
         }
         else if(tipoUsuario.equalsIgnoreCase("Autor")) {
             Cliente c = new Autor(nombreUnico, contraseña, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
-            listaCliente.add(c);
+            clienteLista.add(c);
             
         }
         else if(tipoUsuario.equalsIgnoreCase("Bibliotecario")) {
             Cliente c = new Bibliotecario(nombreUnico, contraseña, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
-            listaCliente.add(c);
+            clienteLista.add(c);
             
         }
         
-        System.out.println(listaCliente.toString()); 
-               
+        System.out.println(clienteLista.toString()); 
+     
     }
     
     public void modificarUsuario(String nombreUsuario, String nuevoUsuario, String nuevaContraseña) {
@@ -52,28 +49,28 @@ public class Logica {
             
         }
         
-        
-        System.out.println(listaCliente.toString());
+        System.out.println(clienteLista.toString());
 
     }
     
-    public boolean existeUsuario(String nombreUsuario) {
+    public boolean existeUsuario (String nombreUsuario) {
         
-        for (int i = 0; i <= listaCliente.size() - 1; i++) {
-            Cliente cl = (Cliente) listaCliente.get(i);
+        for (int i = 0; i <= clienteLista.size() - 1; i++) {
+            Cliente cl = (Cliente) clienteLista.get(i);
             String nombre = cl.getNombreUnico();
             if (nombre.equalsIgnoreCase(nombreUsuario)) {
                 return true;
             }
         }
-        System.out.println(listaCliente.toString());
+        System.out.println(clienteLista.toString());
         return false;
-        
     }
     
+    
     public Cliente getCliente(String nombreUsuario) {
-        for (int i = 0; i <= listaCliente.size() - 1; i++) {
-            Cliente c = (Cliente) listaCliente.get(i);
+        
+        for (int i = 0; i <= clienteLista.size() - 1; i++) {
+            Cliente c = (Cliente) clienteLista.get(i);
             if (c.getNombreUnico().equalsIgnoreCase(nombreUsuario)) {
                 return c;
             }
