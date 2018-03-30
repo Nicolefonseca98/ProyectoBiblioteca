@@ -19,5 +19,6 @@
       <Button fx:id="btnModificar" layoutX="266.0" layoutY="376.0" mnemonicParsing="false" onAction="#accionModificar" text="Modificar" />
       <Label fx:id="lbMensaje2" layoutX="259.0" layoutY="437.0" prefHeight="17.0" prefWidth="149.0" />
       <Label fx:id="lbMensaje" layoutX="281.0" layoutY="211.0" prefHeight="17.0" prefWidth="139.0" />
+      <Button layoutX="68.0" layoutY="442.0" mnemonicParsing="false" onAction="#volverMenu" text="Menú" />
    </children>
 </AnchorPane>
