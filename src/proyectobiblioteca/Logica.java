@@ -87,6 +87,7 @@ public class Logica extends Listas{
             clienteLista.remove(c);
         }
         
+        
         System.out.println(clienteLista.toString());
         
     } //Fin borrarUsuario()
