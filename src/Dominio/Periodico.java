@@ -44,7 +44,7 @@ public class Periodico extends Obra{
 
     @Override
     public String toString() {
-        return "Periodico{" + "issn=" + issn + ", edicion=" + edicion + ", fechaPublicacion=" + fechaPublicacion + '}';
+        return "Periodico{" + "issn=" + issn + ", edicion=" + edicion + ", fechaPublicacion=" + fechaPublicacion +  " autor " + super.getAutor() + " titulo " + super.getTitulo() + " fecha ingreso " +super.getFechaIngreso() +'}';
     }
 
     

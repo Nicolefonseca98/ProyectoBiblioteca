@@ -35,7 +35,7 @@ public class Revista extends Obra{
 
     @Override
     public String toString() {
-        return "Revista{" + "issn=" + issn + ", edici\u00f3n=" + edición + '}';
+        return "Revista{" + "issn=" + issn + ", edici\u00f3n=" + edición + " autor " + super.getAutor() + " titulo " + super.getTitulo() + " fecha ingreso " +super.getFechaIngreso() +'}';
     }
     
 }

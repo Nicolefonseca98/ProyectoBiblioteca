@@ -1,6 +1,8 @@
 
 package proyectobiblioteca;
 
+import Dominio.Cliente;
+import static Listas.Listas.clienteLista;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -11,12 +13,23 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 
 public class InterfazModificarObraController implements Initializable {
 
+    @FXML private TextField txfBuscar;
+    @FXML private TextField txfTitulo;
+    @FXML private ComboBox comboBoxAutor;
+    @FXML private DatePicker dtFecha;
+    @FXML private Label lbMensaje;
+    @FXML private Button btnModificar;
     
      @FXML
     private void volverMenu(ActionEvent event) throws IOException {
@@ -30,10 +43,53 @@ public class InterfazModificarObraController implements Initializable {
         window.show();
 
     }
-  
+    
+    @FXML
+    private void btnBuscar() {
+        
+        Logica l = new Logica();
+        if(l.buscarObra(txfBuscar.getText())) {
+            lbMensaje.setText("Usuario encontrado");
+            txfTitulo.setDisable(false);
+            comboBoxAutor.setDisable(false);
+            dtFecha.setDisable(false);
+            btnModificar.setDisable(false);
+            
+        }
+        else
+            lbMensaje.setText("El usuario no existe");
+    }
+    
+    @FXML
+    private void btnModificar(){
+        
+        Logica l = new Logica();
+        l.modificarObra(txfBuscar.getText(), txfTitulo.getText(), comboBoxAutor.getValue().toString(), dtFecha.getValue().toString());
+        
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        /*
+       * Busca en la lista los usuarios que son autores
+       * para mostrarlos en el comboBox a la hora de ingresar una nueva obra
+       * y así asignarle a la obra un autor ya registrado en el sistema
+       */
+        for (int i = 0; i <= clienteLista.size() - 1; i++) {
+            Cliente c = (Cliente) clienteLista.get(i);
+            if (c.getTipoUsuario().equalsIgnoreCase("Autor")) {
+                
+                comboBoxAutor.getItems().addAll(c.getNombreCompleto());
+                
+            }
+        } //Fin for
+        
+        txfTitulo.setDisable(true);
+        comboBoxAutor.setDisable(true);
+        dtFecha.setDisable(true);
+        btnModificar.setDisable(true);
+        
     }    
     
 }

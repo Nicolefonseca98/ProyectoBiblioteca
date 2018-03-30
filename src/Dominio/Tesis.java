@@ -2,7 +2,6 @@
 package Dominio;
 
 import javafx.beans.property.SimpleStringProperty;
-import javafx.scene.control.DatePicker;
 
 public class Tesis extends Obra{
     
@@ -37,7 +36,7 @@ public class Tesis extends Obra{
 
     @Override
     public String toString() {
-        return "Tesis{" + "resumen=" + resumen + ", summary=" + summary + '}';
+        return "Tesis{" + "resumen=" + resumen + ", summary=" + summary + " autor " + super.getAutor() + " titulo " + super.getTitulo() + " fecha ingreso " +super.getFechaIngreso() + '}';
     }
 
   

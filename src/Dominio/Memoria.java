@@ -2,7 +2,6 @@
 package Dominio;
 
 import javafx.beans.property.SimpleStringProperty;
-import javafx.scene.control.DatePicker;
 
 public class Memoria extends Obra{
     
@@ -43,7 +42,7 @@ public class Memoria extends Obra{
 
     @Override
     public String toString() {
-        return "Memoria{" + "resumen=" + resumen + ", summary=" + summary + ", conferencia=" + conferencia + '}';
+        return "Memoria{" + "resumen=" + resumen + ", summary=" + summary + ", conferencia=" + conferencia +  " autor " + super.getAutor() + " titulo " + super.getTitulo() + " fecha ingreso " +super.getFechaIngreso() +'}';
     }
     
 }

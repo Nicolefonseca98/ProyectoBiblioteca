@@ -60,7 +60,7 @@ public class InterfazAgregarObraController implements Initializable {
             if (c.getTipoUsuario().equalsIgnoreCase("Autor")) {
                 
                 comboBoxAutor.getItems().addAll(c.getNombreCompleto());
-                break;
+                
             }
         } //Fin for
         
@@ -99,12 +99,24 @@ public class InterfazAgregarObraController implements Initializable {
         
          LocalDate fechaIngreso = dtFechaIngreso.getValue();
          LocalDate fechaPublicacion = dtFechaPublicacion.getValue();
-         
-        String ingreso = fechaIngreso.getDayOfMonth()+ "-" + fechaIngreso.getMonthValue()+ "-" + fechaIngreso.getYear();
-        //String publicacion =  fechaPublicacion.getDayOfMonth()+ "-" + fechaPublicacion.getMonthValue()+ "-" + fechaPublicacion.getYear();
+//         
+//        String ingreso = fechaIngreso.getDayOfMonth()+ "-" + fechaIngreso.getMonthValue()+ "-" + fechaIngreso.getYear();
+//        String publicacion =  fechaPublicacion.getDayOfMonth()+ "-" + fechaPublicacion.getMonthValue()+ "-" + fechaPublicacion.getYear();
         
-        l.agregarLibro(txfTitulo.getText(), ingreso, comboBoxAutor.getValue().toString(), txfISBN.getText(), txfTema.getText(), txfSubtema.getText());
-        l.agregarRevista(txfTitulo.getText(), ingreso, comboBoxAutor.getValue().toString(), txfISSN.getText(), txfEdicion.getText());
+        if(comboBoxObra.getValue().toString().equalsIgnoreCase("Libro")) {
+            l.agregarLibro(txfTitulo.getText(), fechaIngreso.toString(), comboBoxAutor.getValue().toString(), txfISBN.getText(), txfTema.getText(), txfSubtema.getText());
+        }
+        else if (comboBoxObra.getValue().toString().equalsIgnoreCase("Revista")){
+            l.agregarRevista(txfTitulo.getText(), fechaIngreso.toString(), comboBoxAutor.getValue().toString(), txfISSN.getText(), txfEdicion.getText());
+        }
+        else if (comboBoxObra.getValue().toString().equalsIgnoreCase("Tesis")) {
+            l.agregarTesis(txfTitulo.getText(), fechaIngreso.toString(), comboBoxAutor.getValue().toString(), txaResumen.getText(), txaSummary.getText());
+        }
+        else if (comboBoxObra.getValue().toString().equalsIgnoreCase("Periódico")) {
+            l.agregarPeriodico(txfTitulo.getText(), fechaIngreso.toString(), comboBoxAutor.getValue().toString(), txfISSN.getText(), txfEdicion.getText(), fechaPublicacion.toString());
+        }
+        else
+            l.agregarMemoria(txfTitulo.getText(), fechaIngreso.toString(), comboBoxAutor.getValue().toString(), txaResumen.getText(), txaSummary.getText(), txfConferencia.getText());
     }
     
     @FXML
