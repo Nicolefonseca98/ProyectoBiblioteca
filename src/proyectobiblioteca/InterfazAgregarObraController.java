@@ -14,6 +14,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import static Listas.Listas.clienteLista;
 import java.io.IOException;
+import java.time.LocalDate;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -36,6 +37,7 @@ public class InterfazAgregarObraController implements Initializable {
     @FXML private TextField txfConferencia;
     @FXML private TextField txfISBN;
     @FXML private TextField txfISSN;
+    @FXML private TextArea txaSummary;
     @FXML private Button btnAgregar;
        
     @Override
@@ -90,6 +92,27 @@ public class InterfazAgregarObraController implements Initializable {
 
     }
     
-
+@FXML
+    private void agregar() {
+        Logica l = new Logica();
+        
+         LocalDate fechaIngreso = dtFechaIngreso.getValue();
+         LocalDate fechaPublicacion = dtFechaPublicacion.getValue();
+         
+        String ingreso = fechaIngreso.getDayOfMonth()+ "-" + fechaIngreso.getMonthValue()+ "-" + fechaIngreso.getYear();
+        String publicacion = (Object) fechaPublicacion.getDayOfMonth()+ "-" + fechaPublicacion.getMonthValue()+ "-" + fechaPublicacion.getYear();
+        
+        if(comboBoxObra.getValue().toString().equals("Libro")){
+            txfISBN.setDisable(false);
+            txfTema.setDisable(false);
+            txfSubtema.setDisable(false);
+        }
+        else if(comboBoxObra.getValue().toString().equals("Revista")) {
+        }
+        
+        l.agregarObra(txfTitulo.getText(), ingreso, comboBoxAutor.getValue().toString(), txfISBN.getText(), txfTema.getText(), txfSubtema.getText(),
+                      txfISSN.getText(), txfEdicion.getText(), txaResumen.getText(), txaSummary.getText(), publicacion, txfConferencia.getText(), 
+                      comboBoxObra.getValue().toString());
+    }
     
 }
