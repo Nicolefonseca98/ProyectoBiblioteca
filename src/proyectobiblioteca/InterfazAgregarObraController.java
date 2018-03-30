@@ -110,16 +110,16 @@ public class InterfazAgregarObraController implements Initializable {
                       comboBoxObra.getValue().toString());
     }
     
-//    @FXML
-//    private void btnOk() {
-//        
-//        if(comboBoxObra.getValue().equals("Libro")){
-//            txfISBN.setDisable(false);
-//            txfTema.setDisable(false);
-//            txfSubtema.setDisable(false);
-//        }
-//        else if(comboBoxObra.getValue().toString().equals("Revista")) {
-//        }
-//    }
+    @FXML
+    private void btnOk() {
+        
+        if(comboBoxObra.getValue().equals("Libro")){
+            txfISBN.setDisable(false);
+            txfTema.setDisable(false);
+            txfSubtema.setDisable(false);
+        }
+        else if(comboBoxObra.getValue().toString().equals("Revista")) {
+        }
+    }
     
 }
