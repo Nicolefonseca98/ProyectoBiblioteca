@@ -8,61 +8,38 @@ public class Periodico extends Obra{
     
     private SimpleStringProperty issn;
     private SimpleStringProperty edicion;
-    private DatePicker fechaPublicacion;
+    private SimpleStringProperty fechaPublicacion;
 
-    public Periodico(SimpleStringProperty issn, SimpleStringProperty edicion, DatePicker fechaPublicacion) {
-        this.issn = issn;
-        this.edicion = edicion;
-        this.fechaPublicacion = fechaPublicacion;
-    }
 
-    public Periodico(SimpleStringProperty issn, SimpleStringProperty edicion, DatePicker fechaPublicacion, SimpleStringProperty titulo, DatePicker fechaIngreso, SimpleStringProperty autor) {
+    public Periodico(String issn, String edicion, String fechaPublicacion, String titulo, String fechaIngreso, String autor) {
         super(titulo, fechaIngreso, autor);
-        this.issn = issn;
-        this.edicion = edicion;
-        this.fechaPublicacion = fechaPublicacion;
+        this.issn = new SimpleStringProperty (issn);
+        this.edicion = new SimpleStringProperty (edicion);
+        this.fechaPublicacion = new SimpleStringProperty (fechaPublicacion);
     }
 
-    /**
-     * @return the issn
-     */
-    public SimpleStringProperty getIssn() {
-        return issn;
+    public String getIssn() {
+        return issn.get();
     }
 
-    /**
-     * @param issn the issn to set
-     */
-    public void setIssn(SimpleStringProperty issn) {
-        this.issn = issn;
+    public void setIssn(String issn) {
+        this.issn = new SimpleStringProperty (issn);
     }
 
-    /**
-     * @return the edicion
-     */
-    public SimpleStringProperty getEdicion() {
-        return edicion;
+    public String getEdicion() {
+        return edicion.get();
     }
 
-    /**
-     * @param edicion the edicion to set
-     */
-    public void setEdicion(SimpleStringProperty edicion) {
-        this.edicion = edicion;
+    public void setEdicion(String edicion) {
+        this.edicion = new SimpleStringProperty (edicion);
     }
 
-    /**
-     * @return the fechaPublicacion
-     */
-    public DatePicker getFechaPublicacion() {
-        return fechaPublicacion;
+    public String getFechaPublicacion() {
+        return fechaPublicacion.get();
     }
 
-    /**
-     * @param fechaPublicacion the fechaPublicacion to set
-     */
-    public void setFechaPublicacion(DatePicker fechaPublicacion) {
-        this.fechaPublicacion = fechaPublicacion;
+    public void setFechaPublicacion(String fechaPublicacion) {
+        this.fechaPublicacion = new SimpleStringProperty (fechaPublicacion);
     }
 
     @Override

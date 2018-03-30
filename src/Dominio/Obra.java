@@ -7,41 +7,41 @@ import javafx.scene.control.DatePicker;
 public class Obra {
     
     private SimpleStringProperty titulo;
-    private DatePicker fechaIngreso;
+    private SimpleStringProperty fechaIngreso;
     private SimpleStringProperty autor;
 
     public Obra() {
     }
 
-    public Obra(SimpleStringProperty titulo, DatePicker fechaIngreso, SimpleStringProperty autor) {
-        this.titulo = titulo;
-        this.fechaIngreso = fechaIngreso;
-        this.autor = autor;
+    public Obra(String titulo, String fechaIngreso, String autor) {
+        this.titulo = new SimpleStringProperty (titulo);
+        this.fechaIngreso = new SimpleStringProperty (fechaIngreso);
+        this.autor = new SimpleStringProperty (autor);
     }
 
-    public SimpleStringProperty getTitulo() {
-        return titulo;
+    public String getTitulo() {
+        return titulo.get();
     }
 
-    public void setTitulo(SimpleStringProperty titulo) {
-        this.titulo = titulo;
+    public void setTitulo(String titulo) {
+        this.titulo = new SimpleStringProperty (titulo);
     }
 
-    public DatePicker getFechaIngreso() {
-        return fechaIngreso;
+    public String getFechaIngreso() {
+        return fechaIngreso.get();
     }
 
     
-    public void setFechaIngreso(DatePicker fechaIngreso) {
-        this.fechaIngreso = fechaIngreso;
+    public void setFechaIngreso(String fechaIngreso) {
+        this.fechaIngreso = new SimpleStringProperty (fechaIngreso);
     }
  
-    public SimpleStringProperty getAutor() {
-        return autor;
+    public String getAutor() {
+        return autor.get();
     }
 
-    public void setAutor(SimpleStringProperty autor) {
-        this.autor = autor;
+    public void setAutor(String autor) {
+        this.autor = new SimpleStringProperty (autor);
     }
 
     @Override

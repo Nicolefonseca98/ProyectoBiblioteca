@@ -9,32 +9,28 @@ public class Revista extends Obra{
     private SimpleStringProperty issn;
     private SimpleStringProperty edición;
 
-    public Revista(SimpleStringProperty issn, SimpleStringProperty edición) {
-        this.issn = issn;
-        this.edición = edición;
-    }
 
-    public Revista(SimpleStringProperty issn, SimpleStringProperty edición, SimpleStringProperty titulo, DatePicker fechaIngreso, SimpleStringProperty autor) {
+    public Revista(String issn, String edición, String titulo, String fechaIngreso, String autor) {
         super(titulo, fechaIngreso, autor);
-        this.issn = issn;
-        this.edición = edición;
+        this.issn = new SimpleStringProperty (issn);
+        this.edición = new SimpleStringProperty (edición);
     }
 
-    public SimpleStringProperty getIssn() {
-        return issn;
+    public String getIssn() {
+        return issn.get();
     }
 
  
-    public void setIssn(SimpleStringProperty issn) {
-        this.issn = issn;
+    public void setIssn(String issn) {
+        this.issn = new SimpleStringProperty (issn);
     }
 
-    public SimpleStringProperty getEdición() {
-        return edición;
+    public String getEdición() {
+        return edición.get();
     }
 
-    public void setEdición(SimpleStringProperty edición) {
-        this.edición = edición;
+    public void setEdición(String edición) {
+        this.edición = new SimpleStringProperty (edición);
     }
 
     @Override

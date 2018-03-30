@@ -10,41 +10,35 @@ public class Memoria extends Obra{
     private SimpleStringProperty summary;
     private SimpleStringProperty conferencia;
 
-    public Memoria(SimpleStringProperty resumen, SimpleStringProperty summary, SimpleStringProperty conferencia) {
-        this.resumen = resumen;
-        this.summary = summary;
-        this.conferencia = conferencia;
-    }
-
-    public Memoria(SimpleStringProperty resumen, SimpleStringProperty summary, SimpleStringProperty conferencia, SimpleStringProperty titulo, DatePicker fechaIngreso, SimpleStringProperty autor) {
+    public Memoria(String resumen, String summary, String conferencia, String titulo, String fechaIngreso, String autor) {
         super(titulo, fechaIngreso, autor);
-        this.resumen = resumen;
-        this.summary = summary;
-        this.conferencia = conferencia;
+        this.resumen = new SimpleStringProperty (resumen);
+        this.summary = new SimpleStringProperty (summary);
+        this.conferencia = new SimpleStringProperty (conferencia);
     }
 
-    public SimpleStringProperty getResumen() {
-        return resumen;
+    public String getResumen() {
+        return resumen.get();
     }
 
-    public void setResumen(SimpleStringProperty resumen) {
-        this.resumen = resumen;
+    public void setResumen(String resumen) {
+        this.resumen = new SimpleStringProperty (resumen);
     }
 
-    public SimpleStringProperty getSummary() {
-        return summary;
+    public String getSummary() {
+        return summary.get();
     }
 
-    public void setSummary(SimpleStringProperty summary) {
-        this.summary = summary;
+    public void setSummary(String summary) {
+        this.summary = new SimpleStringProperty (summary);
     }
 
-    public SimpleStringProperty getConferencia() {
-        return conferencia;
+    public String getConferencia() {
+        return conferencia.get();
     }
 
-    public void setConferencia(SimpleStringProperty conferencia) {
-        this.conferencia = conferencia;
+    public void setConferencia(String conferencia) {
+        this.conferencia = new SimpleStringProperty (conferencia);
     }
 
     @Override

@@ -11,42 +11,37 @@ public class Libro extends Obra{
     private SimpleStringProperty tema;
     private SimpleStringProperty subtema;
 
-    public Libro(SimpleStringProperty isbn, SimpleStringProperty tema, SimpleStringProperty subtema) {
-        this.isbn = isbn;
-        this.tema = tema;
-        this.subtema = subtema;
-    }
 
-    public Libro(SimpleStringProperty isbn, SimpleStringProperty tema, SimpleStringProperty subtema, SimpleStringProperty titulo, DatePicker fechaIngreso, SimpleStringProperty autor) {
+    public Libro(String isbn, String tema, String subtema, String titulo, String fechaIngreso, String autor) {
         super(titulo, fechaIngreso, autor);
-        this.isbn = isbn;
-        this.tema = tema;
-        this.subtema = subtema;
+        this.isbn = new SimpleStringProperty (isbn);
+        this.tema = new SimpleStringProperty (tema);
+        this.subtema = new SimpleStringProperty (subtema);
     }
 
-    public SimpleStringProperty getIsbn() {
-        return isbn;
+    public String getIsbn() {
+        return isbn.get();
     }
 
-    public void setIsbn(SimpleStringProperty isbn) {
-        this.isbn = isbn;
+    public void setIsbn(String isbn) {
+        this.isbn = new SimpleStringProperty (isbn);
     }
 
-    public SimpleStringProperty getTema() {
-        return tema;
+    public String getTema() {
+        return tema.get();
     }
 
-    public void setTema(SimpleStringProperty tema) {
-        this.tema = tema;
+    public void setTema(String tema) {
+        this.tema = new SimpleStringProperty (tema);
     }
 
-    public SimpleStringProperty getSubtema() {
-        return subtema;
+    public String getSubtema() {
+        return subtema.get();
     }
 
  
-    public void setSubtema(SimpleStringProperty subtema) {
-        this.subtema = subtema;
+    public void setSubtema(String subtema) {
+        this.subtema = new SimpleStringProperty (subtema);
     }
 
     @Override

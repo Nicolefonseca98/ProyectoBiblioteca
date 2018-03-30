@@ -12,31 +12,27 @@ public class Tesis extends Obra{
     public Tesis() {
     }
 
-    public Tesis(SimpleStringProperty resumen, SimpleStringProperty summary) {
-        this.resumen = resumen;
-        this.summary = summary;
-    }
 
-    public Tesis(SimpleStringProperty resumen, SimpleStringProperty summary, SimpleStringProperty titulo, DatePicker fechaIngreso, SimpleStringProperty autor) {
+    public Tesis(String resumen, String summary, String titulo, String fechaIngreso, String autor) {
         super(titulo, fechaIngreso, autor);
-        this.resumen = resumen;
-        this.summary = summary;
+        this.resumen = new SimpleStringProperty (resumen);
+        this.summary = new SimpleStringProperty (summary);
     }
 
-    public SimpleStringProperty getResumen() {
-        return resumen;
+    public String getResumen() {
+        return resumen.get();
     }
 
-    public void setResumen(SimpleStringProperty resumen) {
-        this.resumen = resumen;
+    public void setResumen(String resumen) {
+        this.resumen = new SimpleStringProperty (resumen);
     }
 
-    public SimpleStringProperty getSummary() {
-        return summary;
+    public String getSummary() {
+        return summary.get();
     }
 
-    public void setSummary(SimpleStringProperty summary) {
-        this.summary = summary;
+    public void setSummary(String summary) {
+        this.summary = new SimpleStringProperty (summary);
     }
 
     @Override
