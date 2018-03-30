@@ -22,4 +22,6 @@ public class Listas {
     
     public static ObservableList<Object> memoriasLista = FXCollections.observableArrayList();
     
+    public static ObservableList<Object> obraLista = FXCollections.observableArrayList();
+    
 }

@@ -104,6 +104,7 @@ public class InterfazAgregarObraController implements Initializable {
         //String publicacion =  fechaPublicacion.getDayOfMonth()+ "-" + fechaPublicacion.getMonthValue()+ "-" + fechaPublicacion.getYear();
         
         l.agregarLibro(txfTitulo.getText(), ingreso, comboBoxAutor.getValue().toString(), txfISBN.getText(), txfTema.getText(), txfSubtema.getText());
+        l.agregarRevista(txfTitulo.getText(), ingreso, comboBoxAutor.getValue().toString(), txfISSN.getText(), txfEdicion.getText());
     }
     
     @FXML

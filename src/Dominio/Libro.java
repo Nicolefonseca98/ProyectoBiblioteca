@@ -52,7 +52,7 @@ public class Libro extends Obra{
 
     @Override
     public String toString() {
-        return "Libro{" + "isbn=" + isbn + ", tema=" + tema + ", subtema=" + subtema + '}';
+        return "Libro{" + "isbn=" + isbn + ", tema=" + tema + ", subtema=" + subtema + " autor " + super.getAutor() + " titulo " + super.getTitulo() + " fecha ingreso " +super.getFechaIngreso() +'}';
     }
 
    

@@ -100,11 +100,44 @@ public class Logica extends Listas{
  
     public void agregarLibro(String titulo, String fechaIngreso, String autor, String isbn, String tema, String subtema) {
         
-            Obra o = (Obra) new Libro(isbn, tema, subtema, titulo, fechaIngreso, autor);
-            libroLista.add(o);
+        Obra o = new Libro(isbn, tema, subtema, titulo, fechaIngreso, autor);
+        libroLista.add(o);
+           
         System.out.println(libroLista.toString());
        
-     
     }
     
+    public void agregarRevista(String titulo, String fechaIngreso, String autor, String issn, String edicion) {
+        
+        Obra o = new Revista(issn, edicion, titulo, fechaIngreso, autor);
+        revistaLista.add(o);
+        
+        System.out.println(revistaLista.toString());
+    }
+    
+    public void agregarTesis(String titulo, String fechaIngreso, String autor, String resumen, String summary) {
+        
+        Obra o = new Tesis(resumen, summary, titulo, fechaIngreso, autor);
+        tesisLista.add(o);
+        
+        System.out.println(tesisLista.toString());
+        
+    }
+    
+    public void agregarPeriodico(String titulo, String fechaIngreso, String autor, String issn, String edicion, String fechapublicacion) {
+        
+        Obra o = new Periodico(issn, edicion, fechapublicacion, titulo, fechaIngreso, autor);
+        periodicosLista.add(o);
+        
+        System.out.println(periodicosLista.toString());
+    }
+    
+    public void agregarMemoria(String titulo, String fechaIngreso, String autor, String resumen, String summary, String conferencia) {
+        
+        Obra o = new Memoria(resumen, summary, conferencia, titulo, fechaIngreso, autor);
+        memoriasLista.add(o);
+        
+        System.out.println(memoriasLista.toString());
+        
+    }
 }
