@@ -76,12 +76,13 @@ public class InterfazAgregarObraController implements Initializable {
         txfConferencia.setDisable(true);
         txfISBN.setDisable(true);
         txfISSN.setDisable(true);
+        txaSummary.setDisable(true);
         
     }  
     
     @FXML
     private void volverMenu(ActionEvent event) throws IOException {
-     //
+     
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));
         Scene scene = new Scene(parent);
         //Esta linea obtiene la informacion del Stage
@@ -102,17 +103,23 @@ public class InterfazAgregarObraController implements Initializable {
         String ingreso = fechaIngreso.getDayOfMonth()+ "-" + fechaIngreso.getMonthValue()+ "-" + fechaIngreso.getYear();
         String publicacion = (Object) fechaPublicacion.getDayOfMonth()+ "-" + fechaPublicacion.getMonthValue()+ "-" + fechaPublicacion.getYear();
         
-        if(comboBoxObra.getValue().toString().equals("Libro")){
-            txfISBN.setDisable(false);
-            txfTema.setDisable(false);
-            txfSubtema.setDisable(false);
-        }
-        else if(comboBoxObra.getValue().toString().equals("Revista")) {
-        }
+        
         
         l.agregarObra(txfTitulo.getText(), ingreso, comboBoxAutor.getValue().toString(), txfISBN.getText(), txfTema.getText(), txfSubtema.getText(),
                       txfISSN.getText(), txfEdicion.getText(), txaResumen.getText(), txaSummary.getText(), publicacion, txfConferencia.getText(), 
                       comboBoxObra.getValue().toString());
     }
+    
+//    @FXML
+//    private void btnOk() {
+//        
+//        if(comboBoxObra.getValue().equals("Libro")){
+//            txfISBN.setDisable(false);
+//            txfTema.setDisable(false);
+//            txfSubtema.setDisable(false);
+//        }
+//        else if(comboBoxObra.getValue().toString().equals("Revista")) {
+//        }
+//    }
     
 }

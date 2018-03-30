@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="522.0" prefWidth="590.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazAgregarObraController">
+<AnchorPane id="AnchorPane" prefHeight="522.0" prefWidth="590.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazAgregarObraController">
    <children>
       <Label layoutX="256.0" layoutY="6.0" text="Agregar obra" />
       <Label layoutX="14.0" layoutY="39.0" text="Tipo de obra" />
