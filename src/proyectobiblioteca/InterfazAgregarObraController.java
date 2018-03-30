@@ -101,13 +101,9 @@ public class InterfazAgregarObraController implements Initializable {
          LocalDate fechaPublicacion = dtFechaPublicacion.getValue();
          
         String ingreso = fechaIngreso.getDayOfMonth()+ "-" + fechaIngreso.getMonthValue()+ "-" + fechaIngreso.getYear();
-        String publicacion = (Object) fechaPublicacion.getDayOfMonth()+ "-" + fechaPublicacion.getMonthValue()+ "-" + fechaPublicacion.getYear();
+        //String publicacion =  fechaPublicacion.getDayOfMonth()+ "-" + fechaPublicacion.getMonthValue()+ "-" + fechaPublicacion.getYear();
         
-        
-        
-        l.agregarObra(txfTitulo.getText(), ingreso, comboBoxAutor.getValue().toString(), txfISBN.getText(), txfTema.getText(), txfSubtema.getText(),
-                      txfISSN.getText(), txfEdicion.getText(), txaResumen.getText(), txaSummary.getText(), publicacion, txfConferencia.getText(), 
-                      comboBoxObra.getValue().toString());
+        l.agregarLibro(txfTitulo.getText(), ingreso, comboBoxAutor.getValue().toString(), txfISBN.getText(), txfTema.getText(), txfSubtema.getText());
     }
     
     @FXML
@@ -119,6 +115,22 @@ public class InterfazAgregarObraController implements Initializable {
             txfSubtema.setDisable(false);
         }
         else if(comboBoxObra.getValue().toString().equals("Revista")) {
+            txfISSN.setDisable(false);
+            txfEdicion.setDisable(false);
+        }
+        else if(comboBoxObra.getValue().toString().equals("Tesis")) {
+            txaResumen.setDisable(false);
+            txaSummary.setDisable(false);
+        }
+        else if(comboBoxObra.getValue().toString().equals("Periódico")) {
+            txfISSN.setDisable(false);
+            txfEdicion.setDisable(false);
+            dtFechaPublicacion.setDisable(false);
+        }
+        else if(comboBoxObra.getValue().toString().equals("Memoria")) {
+            txaResumen.setDisable(false);
+            txaSummary.setDisable(false);
+            txfConferencia.setDisable(false);
         }
     }
     

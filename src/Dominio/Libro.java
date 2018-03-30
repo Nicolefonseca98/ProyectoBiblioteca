@@ -2,7 +2,6 @@
 package Dominio;
 
 import javafx.beans.property.SimpleStringProperty;
-import javafx.scene.control.DatePicker;
 
 
 public class Libro extends Obra{
@@ -10,6 +9,13 @@ public class Libro extends Obra{
     private SimpleStringProperty isbn;
     private SimpleStringProperty tema;
     private SimpleStringProperty subtema;
+
+    public Libro() {
+    }
+
+    public Libro(String titulo, String fechaIngreso, String autor) {
+        super(titulo, fechaIngreso, autor);
+    }
 
 
     public Libro(String isbn, String tema, String subtema, String titulo, String fechaIngreso, String autor) {
@@ -48,5 +54,7 @@ public class Libro extends Obra{
     public String toString() {
         return "Libro{" + "isbn=" + isbn + ", tema=" + tema + ", subtema=" + subtema + '}';
     }
+
+   
     
 }

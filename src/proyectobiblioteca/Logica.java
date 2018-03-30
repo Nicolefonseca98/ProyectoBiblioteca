@@ -98,37 +98,12 @@ public class Logica extends Listas{
         
     } //Fin borrarUsuario()
  
-    public void agregarObra(String titulo, String fechaIngreso, String autor, String isbn, String tema, String subtema, String issn, String edición,
-                            String resumen, String summary, String fechaPublicación, String conferencia, String tipoObra) {
+    public void agregarLibro(String titulo, String fechaIngreso, String autor, String isbn, String tema, String subtema) {
         
-        if (tipoObra.equalsIgnoreCase("Libro")){
-            Obra o = new Libro(isbn, tema, subtema, titulo, fechaIngreso, autor);
+            Obra o = (Obra) new Libro(isbn, tema, subtema, titulo, fechaIngreso, autor);
             libroLista.add(o);
-            
-        }
-        else if(tipoObra.equalsIgnoreCase("Revista")) {
-            Obra o = new Revista(issn, edición, titulo, fechaIngreso, autor);
-            revistaLista.add(o);
-            
-        }
-        else if(tipoObra.equalsIgnoreCase("Tesis")) {
-            Obra o = new Tesis(resumen, summary, titulo, fechaIngreso, autor);
-            tesisLista.add(o);
-        }
-        else if(tipoObra.equalsIgnoreCase("Periódico")) {
-            Obra o = new Periodico(issn, edición, fechaPublicación, titulo, fechaIngreso, autor);
-            periodicosLista.add(o);
-        }
-        else if(tipoObra.equalsIgnoreCase("Memoria")) {
-            Obra o = new Memoria(resumen, summary, conferencia, titulo, fechaIngreso, autor);
-            memoriasLista.add(o);
-        }
-        
         System.out.println(libroLista.toString());
-        System.out.println(revistaLista.toString()); 
-        System.out.println(tesisLista.toString()); 
-        System.out.println(periodicosLista.toString()); 
-        System.out.println(memoriasLista.toString()); 
+       
      
     }
     
