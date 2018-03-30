@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="196.0" prefWidth="329.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.FXMLDocumentController">
    <children>
-      <GridPane prefHeight="200.0" prefWidth="320.0" style="-fx-background-color: #99CCCC;">
+      <GridPane prefHeight="162.0" prefWidth="320.0" style="-fx-background-color: #99CCCC;">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -23,11 +23,6 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="btnIngresar" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="63.0" text="Ingresar" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <GridPane.margin>
-                  <Insets bottom="10.0" left="10.0" right="3.0" top="10.0" />
-               </GridPane.margin>
-            </Button>
             <PasswordField fx:id="txfContraseña" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" right="3.0" top="10.0" />
@@ -43,12 +38,13 @@
                   <Insets left="35.0" />
                </padding>
             </Label>
-            <TextField fx:id="txfUsuario" prefHeight="25.0" prefWidth="140.0" GridPane.rowIndex="1">
+            <TextField fx:id="txfUsuario" prefHeight="22.0" prefWidth="141.0" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" right="3.0" top="10.0" />
                </GridPane.margin>
             </TextField>
          </children>
       </GridPane>
+      <Button fx:id="btnIngresar" layoutX="250.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="63.0" text="Ingresar" />
    </children>
 </AnchorPane>
