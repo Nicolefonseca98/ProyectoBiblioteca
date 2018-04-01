@@ -192,6 +192,30 @@ public class Logica extends Listas{
         }
         
         System.out.println(obraLista.toString());
-
     }
+    public boolean existeObra (String nombreObra) {
+        
+        for (int i = 0; i <= obraLista.size() - 1; i++) {
+            Obra o = (Obra) obraLista.get(i);
+            String nombre = o.getObra;
+            if (nombre.equalsIgnoreCase(nombreObra)) {
+                return true;
+            }
+        }
+        System.out.println(obraLista.toString());
+        return false;
+    }
+      public void borrarObra(String nombreObra){
+
+        if (buscarObra(nombreObra)) {
+            Obra o = (Obra)getObra(nombreObra);
+
+            obraLista.remove(o);
+        }
+        
+        
+        System.out.println(obraLista.toString());
+        
+    } //Fin borrarObra()
+    
 }

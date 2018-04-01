@@ -8,6 +8,7 @@ public class Obra {
     private SimpleStringProperty titulo;
     private SimpleStringProperty fechaIngreso;
     private SimpleStringProperty autor;
+    public String getObra;
 
     public Obra() {
     }
