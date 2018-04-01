@@ -18,6 +18,5 @@
       <ComboBox fx:id="comboBoxTitulo" layoutX="185.0" layoutY="88.0" prefWidth="150.0" />
       <ComboBox fx:id="comboBoxUsuario" layoutX="185.0" layoutY="126.0" prefWidth="150.0" />
       <Button fx:id="btnPrestar" layoutX="159.0" layoutY="268.0" mnemonicParsing="false" onAction="#botonPrestar" text="Prestar" />
-      <Label layoutX="240.0" layoutY="314.0" prefHeight="17.0" prefWidth="119.0" />
    </children>
 </AnchorPane>
