@@ -11,12 +11,24 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.effect.ImageInput;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 
 public class InterfazBibliotecarioController implements Initializable {
 
+    @FXML private Button btnAgregar;
+    @FXML private Button btnModificar;
+    @FXML private Button btnBorrarUsuario;
+    @FXML private Button btnAgregarObra;
+    @FXML private Button btnModificarObra;
+    @FXML private Button btnBorrarObra;
+    @FXML private Button btnPrestarLibro;
+    @FXML private Button btnLista;
+    @FXML private Button salir;
+    
     @FXML
     private void accionBoton(ActionEvent event) throws IOException {
         
@@ -107,7 +119,17 @@ public class InterfazBibliotecarioController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        //Imágenes de los botones
+        btnAgregar.setEffect(new ImageInput(new Image("/imagen/agregar-usuario.png")));
+        btnModificar.setEffect(new ImageInput(new Image("/imagen/usuario.png")));
+        btnBorrarUsuario.setEffect(new ImageInput(new Image("/imagen/borrarUsuario.png")));
+        btnAgregarObra.setEffect(new ImageInput(new Image("/imagen/agregarLibro.png")));
+        btnBorrarObra.setEffect(new ImageInput(new Image("/imagen/eliminarLibro.png")));
+        btnModificarObra.setEffect(new ImageInput(new Image("/imagen/modificarLibro.png")));
+        btnPrestarLibro.setEffect(new ImageInput(new Image("/imagen/estudiar.png")));
+        btnLista.setEffect(new ImageInput(new Image("/imagen/listaLibro.png")));
+        salir.setEffect(new ImageInput(new Image("/imagen/salir.png")));
     }    
     
 }

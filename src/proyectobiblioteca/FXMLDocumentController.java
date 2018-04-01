@@ -1,8 +1,10 @@
 
 package proyectobiblioteca;
 
+import Dominio.Autor;
 import Dominio.Bibliotecario;
 import Listas.Listas;
+import static Listas.Listas.clienteLista;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -32,9 +34,13 @@ public class FXMLDocumentController extends Listas implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
      
-        //Bibliotecario permanente
+        //Bibliotecario predeterminado
         Bibliotecario bl = new Bibliotecario("bibliotecario01", "1234", "Juan Solano", "Nacional", "123456789", "Biblitecario");
         clienteLista.add(bl);
+        
+        //Autor predeterminado
+       Autor a = new Autor("autor1", "1234", "Ana", "Nacional", "123456789", "Autor");  
+       clienteLista.addAll(a);
         
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));
         Scene scene = new Scene(parent);

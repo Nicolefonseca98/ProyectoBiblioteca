@@ -24,4 +24,6 @@ public class Listas {
     
     public static ObservableList<Object> obraLista = FXCollections.observableArrayList();
     
+    public static ObservableList<Object> librosPrestados = FXCollections.observableArrayList();
+    
 }
