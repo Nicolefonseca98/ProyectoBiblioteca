@@ -11,6 +11,8 @@ import static Listas.Listas.librosPrestados;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,7 +39,7 @@ public class InterfazPrestarLibroController implements Initializable {
     @FXML private DatePicker datePickerRetorno;
     @FXML private Button btnPrestar;
     @FXML private TableView <Libro> tablaPrestamos;
-    @FXML private TableView <Libro> tablaMorosidad;
+    @FXML private TableView <Cliente> tablaMorosidad;
     @FXML private TableColumn <Libro,String> columnaTitulo;
     @FXML private TableColumn <Libro,String> columnaAutor;
     @FXML private TableColumn <Libro,String> columnaIngreso;
@@ -59,11 +61,16 @@ public class InterfazPrestarLibroController implements Initializable {
         columnaTema.setCellValueFactory(new PropertyValueFactory<Libro,String>("tema"));
         columnaSubtema.setCellValueFactory(new PropertyValueFactory<Libro,String>("subtema"));
         columnaISBN.setCellValueFactory(new PropertyValueFactory<Libro,String>("isbn"));
-        columnaNombre.setCellValueFactory(new PropertyValueFactory<Cliente,String>("nombre"));
-        columnaUsuario.setCellValueFactory(new PropertyValueFactory<Cliente,String>("usuario"));
+        columnaNombre.setCellValueFactory(new PropertyValueFactory<Cliente,String>("nombreCompleto"));
+        columnaUsuario.setCellValueFactory(new PropertyValueFactory<Cliente,String>("nombreUnico"));
         columnaTipoId.setCellValueFactory(new PropertyValueFactory<Cliente,String>("tipoIdentificacion"));
         columnaId.setCellValueFactory(new PropertyValueFactory<Cliente,String>("identificacion"));
         columnaTipoUsuario.setCellValueFactory(new PropertyValueFactory<Cliente,String>("tipoUsuario"));
+        
+        ObservableList<Libro> prestamos = FXCollections.observableArrayList();
+        ObservableList<Cliente> morosidad = FXCollections.observableArrayList();
+        tablaPrestamos.setItems(prestamos);
+        tablaMorosidad.setItems(morosidad);
         
         for (int i = 0; i <= libroLista.size() - 1; i++) {
             
