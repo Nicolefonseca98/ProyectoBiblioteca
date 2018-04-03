@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorP" prefHeight="490.0" prefWidth="578.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazBibliotecarioController">
+<AnchorPane id="AnchorPane" fx:id="anchorP" prefHeight="490.0" prefWidth="578.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazBibliotecarioController">
    <children>
       <Label layoutX="50.0" layoutY="139.0" text="Agregar Usuario">
          <font>
@@ -73,7 +73,7 @@
             <ImageInput />
          </effect>
       </Button>
-      <Button fx:id="btnLista" layoutX="255.0" layoutY="402.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="69.0" text="Button">
+      <Button fx:id="btnLista" layoutX="255.0" layoutY="402.0" mnemonicParsing="false" onAction="#botonListas" prefHeight="78.0" prefWidth="69.0" text="Button">
          <effect>
             <ImageInput />
          </effect>

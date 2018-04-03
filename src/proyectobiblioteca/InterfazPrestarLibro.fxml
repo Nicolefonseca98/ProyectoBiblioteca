@@ -10,7 +10,7 @@
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #99CCCC;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1">
+<Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazPrestarLibroController">
   <panes>
     <TitledPane animated="false" text="Prestar libro">
       <content>
@@ -26,9 +26,9 @@
                         <ComboBox fx:id="comboBoxTitulo" layoutX="365.0" layoutY="94.0" prefHeight="25.0" prefWidth="176.0" />
                         <Label layoutX="22.0" layoutY="39.0" text="Usuario" />
                         <ComboBox fx:id="comboBoxUsuario" layoutX="365.0" layoutY="35.0" prefHeight="25.0" prefWidth="178.0" />
-                        <Button fx:id="botonPrestar" layoutX="470.0" layoutY="285.0" mnemonicParsing="false" onAction="#botonPrestar" text="Prestar" />
+                        <Button layoutX="470.0" layoutY="285.0" mnemonicParsing="false" onAction="#prestar" text="Prestar" />
                         <Label layoutX="26.0" layoutY="289.0" prefHeight="17.0" prefWidth="151.0" />
-                        <Button layoutX="534.0" layoutY="285.0" mnemonicParsing="false" onAction="#volverMenu" text="Menú" />
+                        <Button layoutX="534.0" layoutY="285.0" mnemonicParsing="false" onAction="#menu" text="Menú" />
                      </children>
                   </AnchorPane>
                </children></AnchorPane>

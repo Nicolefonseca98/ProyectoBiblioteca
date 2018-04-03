@@ -20,7 +20,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
@@ -37,7 +36,7 @@ public class InterfazPrestarLibroController implements Initializable {
     @FXML private ComboBox comboBoxUsuario;
     @FXML private DatePicker datePickerPrestamo;
     @FXML private DatePicker datePickerRetorno;
-    @FXML private Button btnPrestar;
+    
     @FXML private TableView <Libro> tablaPrestamos;
     @FXML private TableView <Cliente> tablaMorosidad;
     @FXML private TableColumn <Libro,String> columnaTitulo;
@@ -51,6 +50,26 @@ public class InterfazPrestarLibroController implements Initializable {
     @FXML private TableColumn <Cliente,String> columnaTipoId;
     @FXML private TableColumn <Cliente,String> columnaId;
     @FXML private TableColumn <Cliente,String> columnaTipoUsuario;
+    
+    @FXML 
+    private void prestar() {
+        
+//        librosPrestados.add(new Libro(comboBoxTitulo.getValue().toString(),  datePickerPrestamo.getValue().toString(), ""));
+//        System.out.println(librosPrestados.toString());
+    }
+    
+     @FXML
+    private void menu(ActionEvent event) throws IOException {
+     
+        Parent parent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));
+        Scene scene = new Scene(parent);
+        //Esta linea obtiene la informacion del Stage
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.getIcons().add(new Image("/imagen/libros.png"));       
+        window.setScene(scene);
+        window.show();
+
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -69,8 +88,9 @@ public class InterfazPrestarLibroController implements Initializable {
         
         ObservableList<Libro> prestamos = FXCollections.observableArrayList();
         ObservableList<Cliente> morosidad = FXCollections.observableArrayList();
-        tablaPrestamos.setItems(prestamos);
-        tablaMorosidad.setItems(morosidad);
+                
+        tablaPrestamos.setItems(librosPrestados);
+//        tablaMorosidad.setItems();
         
         for (int i = 0; i <= libroLista.size() - 1; i++) {
             
@@ -87,24 +107,5 @@ public class InterfazPrestarLibroController implements Initializable {
         } //Fin for
         
     }
-
-    @FXML private void botonPrestar() {
-        
-        librosPrestados.add(comboBoxTitulo.getValue().toString() + comboBoxUsuario.getValue().toString() + datePickerPrestamo.getValue().toString()
-                               + datePickerRetorno.getValue().toString());
-        System.out.println(librosPrestados.toString());
-    }
-     @FXML
-    private void volverMenu(ActionEvent event) throws IOException {
-     
-        Parent parent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));
-        Scene scene = new Scene(parent);
-        //Esta linea obtiene la informacion del Stage
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.getIcons().add(new Image("/imagen/libros.png"));       
-        window.setScene(scene);
-        window.show();
-
-    }
-    
+ 
 }

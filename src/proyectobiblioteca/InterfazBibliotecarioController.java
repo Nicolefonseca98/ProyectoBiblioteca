@@ -128,6 +128,18 @@ public class InterfazBibliotecarioController implements Initializable {
         window.show();
     }
     
+    @FXML
+    private void botonListas(ActionEvent event) throws IOException {
+        
+        Parent parent = FXMLLoader.load(getClass().getResource("InterfazListaObras.fxml"));
+        Scene scene = new Scene(parent);
+        //Esta linea obtiene la informacion del Stage
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.getIcons().add(new Image("/imagen/libros.png"));       
+        window.setScene(scene);
+        window.show();
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
