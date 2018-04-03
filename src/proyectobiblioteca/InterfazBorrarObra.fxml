@@ -5,13 +5,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="403.0" style="-fx-background-color: #99CCCC;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="proyectobiblioteca.InterfazBorrarObraController">
+<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="403.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazBorrarObraController">
    <children>
       <Label layoutX="171.0" layoutY="70.0" text="Borrar obra" />
       <Label layoutX="129.0" layoutY="105.0" text="Buscar por nombre de obra" />
       <TextField fx:id="txfBuscarObra" layoutX="127.0" layoutY="137.0" />
       <Button layoutX="176.0" layoutY="195.0" mnemonicParsing="false" onAction="#botonBuscarObra" text="Buscar" />
+      <Label fx:id="lbMensajeObra" layoutX="232.0" layoutY="228.0" prefHeight="17.0" prefWidth="108.0" />
       <Button layoutX="337.0" layoutY="401.0" mnemonicParsing="false" onAction="#volverMenu" text="Menú" />
    </children>
 </AnchorPane>

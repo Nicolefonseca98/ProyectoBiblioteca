@@ -22,14 +22,14 @@ import javafx.stage.Stage;
 public class InterfazBorrarObraController implements Initializable {
 
      @FXML private TextField txfBuscarObra;
-     @FXML private Label lbMensaje;
+     @FXML private Label lbMensajeObra;
     
     @FXML
     private void botonBuscarObra() {
        
         Logica l = new Logica();
         l.borrarObra(txfBuscarObra.getText());
-        lbMensaje.setText("Obra borrada");
+        lbMensajeObra.setText("Obra borrada");
         
     }
     
