@@ -5,11 +5,13 @@ package proyectobiblioteca;
 import Dominio.Cliente;
 import Dominio.Libro;
 import Dominio.Obra;
+import Dominio.PrestarLibro;
 import static Listas.Listas.clienteLista;
 import static Listas.Listas.libroLista;
 import static Listas.Listas.librosPrestados;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -37,16 +39,14 @@ public class InterfazPrestarLibroController implements Initializable {
     @FXML private DatePicker datePickerPrestamo;
     @FXML private DatePicker datePickerRetorno;
     
-    @FXML private TableView <Libro> tablaPrestamos;
+    @FXML private TableView <PrestarLibro> tablaPrestamos;
     @FXML private TableView <Cliente> tablaMorosidad;
-    @FXML private TableColumn <Libro,String> columnaTitulo;
-    @FXML private TableColumn <Libro,String> columnaAutor;
-    @FXML private TableColumn <Libro,String> columnaIngreso;
-    @FXML private TableColumn <Libro,String> columnaTema;
-    @FXML private TableColumn <Libro,String> columnaSubtema;
-    @FXML private TableColumn <Libro,String> columnaISBN;
+    @FXML private TableColumn <PrestarLibro,String> columnaTitulo;
+    @FXML private TableColumn <PrestarLibro,String> columnaUsuarioPrestamo;
+    @FXML private TableColumn <PrestarLibro,String> columnaPrestamo;
+    @FXML private TableColumn <PrestarLibro,String> columnaRetorno;
     @FXML private TableColumn <Cliente,String> columnaNombre;
-    @FXML private TableColumn <Cliente,String> columnaUsuario;
+    @FXML private TableColumn <Cliente,String> columnaUsuarioMorosidad;
     @FXML private TableColumn <Cliente,String> columnaTipoId;
     @FXML private TableColumn <Cliente,String> columnaId;
     @FXML private TableColumn <Cliente,String> columnaTipoUsuario;
@@ -74,14 +74,13 @@ public class InterfazPrestarLibroController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //Preparar las columnas en la tabla
-        columnaTitulo.setCellValueFactory(new PropertyValueFactory<Libro,String>("titulo"));
-        columnaAutor.setCellValueFactory(new PropertyValueFactory<Libro,String>("autor"));
-        columnaIngreso.setCellValueFactory(new PropertyValueFactory<Libro,String>("fechaIngreso"));
-        columnaTema.setCellValueFactory(new PropertyValueFactory<Libro,String>("tema"));
-        columnaSubtema.setCellValueFactory(new PropertyValueFactory<Libro,String>("subtema"));
-        columnaISBN.setCellValueFactory(new PropertyValueFactory<Libro,String>("isbn"));
+        columnaTitulo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("titulo"));
+        columnaUsuarioPrestamo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("usuario"));
+        columnaPrestamo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaPrestamo"));
+        columnaRetorno.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaRetorno"));
+     
         columnaNombre.setCellValueFactory(new PropertyValueFactory<Cliente,String>("nombreCompleto"));
-        columnaUsuario.setCellValueFactory(new PropertyValueFactory<Cliente,String>("nombreUnico"));
+        columnaUsuarioMorosidad.setCellValueFactory(new PropertyValueFactory<Cliente,String>("nombreUnico"));
         columnaTipoId.setCellValueFactory(new PropertyValueFactory<Cliente,String>("tipoIdentificacion"));
         columnaId.setCellValueFactory(new PropertyValueFactory<Cliente,String>("identificacion"));
         columnaTipoUsuario.setCellValueFactory(new PropertyValueFactory<Cliente,String>("tipoUsuario"));
@@ -106,6 +105,18 @@ public class InterfazPrestarLibroController implements Initializable {
                 
         } //Fin for
         
+        
     }
- 
+     @FXML private void botonPrestar() {
+    PrestarLibro prestarLibro = new PrestarLibro(comboBoxTitulo.getValue().toString() , comboBoxUsuario.getValue().toString() , datePickerPrestamo.getValue().toString(), datePickerRetorno.getValue().toString());
+    librosPrestados.add(prestarLibro);
+    System.out.println(librosPrestados.toString());
+    }
+     
+////     @FXML private void getMorosidad(DatePicker datePickerRetorno){
+////         if(datePickerRetorno.(LocalDate.now())){
+////             
+////         }
+//         
+//     }
 }

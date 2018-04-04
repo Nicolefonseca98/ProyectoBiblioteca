@@ -10,7 +10,7 @@
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazPrestarLibroController">
+<Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazPrestarLibroController">
   <panes>
     <TitledPane animated="false" text="Prestar libro">
       <content>
@@ -26,7 +26,7 @@
                         <ComboBox fx:id="comboBoxTitulo" layoutX="365.0" layoutY="94.0" prefHeight="25.0" prefWidth="176.0" />
                         <Label layoutX="22.0" layoutY="39.0" text="Usuario" />
                         <ComboBox fx:id="comboBoxUsuario" layoutX="365.0" layoutY="35.0" prefHeight="25.0" prefWidth="178.0" />
-                        <Button layoutX="470.0" layoutY="285.0" mnemonicParsing="false" onAction="#prestar" text="Prestar" />
+                        <Button layoutX="470.0" layoutY="285.0" mnemonicParsing="false" onAction="#botonPrestar" text="Prestar" />
                         <Label layoutX="26.0" layoutY="289.0" prefHeight="17.0" prefWidth="151.0" />
                         <Button layoutX="534.0" layoutY="285.0" mnemonicParsing="false" onAction="#menu" text="Menú" />
                      </children>
@@ -40,12 +40,10 @@
                <children>
                   <TableView fx:id="tablaPrestamos" prefHeight="325.0" prefWidth="600.0" style="-fx-background-color: #99CCCC;">
                     <columns>
-                      <TableColumn fx:id="columnaTitulo" prefWidth="134.0" text="Título" />
-                      <TableColumn fx:id="columnaAutor" prefWidth="91.0" text="Autor" />
-                        <TableColumn fx:id="columnaIngreso" minWidth="0.0" prefWidth="124.0" text="Ingreso" />
-                        <TableColumn fx:id="columnaTema" prefWidth="91.0" text="Tema" />
-                        <TableColumn fx:id="columnaSubtema" prefWidth="96.0" text="Subtema" />
-                        <TableColumn fx:id="columnaISBN" minWidth="0.0" prefWidth="63.0" text="ISBN" />
+                      <TableColumn fx:id="columnaTitulo" prefWidth="203.0" text="Título" />
+                      <TableColumn fx:id="columnaUsuarioPrestamo" prefWidth="161.0" text="Usuario" />
+                        <TableColumn fx:id="columnaPrestamo" minWidth="0.0" prefWidth="125.0" text="Préstamo" />
+                        <TableColumn fx:id="columnaRetorno" prefWidth="110.0" text="Retorno" />
                     </columns>
                   </TableView>
                </children></AnchorPane>
@@ -57,7 +55,7 @@
                <children>
                   <TableView fx:id="tablaMorosidad" layoutX="-1.0" prefHeight="325.0" prefWidth="600.0" style="-fx-background-color: #99CCCC;">
                     <columns>
-                      <TableColumn fx:id="columnaUsuario" prefWidth="116.0" text="Usuario" />
+                      <TableColumn fx:id="columnaUsuarioMorosidad" prefWidth="116.0" text="Usuario" />
                       <TableColumn fx:id="columnaNombre" prefWidth="153.0" text="Nombre" />
                         <TableColumn fx:id="columnaTipoId" prefWidth="136.0" text="Tipo de identificación" />
                         <TableColumn fx:id="columnaId" prefWidth="98.0" text="Identificación" />
