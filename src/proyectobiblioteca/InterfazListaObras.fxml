@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazListaObrasController">
+<AnchorPane id="AnchorPane" prefHeight="422.0" prefWidth="608.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazListaObrasController">
    <children>
       <TableView fx:id="tablaObras" layoutX="25.0" layoutY="63.0" prefHeight="305.0" prefWidth="514.0">
         <columns>
@@ -16,8 +16,9 @@
             <TableColumn fx:id="columnaIngreso" prefWidth="191.0" text="Fecha de ingreso" />
         </columns>
       </TableView>
-      <TextField fx:id="txfBuscar" layoutX="120.0" layoutY="25.0" prefHeight="25.0" prefWidth="231.0" />
+      <TextField fx:id="buscarTitulo" layoutX="98.0" layoutY="25.0" prefHeight="25.0" prefWidth="218.0" />
       <Label layoutX="50.0" layoutY="29.0" text="Buscar" />
-      <Button layoutX="539.0" layoutY="368.0" mnemonicParsing="false" onAction="#volverMenu" text="Menú" />
+      <Button layoutX="538.0" layoutY="375.0" mnemonicParsing="false" onAction="#volverMenu" text="Menú" />
+      <TextField fx:id="buscarAutor" layoutX="341.0" layoutY="25.0" prefHeight="25.0" prefWidth="197.0" />
    </children>
 </AnchorPane>

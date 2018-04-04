@@ -12,8 +12,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,8 +26,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
-
 
 public class InterfazPrestarLibroController implements Initializable {
 
@@ -77,9 +73,6 @@ public class InterfazPrestarLibroController implements Initializable {
         columnaTipoId.setCellValueFactory(new PropertyValueFactory<Cliente,String>("tipoIdentificacion"));
         columnaId.setCellValueFactory(new PropertyValueFactory<Cliente,String>("identificacion"));
         columnaTipoUsuario.setCellValueFactory(new PropertyValueFactory<Cliente,String>("tipoUsuario"));
-        
-        ObservableList<Libro> prestamos = FXCollections.observableArrayList();
-        ObservableList<Cliente> morosidad = FXCollections.observableArrayList();
                 
         tablaPrestamos.setItems(librosPrestados);
 //        tablaMorosidad.setItems();

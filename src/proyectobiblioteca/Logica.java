@@ -8,15 +8,16 @@ import Dominio.Libro;
 import Dominio.Memoria;
 import Dominio.Obra;
 import Dominio.Periodico;
+import Dominio.PrestarLibro;
 import Dominio.Revista;
 import Dominio.Tesis;
 import Dominio.Usuario;
 import Listas.Listas;
+import org.apache.commons.codec.digest.DigestUtils;
 
 
 public class Logica extends Listas{
        
-    
     public void agregarUsuario(String nombreUnico, String contraseña, String nombreCompleto, String tipoIdentificacion, String identificacion, String tipoUsuario) {
         
         /*
@@ -35,6 +36,8 @@ public class Logica extends Listas{
             
         }
         else if(tipoUsuario.equalsIgnoreCase("Bibliotecario")) {
+            
+            String contraseñaEncriptada = DigestUtils.md5Hex(contraseña);
             Cliente c = new Bibliotecario(nombreUnico, contraseña, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
             clienteLista.add(c);
             
@@ -72,8 +75,7 @@ public class Logica extends Listas{
         return false;
     }
     
-    
-    public Cliente getCliente(String nombreUsuario) {
+    private Cliente getCliente(String nombreUsuario) {
         
         for (int i = 0; i <= clienteLista.size() - 1; i++) {
             Cliente c = (Cliente) clienteLista.get(i);
@@ -164,7 +166,7 @@ public class Logica extends Listas{
         return false;
     }
     
-    public Obra getObra(String titulo) {
+    private Obra getObra(String titulo) {
         
         for (int i = 0; i <= obraLista.size() - 1; i++) {
             Obra o = (Obra) obraLista.get(i);
@@ -222,14 +224,23 @@ public class Logica extends Listas{
           
           for (int i = 0; i <= clienteLista.size() - 1; i++) {
             Cliente c = (Cliente) clienteLista.get(i);
-            if ((c.getNombreUnico().equalsIgnoreCase(nombreUsuario)) && (c.getContraseña().equals(contraseña)) && c.getTipoUsuario().equalsIgnoreCase(tipoUsuario)){
-                System.out.println("true");
+            if ((c.getNombreUnico().equalsIgnoreCase(nombreUsuario)) && (c.getContraseña().equals(contraseña)) && c.getTipoUsuario().equalsIgnoreCase(tipoUsuario)){              
                 return true;
-                
             }
         }
-          System.out.println("false");
+          
           return false;
       }
       
+   
+      public void librosUsuario(String nombreUsuario) {
+          
+          for (int i = 0; i <= librosPrestados.size() - 1; i++) {
+            PrestarLibro libro = (PrestarLibro )librosPrestados.get(i);
+            String usuario = libro.getUsuario();
+            if (usuario.equalsIgnoreCase(nombreUsuario)) {
+                
+            }
+        }
+      }
 }

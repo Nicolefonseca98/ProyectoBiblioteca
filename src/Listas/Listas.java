@@ -1,6 +1,7 @@
 
 package Listas;
 
+import Dominio.Autor;
 import Dominio.Obra;
 import Dominio.PrestarLibro;
 import javafx.collections.FXCollections;
@@ -23,5 +24,6 @@ public class Listas {
     public static ObservableList<Obra> obraLista = FXCollections.observableArrayList();
     
     public static ObservableList<PrestarLibro> librosPrestados = FXCollections.observableArrayList();
+
     
 }
