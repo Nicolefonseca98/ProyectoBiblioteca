@@ -1,7 +1,6 @@
 
 package proyectobiblioteca;
 
-
 import Dominio.Cliente;
 import Dominio.Libro;
 import Dominio.Obra;
@@ -50,13 +49,7 @@ public class InterfazPrestarLibroController implements Initializable {
     @FXML private TableColumn <Cliente,String> columnaTipoId;
     @FXML private TableColumn <Cliente,String> columnaId;
     @FXML private TableColumn <Cliente,String> columnaTipoUsuario;
-    
-    @FXML 
-    private void prestar() {
-        
-//        librosPrestados.add(new Libro(comboBoxTitulo.getValue().toString(),  datePickerPrestamo.getValue().toString(), ""));
-//        System.out.println(librosPrestados.toString());
-    }
+ 
     
      @FXML
     private void menu(ActionEvent event) throws IOException {

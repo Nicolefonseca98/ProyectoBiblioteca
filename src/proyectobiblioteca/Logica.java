@@ -218,4 +218,18 @@ public class Logica extends Listas{
         
     } //Fin borrarObra()
     
+      public boolean verificaUsuario(String nombreUsuario, String contraseña, String tipoUsuario) {
+          
+          for (int i = 0; i <= clienteLista.size() - 1; i++) {
+            Cliente c = (Cliente) clienteLista.get(i);
+            if ((c.getNombreUnico().equalsIgnoreCase(nombreUsuario)) && (c.getContraseña().equals(contraseña)) && c.getTipoUsuario().equalsIgnoreCase(tipoUsuario)){
+                System.out.println("true");
+                return true;
+                
+            }
+        }
+          System.out.println("false");
+          return false;
+      }
+      
 }
