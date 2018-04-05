@@ -3,6 +3,7 @@ package proyectobiblioteca;
 
 import Dominio.Autor;
 import Dominio.Bibliotecario;
+import Dominio.Cliente;
 import Dominio.Usuario;
 import Listas.Listas;
 import static Listas.Listas.clienteLista;
@@ -54,10 +55,10 @@ public class FXMLDocumentController extends Listas implements Initializable {
             System.out.println(clienteLista.toString());
             
         } else if (logica.verificaUsuario(txfUsuario.getText(), txfContraseña.getText(), "Usuario")) {
-            
+              
             ventanaUsuario.setScene(sceneUsuario);
             ventanaUsuario.show();
-            
+                
         }else if(logica.verificaUsuario(txfUsuario.getText(), txfContraseña.getText(), "Autor")){   
             
             
@@ -85,5 +86,16 @@ public class FXMLDocumentController extends Listas implements Initializable {
         clienteLista.add(us);
        
     }    
-    
+    public String getListaUsuario() {
+        String nombreUnico= "";
+        
+         for(Cliente cliente: clienteLista) {
+                if(cliente.getNombreUnico().equals(txfUsuario.getText())) {
+                nombreUnico = cliente.getNombreUnico();
+                 return nombreUnico;
+                }
+         }
+        return null;
+    }
 }
+    

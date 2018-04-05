@@ -2,6 +2,7 @@
 package Listas;
 
 import Dominio.Autor;
+import Dominio.Cliente;
 import Dominio.Obra;
 import Dominio.PrestarLibro;
 import javafx.collections.FXCollections;
@@ -9,7 +10,7 @@ import javafx.collections.ObservableList;
 
 public class Listas {
     
-    public static ObservableList<Object> clienteLista = FXCollections.observableArrayList();
+    public static ObservableList<Cliente> clienteLista = FXCollections.observableArrayList();
      
     public static ObservableList<Object> libroLista = FXCollections.observableArrayList();
     

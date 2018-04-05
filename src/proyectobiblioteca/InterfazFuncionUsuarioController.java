@@ -1,6 +1,5 @@
 
 package proyectobiblioteca;
-
 import Dominio.Obra;
 import Dominio.PrestarLibro;
 import static Listas.Listas.librosPrestados;
@@ -36,18 +35,20 @@ public class InterfazFuncionUsuarioController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-     
+        FXMLDocumentController fxmlDocumentController = new FXMLDocumentController();
+        
+        String listaUsuario;
         columnaTitulo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("titulo"));
         columnaPrestamo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaPrestamo"));
         columnaRetorno.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaRetorno"));
         
-        
+        listaUsuario = fxmlDocumentController.getListaUsuario(); 
         tablaPrestamoUsuario.setItems(librosPrestados);
         FilteredList<PrestarLibro> filteredData = new FilteredList<>(librosPrestados, p -> true);
         tablaPrestamoUsuario.setItems(filteredData);
         filteredData.setPredicate(PrestarLibro -> {  
         String usuario = PrestarLibro.getUsuario().toLowerCase();
-        return usuario.contains("nombreUsuario".toLowerCase());
+        return usuario.contains(listaUsuario.toLowerCase());
         });
     }    
     
