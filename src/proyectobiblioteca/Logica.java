@@ -13,7 +13,6 @@ import Dominio.Revista;
 import Dominio.Tesis;
 import Dominio.Usuario;
 import Listas.Listas;
-import org.apache.commons.codec.digest.DigestUtils;
 
 
 public class Logica extends Listas{
@@ -37,7 +36,7 @@ public class Logica extends Listas{
         }
         else if(tipoUsuario.equalsIgnoreCase("Bibliotecario")) {
             
-            String contraseñaEncriptada = DigestUtils.md5Hex(contraseña);
+//            String contraseñaEncriptada = DigestUtils.md5Hex(contraseña);
             Cliente c = new Bibliotecario(nombreUnico, contraseña, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
             clienteLista.add(c);
             
