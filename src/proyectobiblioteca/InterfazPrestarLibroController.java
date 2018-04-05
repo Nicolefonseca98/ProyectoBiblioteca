@@ -5,6 +5,7 @@ import Dominio.Cliente;
 import Dominio.Libro;
 import Dominio.Obra;
 import Dominio.PrestarLibro;
+import Dominio.UsuarioMoroso;
 import static Listas.Listas.clienteLista;
 import static Listas.Listas.libroLista;
 import static Listas.Listas.librosPrestados;
@@ -35,17 +36,16 @@ public class InterfazPrestarLibroController implements Initializable {
     @FXML private DatePicker datePickerRetorno;
     
     @FXML private TableView <PrestarLibro> tablaPrestamos;
-    @FXML private TableView <Cliente> tablaMorosidad;
+    @FXML private TableView <UsuarioMoroso> tablaMorosidad;
+    
     @FXML private TableColumn <PrestarLibro,String> columnaTitulo;
     @FXML private TableColumn <PrestarLibro,String> columnaUsuarioPrestamo;
     @FXML private TableColumn <PrestarLibro,String> columnaPrestamo;
-    @FXML private TableColumn <PrestarLibro,String> columnaRetorno;
-    @FXML private TableColumn <Cliente,String> columnaNombre;
-    @FXML private TableColumn <Cliente,String> columnaUsuarioMorosidad;
-    @FXML private TableColumn <Cliente,String> columnaTipoId;
-    @FXML private TableColumn <Cliente,String> columnaId;
-    @FXML private TableColumn <Cliente,String> columnaTipoUsuario;
- 
+    @FXML private TableColumn <PrestarLibro,String> columnaRetornoPrestamo;
+    
+    @FXML private TableColumn <UsuarioMoroso,String> columnaLibro;
+    @FXML private TableColumn <UsuarioMoroso,String> columnaUsuarioMorosidad;
+    @FXML private TableColumn <UsuarioMoroso,String> columnaRetornoMorosidad;
     
      @FXML
     private void menu(ActionEvent event) throws IOException {
@@ -66,13 +66,11 @@ public class InterfazPrestarLibroController implements Initializable {
         columnaTitulo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("titulo"));
         columnaUsuarioPrestamo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("usuario"));
         columnaPrestamo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaPrestamo"));
-        columnaRetorno.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaRetorno"));
-     
-        columnaNombre.setCellValueFactory(new PropertyValueFactory<Cliente,String>("nombreCompleto"));
-        columnaUsuarioMorosidad.setCellValueFactory(new PropertyValueFactory<Cliente,String>("nombreUnico"));
-        columnaTipoId.setCellValueFactory(new PropertyValueFactory<Cliente,String>("tipoIdentificacion"));
-        columnaId.setCellValueFactory(new PropertyValueFactory<Cliente,String>("identificacion"));
-        columnaTipoUsuario.setCellValueFactory(new PropertyValueFactory<Cliente,String>("tipoUsuario"));
+        columnaRetornoPrestamo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaRetorno"));
+        
+        columnaUsuarioMorosidad.setCellValueFactory(new PropertyValueFactory<UsuarioMoroso,String>("usuario"));
+        columnaLibro.setCellValueFactory(new PropertyValueFactory<UsuarioMoroso,String>("titulo"));
+        columnaRetornoMorosidad.setCellValueFactory(new PropertyValueFactory<UsuarioMoroso,String>("nombreCompleto"));
                 
         tablaPrestamos.setItems(librosPrestados);
 //        tablaMorosidad.setItems();
