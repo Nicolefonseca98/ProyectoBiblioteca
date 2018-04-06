@@ -86,16 +86,11 @@ public class FXMLDocumentController extends Listas implements Initializable {
         clienteLista.add(us);
        
     }    
-    public String getListaUsuario() {
-        String nombreUnico= "";
+    public String getUsuario() {
         
-         for(Cliente cliente: clienteLista) {
-                if(cliente.getNombreUnico().equals(txfUsuario.getText())) {
-                nombreUnico = cliente.getNombreUnico();
-                 return nombreUnico;
-                }
-         }
-        return null;
+        String usuario = "";
+        
+        return usuario;
     }
 }
     

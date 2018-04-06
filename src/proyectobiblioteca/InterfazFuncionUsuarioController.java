@@ -19,6 +19,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -35,21 +36,21 @@ public class InterfazFuncionUsuarioController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        FXMLDocumentController fxmlDocumentController = new FXMLDocumentController();
+        FXMLDocumentController fxmlDocumentController = new FXMLDocumentController();
         
-        String listaUsuario;
         columnaTitulo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("titulo"));
         columnaPrestamo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaPrestamo"));
         columnaRetorno.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaRetorno"));
         
-//        listaUsuario = fxmlDocumentController.getListaUsuario(); 
+        String u = fxmlDocumentController.getUsuario();
+        
         tablaPrestamoUsuario.setItems(librosPrestados);
         FilteredList<PrestarLibro> filteredData = new FilteredList<>(librosPrestados, p -> true);
         tablaPrestamoUsuario.setItems(filteredData);
-//        filteredData.setPredicate(PrestarLibro -> {  
-//        String usuario = PrestarLibro.getUsuario().toLowerCase();
-//        return usuario.contains(listaUsuario.toLowerCase());
-//        });
+        filteredData.setPredicate(PrestarLibro -> {  
+        String usuario = PrestarLibro.getUsuario().toLowerCase();
+        return usuario.contains(u.toLowerCase());
+        });
     }    
     
     @FXML
