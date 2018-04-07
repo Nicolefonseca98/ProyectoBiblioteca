@@ -3,9 +3,12 @@ package proyectobiblioteca;
 
 import Dominio.Libro;
 import Dominio.Obra;
+import Dominio.PrestarLibro;
+import static Listas.Listas.librosPrestados;
 import static Listas.Listas.obraLista;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
@@ -15,7 +18,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -31,6 +36,9 @@ public class InterfazListaObrasController implements Initializable {
     @FXML private TableColumn <Libro,String> columnaIngreso;
     @FXML private TextField buscarTitulo;
     @FXML private TextField buscarAutor;
+    @FXML private Label nombreUsuario;
+    @FXML private Label fechaPrestamo;
+    @FXML private Label fechaRetorno;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -62,7 +70,42 @@ public class InterfazListaObrasController implements Initializable {
         return titulo.contains(text.toLowerCase());
         });
         });
-    }  
+   
+//        tablaObras.setRowFactory(tv -> {
+//            TableRow<Obra> row = new TableRow<>();
+//            row.setOnMouseClicked(event -> {
+//                if (event.getClickCount() == 1 && (!row.isEmpty())) {
+//                    Obra clickTituloTabla = row.getItem();
+//                    clickTituloTabla.getTitulo();
+//                    for (int i = 0; i < librosPrestados.size()-1 ; i++) {
+//                        PrestarLibro prestarLibro = (PrestarLibro) librosPrestados.get(i);
+//                        String titulo = prestarLibro.getTitulo();
+//                        if(clickTituloTabla.equals(titulo)) {
+//                            nombreUsuario.setText(prestarLibro.getUsuario());
+//                            fechaPrestamo.setText(prestarLibro.getFechaPrestamo().toString());
+//                            fechaRetorno.setText(prestarLibro.getFechaRetorno().toString());
+//                            System.out.println(titulo);
+//                            System.out.println(clickTituloTabla);
+//                        }
+//                    }
+//                }
+//            });
+//            return row;
+//        });
+
+//        tablaObras.setRowFactory(tv -> {
+//            TableRow<Obra> row = new TableRow<>();
+//            row.setOnMouseClicked(event -> {
+//                if (event.getClickCount() == 1 && (!row.isEmpty())) {
+//                    Obra rowData = row.getItem();
+//                    
+//                    System.out.println(rowData);
+//                }
+//            });
+//            return row;
+//        });
+    }
+
 
      @FXML
     private void volverMenu(ActionEvent event) throws IOException {
