@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,13 +9,17 @@
 
 <AnchorPane id="AnchorPane" prefHeight="422.0" prefWidth="608.0" style="-fx-background-color: #99CCCC;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="proyectobiblioteca.InterfazFuncionAutorController">
    <children>
-      <TableView layoutX="14.0" layoutY="38.0" prefHeight="347.0" prefWidth="580.0">
+      <TableView fx:id="tablaObrasAutor" layoutX="14.0" layoutY="38.0" prefHeight="320.0" prefWidth="333.0">
         <columns>
-          <TableColumn prefWidth="176.0" text="Autor" />
-          <TableColumn prefWidth="235.0" text="Obra" />
-            <TableColumn prefWidth="168.0" text="Registro" />
+          <TableColumn fx:id="columnaTitulo" prefWidth="169.0" text="Título" />
+            <TableColumn fx:id="columnaFechaIngreso" prefWidth="163.0" text="Fecha de ingreso" />
         </columns>
       </TableView>
-      <Button layoutX="542.0" layoutY="385.0" mnemonicParsing="false" text="Menú" />
+      <Button layoutX="555.0" layoutY="385.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
+      <Label layoutX="428.0" layoutY="30.0" text="Información de autor" />
+      <Label fx:id="nombreCompleto" layoutX="409.0" layoutY="68.0" prefHeight="17.0" prefWidth="185.0" />
+      <Label layoutX="354.0" layoutY="68.0" text="Nombre:" />
+      <Label layoutX="354.0" layoutY="118.0" text="Identificación:" />
+      <Label fx:id="identificacion" layoutX="435.0" layoutY="118.0" prefHeight="17.0" prefWidth="151.0" />
    </children>
 </AnchorPane>
