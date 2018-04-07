@@ -1,17 +1,18 @@
 package Dominio;
 
+import java.time.LocalDate;
 import javafx.beans.property.SimpleStringProperty;
 
 public class UsuarioMoroso {
     
     private SimpleStringProperty usuario;
     private SimpleStringProperty libro;
-    private SimpleStringProperty fechaRetorno;
+    private LocalDate fechaRetorno;
 
-    public UsuarioMoroso(String usuario, String libro, String fechaRetorno) {
+    public UsuarioMoroso(String usuario, String libro, LocalDate fechaRetorno) {
         this.usuario = new SimpleStringProperty(usuario);
         this.libro = new SimpleStringProperty(libro);
-        this.fechaRetorno = new SimpleStringProperty(fechaRetorno);
+        this.fechaRetorno = fechaRetorno;
     }
 
     public UsuarioMoroso() {
@@ -48,15 +49,15 @@ public class UsuarioMoroso {
     /**
      * @return the fechaRetorno
      */
-    public String getFechaRetorno() {
-        return fechaRetorno.get();
+    public LocalDate getFechaRetorno() {
+        return fechaRetorno;
     }
 
     /**
      * @param fechaRetorno the fechaRetorno to set
      */
-    public void setFechaRetorno(String fechaRetorno) {
-        this.fechaRetorno = new SimpleStringProperty (fechaRetorno);
+    public void setFechaRetorno(LocalDate fechaRetorno) {
+        this.fechaRetorno = fechaRetorno;
     }
       @Override
     public String toString() {

@@ -9,9 +9,11 @@ import Dominio.UsuarioMoroso;
 import static Listas.Listas.clienteLista;
 import static Listas.Listas.libroLista;
 import static Listas.Listas.librosPrestados;
+import static Listas.Listas.usuariosMorosos;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -62,6 +64,7 @@ public class InterfazPrestarLibroController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         //Preparar las columnas en la tabla
         columnaTitulo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("titulo"));
         columnaUsuarioPrestamo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("usuario"));
@@ -69,11 +72,11 @@ public class InterfazPrestarLibroController implements Initializable {
         columnaRetornoPrestamo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaRetorno"));
         
         columnaUsuarioMorosidad.setCellValueFactory(new PropertyValueFactory<UsuarioMoroso,String>("usuario"));
-        columnaLibro.setCellValueFactory(new PropertyValueFactory<UsuarioMoroso,String>("titulo"));
-        columnaRetornoMorosidad.setCellValueFactory(new PropertyValueFactory<UsuarioMoroso,String>("nombreCompleto"));
+        columnaLibro.setCellValueFactory(new PropertyValueFactory<UsuarioMoroso,String>("libro"));
+        columnaRetornoMorosidad.setCellValueFactory(new PropertyValueFactory<UsuarioMoroso,String>("fechaRetorno"));
                 
         tablaPrestamos.setItems(librosPrestados);
-//        tablaMorosidad.setItems();
+        tablaMorosidad.setItems(usuariosMorosos);
         
         for (int i = 0; i <= libroLista.size() - 1; i++) {
             
@@ -89,18 +92,37 @@ public class InterfazPrestarLibroController implements Initializable {
                 
         } //Fin for
         
+    }
+    
+    @FXML
+    private void botonPrestar() {
         
+        PrestarLibro prestarLibro = new PrestarLibro(comboBoxTitulo.getValue().toString(), comboBoxUsuario.getValue().toString(), 
+                                                     datePickerPrestamo.getValue(), datePickerRetorno.getValue());
+        librosPrestados.add(prestarLibro);
+        System.out.println(librosPrestados.toString());
     }
-     @FXML private void botonPrestar() {
-    PrestarLibro prestarLibro = new PrestarLibro(comboBoxTitulo.getValue().toString() , comboBoxUsuario.getValue().toString() , datePickerPrestamo.getValue().toString(), datePickerRetorno.getValue().toString());
-    librosPrestados.add(prestarLibro);
-    System.out.println(librosPrestados.toString());
+   
+    @FXML
+    private void moroso() {
+
+        LocalDate fechaRetorno;
+        String usuario = "";
+        String titulo = "";
+
+        for (int i = 0; i <= librosPrestados.size() - 1; i++) {
+            PrestarLibro prestarLibro = (PrestarLibro) librosPrestados.get(i);
+
+            if (LocalDate.now().isAfter(prestarLibro.getFechaRetorno())) {
+                usuario = prestarLibro.getUsuario();
+                titulo = prestarLibro.getTitulo();
+                fechaRetorno = prestarLibro.getFechaRetorno();
+                UsuarioMoroso moroso = new UsuarioMoroso(usuario, titulo, fechaRetorno);
+                usuariosMorosos.add(moroso);
+               
+            }
+        }
+
     }
-     
-////     @FXML private void getMorosidad(DatePicker datePickerRetorno){
-////         if(datePickerRetorno.(LocalDate.now())){
-////             
-////         }
-//         
-//     }
+    
 }

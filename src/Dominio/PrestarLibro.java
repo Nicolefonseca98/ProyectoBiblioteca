@@ -1,24 +1,26 @@
 package Dominio;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import javafx.beans.property.SimpleStringProperty;
 
 public class PrestarLibro {
     
    private SimpleStringProperty titulo;
    private SimpleStringProperty usuario;
-   private SimpleStringProperty fechaPrestamo;
-   private SimpleStringProperty fechaRetorno;
+   private LocalDate fechaPrestamo;
+   private LocalDate fechaRetorno;
 
     @Override
     public String toString() {
         return "PrestarLibro{" + "titulo=" + titulo + ", usuario=" + usuario + ", fechaPrestamo=" + fechaPrestamo + ", fechaRetorno=" + fechaRetorno + '}';
     }
 
-    public PrestarLibro(String titulo, String usuario, String fechaPrestamo, String fechaRetorno) {
+    public PrestarLibro(String titulo, String usuario, LocalDate fechaPrestamo, LocalDate fechaRetorno) {
         this.titulo = new SimpleStringProperty(titulo);
         this.usuario = new SimpleStringProperty(usuario);
-        this.fechaPrestamo = new SimpleStringProperty(fechaPrestamo);
-        this.fechaRetorno = new SimpleStringProperty (fechaRetorno);
+        this.fechaPrestamo = fechaPrestamo;
+        this.fechaRetorno = fechaRetorno;
     }
     public PrestarLibro() {
     }
@@ -54,29 +56,29 @@ public class PrestarLibro {
     /**
      * @return the fechaPrestamo
      */
-    public String getFechaPrestamo() {
-        return fechaPrestamo.get();
+    public LocalDate getFechaPrestamo() {
+        return fechaPrestamo;
     }
 
     /**
      * @param fechaPrestamo the fechaPrestamo to set
      */
-    public void setFechaPrestamo(String fechaPrestamo) {
-        this.fechaPrestamo = new SimpleStringProperty (fechaPrestamo);
+    public void setFechaPrestamo(LocalDate fechaPrestamo) {
+        this.fechaPrestamo = fechaPrestamo;
     }
 
     /**
      * @return the fechaRetorno
      */
-    public String getFechaRetorno() {
-        return fechaRetorno.get();
+    public LocalDate getFechaRetorno() {
+        return fechaRetorno;
     }
 
     /**
      * @param fechaRetorno the fechaRetorno to set
      */
-    public void setFechaRetorno(String fechaRetorno) {
-        this.fechaRetorno = new SimpleStringProperty(fechaRetorno);
+    public void setFechaRetorno(LocalDate fechaRetorno) {
+        this.fechaRetorno = fechaRetorno;
     }
 
     /**

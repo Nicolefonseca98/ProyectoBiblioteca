@@ -2,8 +2,10 @@
 package proyectobiblioteca;
 import Dominio.Obra;
 import Dominio.PrestarLibro;
+import Listas.Listas;
 import static Listas.Listas.librosPrestados;
 import static Listas.Listas.obraLista;
+import static Listas.Listas.usuarioLogin;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -19,7 +21,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -36,21 +37,26 @@ public class InterfazFuncionUsuarioController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        FXMLDocumentController fxmlDocumentController = new FXMLDocumentController();
         
         columnaTitulo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("titulo"));
         columnaPrestamo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaPrestamo"));
         columnaRetorno.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaRetorno"));
         
-        String u = fxmlDocumentController.getUsuario();
+        for (int i = 0 ; i <= usuarioLogin.size() -1; i++) {
+            String us = usuarioLogin.get(i);
         
+        nombreCompleto.setText(us);
         tablaPrestamoUsuario.setItems(librosPrestados);
         FilteredList<PrestarLibro> filteredData = new FilteredList<>(librosPrestados, p -> true);
         tablaPrestamoUsuario.setItems(filteredData);
         filteredData.setPredicate(PrestarLibro -> {  
         String usuario = PrestarLibro.getUsuario().toLowerCase();
-        return usuario.contains(u.toLowerCase());
+        return usuario.contains(us.toLowerCase());
+        
         });
+        
+        }
+        
     }    
     
     @FXML
@@ -63,7 +69,7 @@ public class InterfazFuncionUsuarioController implements Initializable {
         window.getIcons().add(new Image("/imagen/libros.png"));       
         window.setScene(scene);
         window.show();
-
+        
     }
     
 }

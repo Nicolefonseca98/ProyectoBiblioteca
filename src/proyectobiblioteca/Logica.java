@@ -23,21 +23,22 @@ public class Logica extends Listas{
         * Cada condición compara el tipo de usuario que se ingresa 
         * y lo guarda en la Lista listaCliente
         */
-        
+        String contraseñaEncriptada = DigestUtils.md5Hex(contraseña);
         if (tipoUsuario.equalsIgnoreCase("Usuario")){
-            Cliente c = new Usuario(nombreUnico, contraseña, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
+            
+            Cliente c = new Usuario(nombreUnico, contraseñaEncriptada, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
             clienteLista.add(c);
             
         }
         else if(tipoUsuario.equalsIgnoreCase("Autor")) {
-            Cliente c = new Autor(nombreUnico, contraseña, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
+            Cliente c = new Autor(nombreUnico, contraseñaEncriptada, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
             clienteLista.add(c);
             
         }
         else if(tipoUsuario.equalsIgnoreCase("Bibliotecario")) {
             
-            String contraseñaEncriptada = DigestUtils.md5Hex(contraseña);
-            Cliente c = new Bibliotecario(nombreUnico, contraseña, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
+          
+            Cliente c = new Bibliotecario(nombreUnico, contraseñaEncriptada, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
             clienteLista.add(c);
             
         }
@@ -189,11 +190,11 @@ public class Logica extends Listas{
             autorViejo.setAutor(nuevoAutor);
             fechaVieja.setFechaIngreso(nuevaFecha);
             
-            
         }
         
         System.out.println(obraLista.toString());
     }
+    
     public boolean existeObra (String nombreObra) {
         
         for (int i = 0; i <= obraLista.size() - 1; i++) {
@@ -206,6 +207,7 @@ public class Logica extends Listas{
         System.out.println(obraLista.toString());
         return false;
     }
+    
       public void borrarObra(String nombreObra){
 
         if (buscarObra(nombreObra)) {
@@ -213,7 +215,6 @@ public class Logica extends Listas{
 
             obraLista.remove(o);
         }
-        
         
         System.out.println(obraLista.toString());
         
@@ -231,8 +232,7 @@ public class Logica extends Listas{
           return false;
       }
       
-   
-      public void librosUsuario(String nombreUsuario) {
+      public void librosPrestadosUsuario(String nombreUsuario) {
           
           for (int i = 0; i <= librosPrestados.size() - 1; i++) {
             PrestarLibro libro = (PrestarLibro )librosPrestados.get(i);
@@ -241,5 +241,6 @@ public class Logica extends Listas{
                 
             }
         }
+         
       }
 }
