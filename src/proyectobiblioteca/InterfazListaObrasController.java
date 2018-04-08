@@ -39,6 +39,7 @@ public class InterfazListaObrasController implements Initializable {
     @FXML private Label nombreUsuario;
     @FXML private Label fechaPrestamo;
     @FXML private Label fechaRetorno;
+    @FXML private Label mensaje;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -70,43 +71,34 @@ public class InterfazListaObrasController implements Initializable {
         return titulo.contains(text.toLowerCase());
         });
         });
-   
-//        tablaObras.setRowFactory(tv -> {
-//            TableRow<Obra> row = new TableRow<>();
-//            row.setOnMouseClicked(event -> {
-//                if (event.getClickCount() == 1 && (!row.isEmpty())) {
-//                    Obra clickTituloTabla = row.getItem();
-//                    clickTituloTabla.getTitulo();
-//                    for (int i = 0; i < librosPrestados.size()-1 ; i++) {
-//                        PrestarLibro prestarLibro = (PrestarLibro) librosPrestados.get(i);
-//                        String titulo = prestarLibro.getTitulo();
-//                        if(clickTituloTabla.equals(titulo)) {
-//                            nombreUsuario.setText(prestarLibro.getUsuario());
-//                            fechaPrestamo.setText(prestarLibro.getFechaPrestamo().toString());
-//                            fechaRetorno.setText(prestarLibro.getFechaRetorno().toString());
-//                            System.out.println(titulo);
-//                            System.out.println(clickTituloTabla);
-//                        }
-//                    }
-//                }
-//            });
-//            return row;
-//        });
-
-//        tablaObras.setRowFactory(tv -> {
-//            TableRow<Obra> row = new TableRow<>();
-//            row.setOnMouseClicked(event -> {
-//                if (event.getClickCount() == 1 && (!row.isEmpty())) {
-//                    Obra rowData = row.getItem();
-//                    
-//                    System.out.println(rowData);
-//                }
-//            });
-//            return row;
-//        });
+        
+        tablaObras.setRowFactory(tv -> {
+            TableRow<Obra> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 1 && (!row.isEmpty())) {
+                    Obra clickTituloTabla = row.getItem();
+                }
+                
+                for (int i = 0; i <= librosPrestados.size() - 1; i++) {
+                    
+                    PrestarLibro prestarLibro = librosPrestados.get(i);
+                    String tituloTabla = row.getItem().getTitulo();
+                    String tituloPrestamo = prestarLibro.getTitulo();
+                    
+                    if (tituloTabla.equals(tituloPrestamo)) {
+                        nombreUsuario.setText(prestarLibro.getUsuario());
+                        fechaPrestamo.setText(prestarLibro.getFechaPrestamo().toString());
+                        fechaRetorno.setText(prestarLibro.getFechaRetorno().toString());
+                    } else {
+                        mensaje.setText("El libro no se encuentra prestado");
+                    }
+                }
+            });
+            return row;
+        });
+            
     }
-
-
+  
      @FXML
     private void volverMenu(ActionEvent event) throws IOException {
      

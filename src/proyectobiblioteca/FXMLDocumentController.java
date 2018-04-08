@@ -3,6 +3,7 @@ package proyectobiblioteca;
 import Dominio.Autor;
 import Dominio.Bibliotecario;
 import Dominio.Cliente;
+import Dominio.Libro;
 import Dominio.Usuario;
 import Listas.Listas;
 import static Listas.Listas.clienteLista;
@@ -89,6 +90,10 @@ public class FXMLDocumentController extends Listas implements Initializable {
         //Usuario predeterminado
         Usuario us = new Usuario("Karla2", contraseñaEncriptada, "Karla Fallas", "Residencia", "109630582", "Usuario");
         clienteLista.add(us);
+        
+        Libro l = new Libro("123", "a", "a", "a", "2018-04-07", "Ana Rodríguez");
+        obraLista.add(l);
+        libroLista.add(l);
 
     }
 
