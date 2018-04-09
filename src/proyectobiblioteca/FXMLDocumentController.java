@@ -53,28 +53,29 @@ public class FXMLDocumentController extends Listas implements Initializable {
         ventanaUsuario.getIcons().add(new Image("/imagen/libros.png"));
 
         String contraseñaEncriptada = DigestUtils.md5Hex(txfContraseña.getText());
-
+           try {
         //Verifica datos del usuario
         if (logica.verificaUsuario(txfUsuario.getText(), contraseñaEncriptada, "Bibliotecario")) {
-
             window.setScene(scene);
             window.show();
             System.out.println(clienteLista.toString());
-        } else if (logica.verificaUsuario(txfUsuario.getText(), contraseñaEncriptada, "Usuario")) {  
+               } else if (logica.verificaUsuario(txfUsuario.getText(), contraseñaEncriptada, "Usuario")) {           
             UsuarioLogin usuario = new UsuarioLogin(txfUsuario.getText());
             usuarioLogin.add(usuario);
             System.out.println(usuarioLogin.toString());
             ventanaUsuario.setScene(sceneUsuario);
             ventanaUsuario.show();
-            
-        } else if (logica.verificaUsuario(txfUsuario.getText(), contraseñaEncriptada, "Autor")) {
-
-        } else {
+             } else if (logica.verificaUsuario(txfUsuario.getText(), contraseñaEncriptada, "Autor")) {
+                      } else {
+            mensaje.setText("Datos inválidos");
+            txfContraseña.setText("");
+            txfUsuario.setText("");
+            }
+          } catch (NullPointerException NPE) {
             mensaje.setText("Datos inválidos");
             txfContraseña.setText("");
             txfUsuario.setText("");
         }
-
     }
 
     @Override

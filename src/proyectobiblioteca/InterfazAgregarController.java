@@ -31,13 +31,16 @@ public class InterfazAgregarController implements Initializable {
 
     @FXML
     private void agregarUsuario() {
-        
+        try {
         Logica l = new Logica();
         l.agregarUsuario(txfUsuario.getText(), txfContraseña.getText(), txfNombre.getText(),
                         choiceBox1.getValue().toString(), txfIdentificacion.getText(), choiceBox2.getValue().toString());
         lbMensaje.setText("Usuario añadido");
+        
+           } catch (NullPointerException NPE) {
+            lbMensaje.setText("Ingrese todos los datos");
+        }
     }
- 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

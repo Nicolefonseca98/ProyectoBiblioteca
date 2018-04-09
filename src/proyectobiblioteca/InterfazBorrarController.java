@@ -26,8 +26,16 @@ public class InterfazBorrarController implements Initializable {
        
         Logica l = new Logica();
         l.borrarUsuario(txfBuscar.getText());
-        lbMensaje.setText("Usuario borrado");
+      
+        if(txfBuscar.getText().equals("")) {
+            
+          lbMensaje.setText("Ingrese un usuario.");
+          
+        } else {
+            
+        lbMensaje.setText("Usuario borrado.");
         
+        }  
     }
     
      @FXML

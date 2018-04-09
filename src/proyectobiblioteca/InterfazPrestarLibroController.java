@@ -96,11 +96,16 @@ public class InterfazPrestarLibroController implements Initializable {
     
     @FXML
     private void botonPrestar() {
-        
+        try {
+            
+       
         PrestarLibro prestarLibro = new PrestarLibro(comboBoxTitulo.getValue().toString(), comboBoxUsuario.getValue().toString(), 
                                                      datePickerPrestamo.getValue(), datePickerRetorno.getValue());
         librosPrestados.add(prestarLibro);
         System.out.println(librosPrestados.toString());
+         } catch (NullPointerException NPE) {
+             System.out.println("Ingrese todos los datos.");
+        }
     }
    
     @FXML
