@@ -40,6 +40,6 @@
       <Label layoutX="358.0" layoutY="191.0" text="Abstract" />
       <TextArea fx:id="txaSummary" layoutX="358.0" layoutY="213.0" prefHeight="97.0" prefWidth="214.0" />
       <Button fx:id="btnOk" layoutX="230.0" layoutY="56.0" mnemonicParsing="false" onAction="#btnOk" text="OK" />
-      <Label fx:id="lbMensaje" layoutX="457.0" layoutY="485.0" prefHeight="17.0" prefWidth="112.0" />
+      <Label fx:id="lbMensaje" layoutX="372.0" layoutY="485.0" prefHeight="17.0" prefWidth="196.0" />
    </children>
 </AnchorPane>

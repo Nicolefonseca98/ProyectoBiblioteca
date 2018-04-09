@@ -22,5 +22,6 @@
       <Label fx:id="lbMensaje" layoutX="304.0" layoutY="161.0" prefHeight="17.0" prefWidth="107.0" />
       <Button fx:id="btnModificar" layoutX="223.0" layoutY="373.0" mnemonicParsing="false" onAction="#btnModificar" text="Modificar" />
       <ComboBox fx:id="comboBoxAutor" layoutX="182.0" layoutY="279.0" prefWidth="150.0" />
+      <Label fx:id="mensajeModificar" layoutX="267.0" layoutY="429.0" prefHeight="17.0" prefWidth="131.0" />
    </children>
 </AnchorPane>

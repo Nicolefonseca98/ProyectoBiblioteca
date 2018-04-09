@@ -26,11 +26,14 @@ public class InterfazBorrarObraController implements Initializable {
     
     @FXML
     private void botonBuscarObra() {
-       
-        Logica l = new Logica();
-        l.borrarObra(txfBuscarObra.getText());
-        lbMensajeObra.setText("Obra borrada");
-        
+      
+        if (txfBuscarObra.getText().equals("")) {
+            lbMensajeObra.setText("Ingrese todos los datos");
+        } else {
+            Logica l = new Logica();
+            l.borrarObra(txfBuscarObra.getText());
+            lbMensajeObra.setText("Obra borrada");
+        }
     }
     
      @FXML

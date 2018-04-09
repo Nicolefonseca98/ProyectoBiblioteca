@@ -30,6 +30,7 @@ public class InterfazModificarObraController implements Initializable {
     @FXML private DatePicker dtFecha;
     @FXML private Label lbMensaje;
     @FXML private Button btnModificar;
+    @FXML private Label mensajeModificar;
     
      @FXML
     private void volverMenu(ActionEvent event) throws IOException {
@@ -46,10 +47,10 @@ public class InterfazModificarObraController implements Initializable {
     
     @FXML
     private void btnBuscar() {
-        
+       
         Logica l = new Logica();
         if(l.buscarObra(txfBuscar.getText())) {
-            lbMensaje.setText("Usuario encontrado");
+            lbMensaje.setText("Obra encontrado");
             txfTitulo.setDisable(false);
             comboBoxAutor.setDisable(false);
             dtFecha.setDisable(false);
@@ -57,15 +58,21 @@ public class InterfazModificarObraController implements Initializable {
             
         }
         else
-            lbMensaje.setText("El usuario no existe");
+            lbMensaje.setText("La obra no existe");
+        
     }
+    
     
     @FXML
     private void btnModificar(){
         
-        Logica l = new Logica();
-        l.modificarObra(txfBuscar.getText(), txfTitulo.getText(), comboBoxAutor.getValue().toString(), dtFecha.getValue().toString());
-        
+        try {
+            Logica l = new Logica();
+            l.modificarObra(txfBuscar.getText(), txfTitulo.getText(), comboBoxAutor.getValue().toString(), dtFecha.getValue().toString());
+            mensajeModificar.setText("Obra modificada");
+        } catch (NullPointerException NPE) {
+            mensajeModificar.setText("Ingrese todos los datos");
+        }
     }
     
     @Override
