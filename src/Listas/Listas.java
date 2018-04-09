@@ -1,10 +1,10 @@
 
 package Listas;
 
-import Dominio.Autor;
 import Dominio.Cliente;
 import Dominio.Obra;
 import Dominio.PrestarLibro;
+import Dominio.UsuarioLogin;
 import Dominio.UsuarioMoroso;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -29,5 +29,5 @@ public class Listas {
 
     public static ObservableList<UsuarioMoroso> usuariosMorosos = FXCollections.observableArrayList();
     
-    public static ObservableList<String> usuarioLogin = FXCollections.observableArrayList();
+    public static ObservableList<UsuarioLogin> usuarioLogin = FXCollections.observableArrayList();
 }

@@ -2,6 +2,7 @@
 package proyectobiblioteca;
 import Dominio.Obra;
 import Dominio.PrestarLibro;
+import Dominio.UsuarioLogin;
 import Listas.Listas;
 import static Listas.Listas.librosPrestados;
 import static Listas.Listas.obraLista;
@@ -37,21 +38,21 @@ public class InterfazFuncionUsuarioController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        System.out.println(usuarioLogin.toString());
         
         columnaTitulo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("titulo"));
         columnaPrestamo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaPrestamo"));
         columnaRetorno.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaRetorno"));
         
         for (int i = 0 ; i <= usuarioLogin.size() -1; i++) {
-            String us = usuarioLogin.get(i);
-        
-        nombreCompleto.setText(us);
+            UsuarioLogin usuario = (UsuarioLogin) usuarioLogin.get(i);
+        nombreCompleto.setText(usuario.toString());
         tablaPrestamoUsuario.setItems(librosPrestados);
         FilteredList<PrestarLibro> filteredData = new FilteredList<>(librosPrestados, p -> true);
         tablaPrestamoUsuario.setItems(filteredData);
         filteredData.setPredicate(PrestarLibro -> {  
-        String usuario = PrestarLibro.getUsuario().toLowerCase();
-        return usuario.contains(us.toLowerCase());
+        String usuarioPrestamo = PrestarLibro.getUsuario().toLowerCase();
+        return usuarioPrestamo.contains(usuario.toString().toLowerCase());
         
         });
         

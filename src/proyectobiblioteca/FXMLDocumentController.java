@@ -5,6 +5,7 @@ import Dominio.Bibliotecario;
 import Dominio.Cliente;
 import Dominio.Libro;
 import Dominio.Usuario;
+import Dominio.UsuarioLogin;
 import Listas.Listas;
 import static Listas.Listas.clienteLista;
 import java.io.IOException;
@@ -59,13 +60,13 @@ public class FXMLDocumentController extends Listas implements Initializable {
             window.setScene(scene);
             window.show();
             System.out.println(clienteLista.toString());
-
-        } else if (logica.verificaUsuario(txfUsuario.getText(), contraseñaEncriptada, "Usuario")) {
-
+        } else if (logica.verificaUsuario(txfUsuario.getText(), contraseñaEncriptada, "Usuario")) {  
+            UsuarioLogin usuario = new UsuarioLogin(txfUsuario.getText());
+            usuarioLogin.add(usuario);
+            System.out.println(usuarioLogin.toString());
             ventanaUsuario.setScene(sceneUsuario);
             ventanaUsuario.show();
-            usuarioLogin.add(txfUsuario.getText());
-
+            
         } else if (logica.verificaUsuario(txfUsuario.getText(), contraseñaEncriptada, "Autor")) {
 
         } else {
