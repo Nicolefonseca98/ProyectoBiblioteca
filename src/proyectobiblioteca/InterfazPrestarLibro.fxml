@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazPrestarLibroController">
+<Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazPrestarLibroController">
   <panes>
     <TitledPane animated="false" text="Prestar libro">
       <content>
@@ -39,12 +39,12 @@
                               <Font name="Times New Roman" size="15.0" />
                            </font></Label>
                         <ComboBox fx:id="comboBoxUsuario" layoutX="365.0" layoutY="35.0" prefHeight="25.0" prefWidth="178.0" />
-                        <Button layoutX="470.0" layoutY="285.0" mnemonicParsing="false" onAction="#botonPrestar" text="Prestar">
+                        <Button layoutX="470.0" layoutY="285.0" mnemonicParsing="false" onAction="#buttonPrestar" text="Prestar">
                            <font>
                               <Font name="Times New Roman" size="13.0" />
                            </font></Button>
-                        <Label fx:id="mensaje" layoutX="421.0" layoutY="249.0" prefHeight="17.0" prefWidth="151.0" />
-                        <Button layoutX="534.0" layoutY="285.0" mnemonicParsing="false" onAction="#menu" text="Menú">
+                        <Label fx:id="labelMensaje" layoutX="421.0" layoutY="249.0" prefHeight="17.0" prefWidth="151.0" />
+                        <Button layoutX="534.0" layoutY="285.0" mnemonicParsing="false" onAction="#buttonMenu" text="Menú">
                            <font>
                               <Font name="Times New Roman" size="13.0" />
                            </font></Button>
@@ -56,9 +56,9 @@
             <Font name="Times New Roman" size="14.0" />
          </font>
     </TitledPane>
-    <TitledPane animated="false" prefHeight="350.0" prefWidth="622.0" style="-fx-background-color: #99CCCC;" text="Libros prestados">
+    <TitledPane animated="false" prefHeight="308.0" prefWidth="585.0" style="-fx-background-color: #99CCCC;" text="Libros prestados">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="287.0" prefWidth="582.0">
                <children>
                   <TableView fx:id="tablaPrestamos" prefHeight="325.0" prefWidth="600.0" style="-fx-background-color: #99CCCC;">
                     <columns>

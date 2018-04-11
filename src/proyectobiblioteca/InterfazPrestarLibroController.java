@@ -36,7 +36,7 @@ public class InterfazPrestarLibroController implements Initializable {
     @FXML private ComboBox comboBoxUsuario;
     @FXML private DatePicker datePickerPrestamo;
     @FXML private DatePicker datePickerRetorno;
-    @FXML private Label mensaje;
+    @FXML private Label labelMensaje;
     
     @FXML private TableView <PrestarLibro> tablaPrestamos;
     @FXML private TableView <UsuarioMoroso> tablaMorosidad;
@@ -51,7 +51,7 @@ public class InterfazPrestarLibroController implements Initializable {
     @FXML private TableColumn <UsuarioMoroso,String> columnaRetornoMorosidad;
     
      @FXML
-    private void menu(ActionEvent event) throws IOException {
+    private void buttonMenu(ActionEvent event) throws IOException {
      
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));
         Scene scene = new Scene(parent);
@@ -96,16 +96,16 @@ public class InterfazPrestarLibroController implements Initializable {
     }
     
     @FXML
-    private void botonPrestar() {
+    private void buttonPrestar() {
         try {
             
         PrestarLibro prestarLibro = new PrestarLibro(comboBoxTitulo.getValue().toString(), comboBoxUsuario.getValue().toString(), 
                                                      datePickerPrestamo.getValue(), datePickerRetorno.getValue());
         librosPrestados.add(prestarLibro);
-        mensaje.setText("Libro prestado");
+        labelMensaje.setText("Libro prestado");
         
         } catch (NullPointerException NPE) {
-            mensaje.setText("Ingrese todos los datos.");
+            labelMensaje.setText("Ingrese todos los datos.");
        }
     }
    
