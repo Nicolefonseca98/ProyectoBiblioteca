@@ -12,7 +12,6 @@ import Dominio.PrestarLibro;
 import Dominio.Revista;
 import Dominio.Tesis;
 import Dominio.Usuario;
-import Dominio.UsuarioLogin;
 import Listas.Listas;
 import org.apache.commons.codec.digest.DigestUtils;
 
@@ -38,7 +37,6 @@ public class Logica extends Listas{
         }
         else if(tipoUsuario.equalsIgnoreCase("Bibliotecario")) {
             
-          
             Cliente c = new Bibliotecario(nombreUnico, contraseñaEncriptada, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
             clienteLista.add(c);
             

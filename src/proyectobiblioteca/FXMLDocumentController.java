@@ -54,7 +54,6 @@ public class FXMLDocumentController extends Listas implements Initializable {
         Stage ventanaAutor = (Stage) ((Node) event.getSource()).getScene().getWindow();
         ventanaAutor.getIcons().add(new Image("/imagen/libros.png"));
         
-
         String contraseñaEncriptada = DigestUtils.md5Hex(txfContraseña.getText());
         try {
         //Verifica datos del usuario
@@ -86,7 +85,7 @@ public class FXMLDocumentController extends Listas implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+       
         String contraseñaEncriptada = DigestUtils.md5Hex("1234");
         //Autor predeterminado
         Autor a = new Autor("autor1", contraseñaEncriptada, "Ana Rodríguez", "Nacional", "123456789", "Autor");
@@ -100,9 +99,6 @@ public class FXMLDocumentController extends Listas implements Initializable {
         Usuario us = new Usuario("Karla2", contraseñaEncriptada, "Karla Fallas", "Residencia", "109630582", "Usuario");
         clienteLista.add(us);
         
-        Libro l = new Libro("123", "a", "a", "a", "2018-04-07", "Ana Rodríguez");
-        obraLista.add(l);
-        libroLista.add(l);
         
     }
 

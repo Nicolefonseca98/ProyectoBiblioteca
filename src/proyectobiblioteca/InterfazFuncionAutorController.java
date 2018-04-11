@@ -31,29 +31,29 @@ public class InterfazFuncionAutorController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-//        for (int i = 0 ; i <= usuarioLogin.size() -1; i++) {
-//            String us = usuarioLogin.get(i);
-//        columnaTitulo.setCellValueFactory(new PropertyValueFactory<Obra,String>("titulo"));
-//        columnaFechaIngreso.setCellValueFactory(new PropertyValueFactory<Obra,String>("fechaIngreso"));
-//         
-//        
-//        nombreCompleto.setText(us);
-//        tablaObrasAutor.setItems(obraLista);
-//        FilteredList<Obra> filteredData = new FilteredList<>(obraLista, p -> true);
-//        tablaObrasAutor.setItems(filteredData);
-//        filteredData.setPredicate(Obra -> {  
-//        String usuario = (Obra.getAutor().toLowerCase());
-//        return usuario.contains(us.toLowerCase());
-//        
-//        });
-//        
-//        }
     }    
+    @FXML
+    private void buscar(ActionEvent event)  {
+        
+        nombreCompleto.setText(usuarioLogin.get(0).toString());
+        columnaTitulo.setCellValueFactory(new PropertyValueFactory<Obra,String>("titulo"));
+        columnaFechaIngreso.setCellValueFactory(new PropertyValueFactory<Obra,String>("fechaIngreso"));
+        
+        tablaObrasAutor.setItems(obraLista);
+        FilteredList<Obra> filteredData = new FilteredList<>(obraLista, p -> true);
+        tablaObrasAutor.setItems(filteredData);
+        filteredData.setPredicate(Obra -> {  
+        String usuario = Obra.getAutor().toLowerCase();
+        return usuario.contains(usuario.toLowerCase());
+        
+        });
+        
+    }
     
     
      @FXML
     private void salir(ActionEvent event) throws IOException {
-     
+        usuarioLogin.remove(0);
         Parent parent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         Scene scene = new Scene(parent);
         //Esta linea obtiene la informacion del Stage

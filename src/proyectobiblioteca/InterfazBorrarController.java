@@ -30,7 +30,7 @@ public class InterfazBorrarController implements Initializable {
         if (txfBuscar.getText().equals("")) {
             lbMensaje.setText("Ingrese un usuario.");
         }else if (txfBuscar.getText().equals(usuarioLogin.get(0))) { 
-            lbMensaje.setText("No se puede borrar");
+            lbMensaje.setText("No se puede borrar este usuario");
         } else if(l.borrarMoroso(txfBuscar.getText())){
             lbMensaje.setText("El usuario está moroso");
         } else {  

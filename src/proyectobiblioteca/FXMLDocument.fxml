@@ -24,7 +24,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <PasswordField fx:id="txfContraseña" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <PasswordField fx:id="txfContraseña" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" right="3.0" top="10.0" />
                </GridPane.margin>
