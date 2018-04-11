@@ -9,6 +9,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazPrestarLibroController">
   <panes>
@@ -18,21 +19,42 @@
                <children>
                   <AnchorPane layoutX="-1.0" prefHeight="324.0" prefWidth="600.0" style="-fx-background-color: #99CCCC;">
                      <children>
-                        <Label layoutX="21.0" layoutY="145.0" text="Fecha de préstamo" />
+                        <Label layoutX="21.0" layoutY="145.0" text="Fecha de préstamo">
+                           <font>
+                              <Font name="Times New Roman" size="15.0" />
+                           </font></Label>
                         <DatePicker fx:id="datePickerPrestamo" layoutX="366.0" layoutY="141.0" />
-                        <Label layoutX="18.0" layoutY="203.0" text="Fecha de retorno" />
+                        <Label layoutX="18.0" layoutY="203.0" text="Fecha de retorno">
+                           <font>
+                              <Font name="Times New Roman" size="15.0" />
+                           </font></Label>
                         <DatePicker fx:id="datePickerRetorno" layoutX="367.0" layoutY="199.0" />
-                        <Label layoutX="22.0" layoutY="98.0" prefHeight="17.0" prefWidth="33.0" text="Título" />
+                        <Label layoutX="22.0" layoutY="98.0" prefHeight="18.0" prefWidth="70.0" text="Título">
+                           <font>
+                              <Font name="Times New Roman" size="15.0" />
+                           </font></Label>
                         <ComboBox fx:id="comboBoxTitulo" layoutX="365.0" layoutY="94.0" prefHeight="25.0" prefWidth="176.0" />
-                        <Label layoutX="22.0" layoutY="39.0" text="Usuario" />
+                        <Label layoutX="22.0" layoutY="39.0" text="Usuario">
+                           <font>
+                              <Font name="Times New Roman" size="15.0" />
+                           </font></Label>
                         <ComboBox fx:id="comboBoxUsuario" layoutX="365.0" layoutY="35.0" prefHeight="25.0" prefWidth="178.0" />
-                        <Button layoutX="470.0" layoutY="285.0" mnemonicParsing="false" onAction="#botonPrestar" text="Prestar" />
+                        <Button layoutX="470.0" layoutY="285.0" mnemonicParsing="false" onAction="#botonPrestar" text="Prestar">
+                           <font>
+                              <Font name="Times New Roman" size="13.0" />
+                           </font></Button>
                         <Label fx:id="mensaje" layoutX="421.0" layoutY="249.0" prefHeight="17.0" prefWidth="151.0" />
-                        <Button layoutX="534.0" layoutY="285.0" mnemonicParsing="false" onAction="#menu" text="Menú" />
+                        <Button layoutX="534.0" layoutY="285.0" mnemonicParsing="false" onAction="#menu" text="Menú">
+                           <font>
+                              <Font name="Times New Roman" size="13.0" />
+                           </font></Button>
                      </children>
                   </AnchorPane>
                </children></AnchorPane>
       </content>
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
     </TitledPane>
     <TitledPane animated="false" prefHeight="350.0" prefWidth="622.0" style="-fx-background-color: #99CCCC;" text="Libros prestados">
       <content>
@@ -48,6 +70,9 @@
                   </TableView>
                </children></AnchorPane>
       </content>
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
     </TitledPane>
     <TitledPane animated="false" onMouseClicked="#moroso" text="Morosidad">
       <content>
@@ -62,6 +87,9 @@
                   </TableView>
                </children></AnchorPane>
       </content>
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
     </TitledPane>
   </panes>
 </Accordion>

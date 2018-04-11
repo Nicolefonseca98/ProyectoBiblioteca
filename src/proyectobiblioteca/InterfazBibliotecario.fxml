@@ -83,7 +83,10 @@
             <ImageInput />
          </effect>
       </Button>
-      <Label layoutX="471.0" layoutY="491.0" text="Salir" />
+      <Label layoutX="471.0" layoutY="491.0" text="Salir">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font></Label>
    </children>
    <padding>
       <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />

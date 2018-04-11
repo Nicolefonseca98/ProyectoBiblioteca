@@ -5,21 +5,49 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="505.0" prefWidth="456.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazModificarController">
    <children>
-      <Label layoutX="171.0" layoutY="58.0" text="Modificar Usuario" />
-      <Label layoutX="137.0" layoutY="96.0" text="Buscar por nombre de usuario" />
-      <TextField fx:id="txfBuscar" layoutX="144.0" layoutY="133.0" />
-      <Button fx:id="btnBuscar" layoutX="193.0" layoutY="186.0" mnemonicParsing="false" onAction="#accionBuscar" text="Buscar" />
-      <Label layoutX="172.0" layoutY="236.0" text="Datos a modificar" />
-      <Label layoutX="50.0" layoutY="290.0" text="Nuevo nombre de usuario" />
-      <Label layoutX="61.0" layoutY="335.0" text="Nueva contraseña" />
+      <Label layoutX="152.0" layoutY="60.0" text="Modificar Usuario">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font></Label>
+      <Label layoutX="124.0" layoutY="101.0" text="Buscar por nombre de usuario">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font></Label>
+      <TextField fx:id="txfBuscar" layoutX="140.0" layoutY="141.0" />
+      <Button fx:id="btnBuscar" layoutX="187.0" layoutY="186.0" mnemonicParsing="false" onAction="#accionBuscar" text="Buscar">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font></Button>
+      <Label layoutX="155.0" layoutY="243.0" text="Datos a modificar">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font></Label>
+      <Label layoutX="50.0" layoutY="290.0" text="Nuevo nombre de usuario">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font></Label>
+      <Label layoutX="61.0" layoutY="335.0" text="Nueva contraseña">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font></Label>
       <TextField fx:id="txfNuevoUsuario" layoutX="214.0" layoutY="286.0" />
-      <Button fx:id="btnModificar" layoutX="266.0" layoutY="376.0" mnemonicParsing="false" onAction="#accionModificar" text="Modificar" />
+      <Button fx:id="btnModificar" layoutX="254.0" layoutY="384.0" mnemonicParsing="false" onAction="#accionModificar" text="Modificar">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font></Button>
       <Label fx:id="lbMensaje2" layoutX="259.0" layoutY="437.0" prefHeight="17.0" prefWidth="149.0" />
-      <Label fx:id="lbMensaje" layoutX="281.0" layoutY="211.0" prefHeight="17.0" prefWidth="139.0" />
-      <Button layoutX="397.0" layoutY="466.0" mnemonicParsing="false" onAction="#volverMenu" text="Menú" />
+      <Label fx:id="lbMensaje" layoutX="281.0" layoutY="211.0" prefHeight="17.0" prefWidth="139.0">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font></Label>
+      <Button layoutX="371.0" layoutY="454.0" mnemonicParsing="false" onAction="#volverMenu" text="Menú">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font></Button>
       <PasswordField fx:id="recibeContraseña" layoutX="214.0" layoutY="331.0" />
    </children>
 </AnchorPane>

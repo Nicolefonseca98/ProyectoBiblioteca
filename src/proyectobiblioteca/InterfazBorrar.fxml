@@ -4,14 +4,27 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="403.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazBorrarController">
+<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="403.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazBorrarController">
    <children>
-      <Label layoutX="147.0" layoutY="64.0" text="Borrar Usuario" />
-      <Label layoutX="112.0" layoutY="121.0" text="Buscar por nombre de usuario" />
-      <TextField fx:id="txfBuscar" layoutX="118.0" layoutY="170.0" />
-      <Button layoutX="168.0" layoutY="220.0" mnemonicParsing="false" onAction="#botonB" text="Borrar" />
-      <Label fx:id="lbMensaje" layoutX="267.0" layoutY="203.0" prefHeight="17.0" prefWidth="120.0" />
-      <Button layoutX="340.0" layoutY="401.0" mnemonicParsing="false" onAction="#volverMenu" text="Menú" />
+      <Label layoutX="147.0" layoutY="67.0" text="Borrar Usuario">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font></Label>
+      <Label layoutX="111.0" layoutY="125.0" text="Buscar por nombre de usuario">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font></Label>
+      <TextField fx:id="txfBuscar" layoutX="127.0" layoutY="178.0" />
+      <Button layoutX="176.0" layoutY="230.0" mnemonicParsing="false" onAction="#botonB" text="Borrar">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font></Button>
+      <Label fx:id="lbMensaje" layoutX="256.0" layoutY="212.0" prefHeight="17.0" prefWidth="120.0" />
+      <Button layoutX="340.0" layoutY="401.0" mnemonicParsing="false" onAction="#volverMenu" text="Menú">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font></Button>
    </children>
 </AnchorPane>

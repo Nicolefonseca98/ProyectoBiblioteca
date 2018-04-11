@@ -20,14 +20,20 @@
         </columns>
       </TableView>
       <TextField fx:id="buscarTitulo" layoutX="98.0" layoutY="25.0" prefHeight="25.0" prefWidth="218.0" />
-      <Label layoutX="50.0" layoutY="29.0" text="Buscar" />
-      <Button layoutX="622.0" layoutY="442.0" mnemonicParsing="false" onAction="#volverMenu" text="Menú" />
+      <Label layoutX="50.0" layoutY="29.0" text="Buscar">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font></Label>
+      <Button layoutX="622.0" layoutY="442.0" mnemonicParsing="false" onAction="#volverMenu" text="Menú">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font></Button>
       <TextField fx:id="buscarAutor" layoutX="341.0" layoutY="25.0" prefHeight="25.0" prefWidth="197.0" />
       <VBox alignment="CENTER" layoutX="491.0" layoutY="114.0" prefHeight="235.0" prefWidth="197.0" spacing="15.0">
          <children>
             <Label prefHeight="17.0" prefWidth="161.0" text="Información de préstamo">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="Times New Roman" size="15.0" />
                </font>
                <VBox.margin>
                   <Insets left="15.0" />
@@ -35,19 +41,19 @@
             </Label>
             <Label text="Usuario">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="Times New Roman" size="15.0" />
                </font>
             </Label>
             <Label fx:id="nombreUsuario" prefHeight="17.0" prefWidth="91.0" />
             <Label text="Fecha de préstamo">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="Times New Roman" size="15.0" />
                </font>
             </Label>
             <Label fx:id="fechaPrestamo" prefHeight="17.0" prefWidth="91.0" />
             <Label text="Fecha de retorno">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="Times New Roman" size="15.0" />
                </font>
             </Label>
             <Label fx:id="fechaRetorno" prefHeight="17.0" prefWidth="91.0" />

@@ -9,10 +9,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="416.0" prefWidth="433.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazAgregarController">
    <children>
-      <VBox prefHeight="502.0" prefWidth="415.0" spacing="10.0" style="-fx-background-color: #99CCCC;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0">
+      <VBox prefHeight="516.0" prefWidth="421.0" spacing="10.0" style="-fx-background-color: #99CCCC;" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="0.0">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" text="Agregar usuario">
                <padding>
@@ -21,11 +22,17 @@
                <VBox.margin>
                   <Insets />
                </VBox.margin>
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
             </Label>
             <Label text="Usuario">
                <VBox.margin>
                   <Insets left="100.0" right="20.0" />
-               </VBox.margin></Label>
+               </VBox.margin>
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font></Label>
             <TextField fx:id="txfUsuario">
                <VBox.margin>
                   <Insets left="100.0" right="100.0" />
@@ -33,7 +40,10 @@
             <Label text="Nombre completo">
                <VBox.margin>
                   <Insets left="100.0" />
-               </VBox.margin></Label>
+               </VBox.margin>
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font></Label>
             <TextField fx:id="txfNombre">
                <VBox.margin>
                   <Insets left="100.0" right="100.0" />
@@ -41,7 +51,10 @@
             <Label text="Contraseña">
                <VBox.margin>
                   <Insets left="100.0" />
-               </VBox.margin></Label>
+               </VBox.margin>
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font></Label>
             <PasswordField fx:id="txfContraseña">
                <VBox.margin>
                   <Insets left="100.0" right="100.0" />
@@ -49,7 +62,10 @@
             <Label text="Tipo de identificación">
                <VBox.margin>
                   <Insets left="100.0" />
-               </VBox.margin></Label>
+               </VBox.margin>
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font></Label>
             <ChoiceBox fx:id="choiceBox1" prefHeight="25.0" prefWidth="224.0">
                <VBox.margin>
                   <Insets left="100.0" right="100.0" />
@@ -57,7 +73,10 @@
             <Label text="Identificación">
                <VBox.margin>
                   <Insets left="100.0" />
-               </VBox.margin></Label>
+               </VBox.margin>
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font></Label>
             <TextField fx:id="txfIdentificacion">
                <VBox.margin>
                   <Insets left="100.0" right="100.0" />
@@ -66,26 +85,38 @@
                <VBox.margin>
                   <Insets left="100.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
             </Label>
             <ChoiceBox fx:id="choiceBox2" prefWidth="150.0">
                <VBox.margin>
                   <Insets left="100.0" right="100.0" />
                </VBox.margin>
             </ChoiceBox>
-            <Label fx:id="lbMensaje">
+            <Label fx:id="lbMensaje" prefHeight="17.0" prefWidth="132.0">
                <VBox.margin>
                   <Insets left="300.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
             </Label>
             <Button mnemonicParsing="false" onAction="#agregarUsuario" text="Agregar">
                <VBox.margin>
                   <Insets left="150.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font>
             </Button>
             <Button mnemonicParsing="false" onAction="#volverMenu" text="Menú">
                <VBox.margin>
                   <Insets left="300.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font>
             </Button>
          </children>
          <cursor>
