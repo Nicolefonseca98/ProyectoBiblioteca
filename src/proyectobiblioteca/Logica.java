@@ -15,14 +15,10 @@ import Dominio.Usuario;
 import Listas.Listas;
 import org.apache.commons.codec.digest.DigestUtils;
 
-public class Logica extends Listas{
+public class Logica extends Listas {
        
     public void agregarUsuario(String nombreUnico, String contraseña, String nombreCompleto, String tipoIdentificacion, String identificacion, String tipoUsuario) {
-        
-        /*
-        * Cada condición compara el tipo de usuario que se ingresa 
-        * y lo guarda en la Lista listaCliente
-        */
+     
         String contraseñaEncriptada = DigestUtils.md5Hex(contraseña);
         if (tipoUsuario.equalsIgnoreCase("Usuario")){
             
@@ -198,18 +194,6 @@ public class Logica extends Listas{
             }
         }
           return false;
-      }
-      
-      public void librosPrestadosUsuario(String nombreUsuario) {
-          
-        for (int i = 0; i <= librosPrestados.size() - 1; i++) {
-            PrestarLibro libro = (PrestarLibro )librosPrestados.get(i);
-            String usuario = libro.getUsuario();
-            if (usuario.equalsIgnoreCase(nombreUsuario)) {
-                
-            }
-        }
-         
       }
       
       public boolean borrarMoroso(String usuario) {
