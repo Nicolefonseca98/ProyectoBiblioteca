@@ -1,7 +1,6 @@
 package Dominio;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import javafx.beans.property.SimpleStringProperty;
 
 public class PrestarLibro {

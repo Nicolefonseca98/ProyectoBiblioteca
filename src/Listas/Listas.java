@@ -4,11 +4,11 @@ package Listas;
 import Dominio.Cliente;
 import Dominio.Obra;
 import Dominio.PrestarLibro;
-import Dominio.UsuarioLogin;
 import Dominio.UsuarioMoroso;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+// Clase para guardar cada dato en su lista respectiva.
 public class Listas {
     
     public static ObservableList<Cliente> clienteLista = FXCollections.observableArrayList();

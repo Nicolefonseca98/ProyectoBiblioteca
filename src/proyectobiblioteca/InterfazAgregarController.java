@@ -28,6 +28,7 @@ public class InterfazAgregarController implements Initializable {
     @FXML private Label labelMensaje;
 
     @FXML
+    //Método que le da acción al botón "Agregar" para ingresar un usuario nuevo, llama a otro método y verifica si este existe
     private void buttonAgregarUsuario() {
         try {
             Logica l = new Logica();
@@ -58,6 +59,7 @@ public class InterfazAgregarController implements Initializable {
     }
 
     @FXML
+    //Método que le da accion al botón "Menú" y regresa a la interfaz del bibliotecario.
     private void buttonVolverMenu(ActionEvent event) throws IOException {
 
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));

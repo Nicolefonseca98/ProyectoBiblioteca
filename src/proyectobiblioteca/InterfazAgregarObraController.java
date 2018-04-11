@@ -43,6 +43,7 @@ public class InterfazAgregarObraController implements Initializable {
     @FXML private Button buttonOk;
        
     @Override
+    
     public void initialize(URL url, ResourceBundle rb) {
         
         //Tipos de obras a elegir por el usuario
@@ -93,6 +94,7 @@ public class InterfazAgregarObraController implements Initializable {
     
     @FXML
     private void buttonAgregar() {
+        
         try {
             Logica l = new Logica();
 

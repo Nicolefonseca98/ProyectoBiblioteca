@@ -2,7 +2,6 @@
 package Dominio;
 
 import javafx.beans.property.SimpleStringProperty;
-import javafx.scene.control.DatePicker;
 
 public class Periodico extends Obra{
     

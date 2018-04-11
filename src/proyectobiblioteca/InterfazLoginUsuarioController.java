@@ -23,7 +23,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.apache.commons.codec.digest.DigestUtils;
 
-public class FXMLDocumentController extends Listas implements Initializable {
+public class InterfazLoginUsuarioController extends Listas implements Initializable {
 
     @FXML private TextField textFieldUsuario;
     @FXML private PasswordField textFieldContraseña;

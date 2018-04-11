@@ -1,13 +1,8 @@
 
 package proyectobiblioteca;
-import Dominio.Cliente;
-import Dominio.Obra;
 import Dominio.PrestarLibro;
-import Dominio.Usuario;
-import Dominio.UsuarioLogin;
 import Listas.Listas;
 import static Listas.Listas.librosPrestados;
-import static Listas.Listas.obraLista;
 import static Listas.Listas.usuarioLogin;
 import java.io.IOException;
 import java.net.URL;
@@ -68,7 +63,7 @@ public class InterfazFuncionUsuarioController extends Listas implements Initiali
     @FXML
     private void buttonSalir(ActionEvent event) throws IOException {
         usuarioLogin.remove(0);
-        Parent parent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("InterfazLoginUsuario.fxml"));
         Scene scene = new Scene(parent);
         //Esta linea obtiene la informacion del Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
