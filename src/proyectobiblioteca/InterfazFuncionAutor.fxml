@@ -15,7 +15,7 @@
             <TableColumn fx:id="columnaFechaIngreso" prefWidth="163.0" text="Fecha de ingreso" />
         </columns>
       </TableView>
-      <Button layoutX="527.0" layoutY="358.0" mnemonicParsing="false" onAction="#salir" text="Salir">
+      <Button layoutX="527.0" layoutY="358.0" mnemonicParsing="false" onAction="#buttonSalir" text="Salir">
          <font>
             <Font name="Times New Roman" size="13.0" />
          </font></Button>
@@ -23,20 +23,12 @@
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Label>
-      <Label fx:id="nombreCompleto" layoutX="409.0" layoutY="68.0" prefHeight="17.0" prefWidth="185.0" />
-      <Label layoutX="354.0" layoutY="68.0" text="Nombre:">
+      <Label fx:id="labelNombreCompleto" layoutX="422.0" layoutY="95.0" prefHeight="17.0" prefWidth="185.0" />
+      <Label layoutX="361.0" layoutY="94.0" text="Nombre:">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <Label layoutX="354.0" layoutY="118.0" text="Identificación:">
-         <font>
-            <Font name="Times New Roman" size="15.0" />
-         </font></Label>
-      <Label fx:id="identificacion" layoutX="435.0" layoutY="118.0" prefHeight="17.0" prefWidth="151.0">
-         <font>
-            <Font name="Times New Roman" size="12.0" />
-         </font></Label>
-      <Button layoutX="428.0" layoutY="162.0" mnemonicParsing="false" onAction="#buscar" text="Buscar obras">
+      <Button layoutX="428.0" layoutY="162.0" mnemonicParsing="false" onAction="#buttonBuscar" text="Buscar obras">
          <font>
             <Font name="Times New Roman" size="13.0" />
          </font></Button>

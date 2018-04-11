@@ -11,7 +11,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="197.0" prefWidth="434.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.FXMLDocumentController">
    <children>
-      <PasswordField fx:id="txfContraseña" focusTraversable="false" layoutX="176.0" layoutY="66.0" />
+      <PasswordField fx:id="textFieldContraseña" focusTraversable="false" layoutX="176.0" layoutY="66.0" />
       <Label contentDisplay="CENTER" layoutX="8.0" layoutY="36.0" prefHeight="17.0" prefWidth="123.0" text="Usuario">
          <padding>
             <Insets left="35.0" />
@@ -28,12 +28,12 @@
             <Font name="Times New Roman" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txfUsuario" layoutX="14.0" layoutY="66.0" prefHeight="22.0" prefWidth="141.0" />
-      <Button fx:id="btnIngresar" layoutX="254.0" layoutY="109.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="63.0" text="Ingresar">
+      <TextField fx:id="textFieldUsuario" layoutX="14.0" layoutY="66.0" prefHeight="22.0" prefWidth="141.0" />
+      <Button layoutX="254.0" layoutY="109.0" mnemonicParsing="false" onAction="#buttonIngresar" prefHeight="25.0" prefWidth="63.0" text="Ingresar">
          <font>
             <Font name="Times New Roman" size="13.0" />
          </font></Button>
-      <Label fx:id="mensaje" layoutX="112.0" layoutY="113.0" prefHeight="17.0" prefWidth="129.0" />
+      <Label fx:id="labelMensaje" layoutX="112.0" layoutY="113.0" prefHeight="17.0" prefWidth="129.0" />
       <ImageView fx:id="imageViewGif" fitHeight="149.0" fitWidth="97.0" layoutX="332.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

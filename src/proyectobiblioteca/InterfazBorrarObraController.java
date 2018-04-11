@@ -16,25 +16,25 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 public class InterfazBorrarObraController implements Initializable {
 
-     @FXML private TextField txfBuscarObra;
-     @FXML private Label lbMensajeObra;
+     @FXML private TextField textFieldBuscarObra;
+     @FXML private Label labelMensaje;
     
     @FXML
-    private void botonBuscarObra() {
+    private void buttonBuscarObra() {
        Logica logica = new Logica();
        try {
-        if (logica.buscarObra(txfBuscarObra.getText())){
-            logica.borrarObra(txfBuscarObra.getText());
-            lbMensajeObra.setText("Obra borrada");
+        if (logica.buscarObra(textFieldBuscarObra.getText())){
+            logica.borrarObra(textFieldBuscarObra.getText());
+            labelMensaje.setText("Obra borrada");
         } else
-            lbMensajeObra.setText("La obra no existe");
+            labelMensaje.setText("La obra no existe");
        } catch (NullPointerException NPE) {
-           lbMensajeObra.setText("Ingrese los datos");
+           labelMensaje.setText("Ingrese los datos");
        }
     }
     
      @FXML
-    private void volverMenu(ActionEvent event) throws IOException {
+    private void buttonVolverMenu(ActionEvent event) throws IOException {
      
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));
         Scene scene = new Scene(parent);

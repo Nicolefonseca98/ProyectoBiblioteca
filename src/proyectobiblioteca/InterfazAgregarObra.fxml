@@ -19,17 +19,17 @@
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <ComboBox fx:id="comboBoxObra" layoutX="11.0" layoutY="56.0" prefHeight="25.0" prefWidth="207.0" />
+      <ComboBox fx:id="comboBoxTipoObra" layoutX="11.0" layoutY="56.0" prefHeight="25.0" prefWidth="207.0" />
       <Label layoutX="14.0" layoutY="81.0" text="Título">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <TextField fx:id="txfTitulo" layoutX="11.0" layoutY="103.0" prefHeight="25.0" prefWidth="207.0" />
+      <TextField fx:id="textFieldTitulo" layoutX="11.0" layoutY="103.0" prefHeight="25.0" prefWidth="207.0" />
       <Label layoutX="12.0" layoutY="128.0" text="Fecha de ingreso">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <DatePicker fx:id="dtFechaIngreso" layoutX="11.0" layoutY="145.0" prefHeight="25.0" prefWidth="207.0" />
+      <DatePicker fx:id="datePickerFechaIngreso" layoutX="11.0" layoutY="145.0" prefHeight="25.0" prefWidth="207.0" />
       <Label layoutX="14.0" layoutY="170.0" text="Autor">
          <font>
             <Font name="Times New Roman" size="15.0" />
@@ -39,47 +39,47 @@
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <TextField fx:id="txfTema" layoutX="11.0" layoutY="238.0" prefHeight="25.0" prefWidth="207.0" />
+      <TextField fx:id="textFieldTema" layoutX="11.0" layoutY="238.0" prefHeight="25.0" prefWidth="207.0" />
       <Label layoutX="14.0" layoutY="262.0" text="Subtema">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <TextField fx:id="txfSubtema" layoutX="11.0" layoutY="285.0" prefHeight="25.0" prefWidth="207.0" />
+      <TextField fx:id="textFieldSubtema" layoutX="11.0" layoutY="285.0" prefHeight="25.0" prefWidth="207.0" />
       <Label layoutX="10.0" layoutY="386.0" text="Edición">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <TextField fx:id="txfEdicion" layoutX="11.0" layoutY="421.0" prefHeight="25.0" prefWidth="207.0" />
+      <TextField fx:id="textFieldEdicion" layoutX="11.0" layoutY="421.0" prefHeight="25.0" prefWidth="207.0" />
       <Label layoutX="354.0" layoutY="39.0" text="Resumen">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <TextArea fx:id="txaResumen" layoutX="359.0" layoutY="56.0" prefHeight="127.0" prefWidth="214.0" />
+      <TextArea fx:id="textAreaResumen" layoutX="359.0" layoutY="56.0" prefHeight="127.0" prefWidth="214.0" />
       <Label layoutX="12.0" layoutY="457.0" text="Conferencia">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <TextField fx:id="txfConferencia" layoutX="11.0" layoutY="481.0" prefHeight="25.0" prefWidth="207.0" />
+      <TextField fx:id="textFieldConferencia" layoutX="11.0" layoutY="481.0" prefHeight="25.0" prefWidth="207.0" />
       <Label layoutX="357.0" layoutY="322.0" prefHeight="18.0" prefWidth="51.0" text="ISBN">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <TextField fx:id="txfISBN" layoutX="354.0" layoutY="347.0" prefHeight="25.0" prefWidth="207.0" />
+      <TextField fx:id="textFieldIsbn" layoutX="354.0" layoutY="347.0" prefHeight="25.0" prefWidth="207.0" />
       <Label layoutX="359.0" layoutY="386.0" text="ISSN">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <TextField fx:id="txfISSN" layoutX="354.0" layoutY="409.0" prefHeight="25.0" prefWidth="207.0" />
+      <TextField fx:id="textFieldIssn" layoutX="354.0" layoutY="409.0" prefHeight="25.0" prefWidth="207.0" />
       <Label layoutX="11.0" layoutY="322.0" text="Fecha de publicación">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <DatePicker fx:id="dtFechaPublicacion" layoutX="15.0" layoutY="347.0" />
-      <Button fx:id="btnAgregar" layoutX="380.0" layoutY="445.0" mnemonicParsing="false" onAction="#agregar" text="Agregar">
+      <DatePicker fx:id="datePickerFechaPublicacion" layoutX="15.0" layoutY="347.0" prefHeight="25.0" prefWidth="196.0" />
+      <Button fx:id="buttonAgregar" layoutX="380.0" layoutY="445.0" mnemonicParsing="false" onAction="#buttonAgregar" text="Agregar">
          <font>
             <Font name="Times New Roman" size="13.0" />
          </font></Button>
-      <Button layoutX="458.0" layoutY="445.0" mnemonicParsing="false" onAction="#volverMenu" text="Menú">
+      <Button layoutX="458.0" layoutY="445.0" mnemonicParsing="false" onAction="#buttonVolverMenu" text="Menú">
          <font>
             <Font name="Times New Roman" size="13.0" />
          </font></Button>
@@ -87,12 +87,12 @@
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <TextArea fx:id="txaSummary" layoutX="358.0" layoutY="213.0" prefHeight="97.0" prefWidth="214.0" />
-      <Button fx:id="btnOk" layoutX="230.0" layoutY="56.0" mnemonicParsing="false" onAction="#btnOk" text="OK">
+      <TextArea fx:id="textAreaSummary" layoutX="358.0" layoutY="213.0" prefHeight="97.0" prefWidth="214.0" />
+      <Button fx:id="buttonOk" layoutX="230.0" layoutY="56.0" mnemonicParsing="false" onAction="#buttonOk" text="OK">
          <font>
             <Font name="Times New Roman" size="13.0" />
          </font></Button>
-      <Label fx:id="lbMensaje" layoutX="372.0" layoutY="485.0" prefHeight="17.0" prefWidth="196.0">
+      <Label fx:id="labelMensaje" layoutX="372.0" layoutY="485.0" prefHeight="17.0" prefWidth="196.0">
          <font>
             <Font name="Times New Roman" size="12.0" />
          </font></Label>

@@ -25,28 +25,28 @@ import javafx.stage.Stage;
 
 public class InterfazAgregarObraController implements Initializable {
 
-    @FXML private ComboBox comboBoxObra;
-    @FXML private TextField txfTitulo;
-    @FXML private DatePicker dtFechaIngreso;
+    @FXML private ComboBox comboBoxTipoObra;
+    @FXML private TextField textFieldTitulo;
+    @FXML private DatePicker datePickerFechaIngreso;
     @FXML private ComboBox comboBoxAutor;
-    @FXML private TextField txfTema;
-    @FXML private TextField txfSubtema;
-    @FXML private DatePicker dtFechaPublicacion;
-    @FXML private TextField txfEdicion;
-    @FXML private TextArea txaResumen;
-    @FXML private TextField txfConferencia;
-    @FXML private TextField txfISBN;
-    @FXML private TextField txfISSN;
-    @FXML private TextArea txaSummary;
-    @FXML private Label lbMensaje;
-    @FXML private Button btnAgregar;
-    @FXML private Button btnOk;
+    @FXML private TextField textFieldTema;
+    @FXML private TextField textFieldSubtema;
+    @FXML private DatePicker datePickerFechaPublicacion;
+    @FXML private TextField textFieldEdicion;
+    @FXML private TextArea textAreaResumen;
+    @FXML private TextField textFieldConferencia;
+    @FXML private TextField textFieldIsbn;
+    @FXML private TextField textFieldIssn;
+    @FXML private TextArea textAreaSummary;
+    @FXML private Label labelMensaje;
+    @FXML private Button buttonAgregar;
+    @FXML private Button buttonOk;
        
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
         //Tipos de obras a elegir por el usuario
-        comboBoxObra.getItems().addAll("Libro", "Revista", "Tesis", "Periódico", "Memoria");
+        comboBoxTipoObra.getItems().addAll("Libro", "Revista", "Tesis", "Periódico", "Memoria");
         
         /*
        * Busca en la lista los usuarios que son autores
@@ -57,7 +57,7 @@ public class InterfazAgregarObraController implements Initializable {
             Cliente c = (Cliente) clienteLista.get(i);
             if (c.getTipoUsuario().equalsIgnoreCase("Autor")) {
                 
-                comboBoxAutor.getItems().addAll(c.getNombreCompleto());
+                comboBoxAutor.getItems().addAll(c.getNombreUnico());
                 
             }
         } //Fin for
@@ -66,20 +66,20 @@ public class InterfazAgregarObraController implements Initializable {
         /*Campos deshabilitados hasta que se escoja el tipo de obra
         * que se va agregar al sistema
         */ 
-        txfTema.setDisable(true);
-        txfSubtema.setDisable(true);
-        dtFechaPublicacion.setDisable(true);
-        txaResumen.setDisable(true);
-        txfEdicion.setDisable(true);
-        txfConferencia.setDisable(true);
-        txfISBN.setDisable(true);
-        txfISSN.setDisable(true);
-        txaSummary.setDisable(true);
+        textFieldTema.setDisable(true);
+        textFieldSubtema.setDisable(true);
+        datePickerFechaPublicacion.setDisable(true);
+        textAreaResumen.setDisable(true);
+        textFieldEdicion.setDisable(true);
+        textFieldConferencia.setDisable(true);
+        textFieldIsbn.setDisable(true);
+        textFieldIssn.setDisable(true);
+        textAreaSummary.setDisable(true);
         
     }  
     
     @FXML
-    private void volverMenu(ActionEvent event) throws IOException {
+    private void buttonVolverMenu(ActionEvent event) throws IOException {
     
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));
         Scene scene = new Scene(parent);
@@ -91,97 +91,98 @@ public class InterfazAgregarObraController implements Initializable {
 
     }
     
-@FXML
-    private void agregar() {
+    @FXML
+    private void buttonAgregar() {
         try {
-        Logica l = new Logica();
-        
-         LocalDate fechaIngreso = dtFechaIngreso.getValue();
-         LocalDate fechaPublicacion = dtFechaPublicacion.getValue();
-        
-        if(comboBoxObra.getValue().toString().equalsIgnoreCase("Libro")) {
-            if (txfTitulo.getText().equals("") || fechaIngreso.equals("") || comboBoxAutor.getValue().toString().equals("") || txfISBN.getText().equals("")
-                || txfTema.getText().equals("") || txfSubtema.getText().equals("")) {
-                lbMensaje.setText("Ingrese todos los datos");
-            } else {
-            l.agregarLibro(txfTitulo.getText(), fechaIngreso.toString(), comboBoxAutor.getValue().toString(), txfISBN.getText(), txfTema.getText(), txfSubtema.getText());
-            lbMensaje.setText("Obra agregada");
-            btnAgregar.setDisable(true);
+            Logica l = new Logica();
+
+            LocalDate fechaIngreso = datePickerFechaIngreso.getValue();
+            LocalDate fechaPublicacion = datePickerFechaPublicacion.getValue();
+
+            if (comboBoxTipoObra.getValue().toString().equalsIgnoreCase("Libro")) {
+                if (textFieldTitulo.getText().equals("") || fechaIngreso.equals("") || comboBoxAutor.getValue().toString().equals("") || textFieldIsbn.getText().equals("")
+                        || textFieldTema.getText().equals("") || textFieldSubtema.getText().equals("")) {
+                    labelMensaje.setText("Ingrese todos los datos");
+                } else {
+                    l.agregarLibro(textFieldTitulo.getText(), fechaIngreso.toString(), comboBoxAutor.getValue().toString(), textFieldIsbn.getText(), textFieldTema.getText(), textFieldSubtema.getText());
+                    labelMensaje.setText("Obra agregada");
+                    buttonAgregar.setDisable(true);
+                }
+            } else if (comboBoxTipoObra.getValue().toString().equalsIgnoreCase("Revista")) {
+                if (textFieldTitulo.getText().equals("") || fechaIngreso.equals("") || comboBoxAutor.getValue().toString().equals("") || textFieldIssn.getText().equals("")
+                        || textFieldEdicion.getText().equals("")) {
+                    labelMensaje.setText("Ingrese todos los datos");
+                } else {
+                    l.agregarRevista(textFieldTitulo.getText(), fechaIngreso.toString(), comboBoxAutor.getValue().toString(), textFieldIssn.getText(), textFieldEdicion.getText());
+                    labelMensaje.setText("Obra agregada");
+                    buttonAgregar.setDisable(true);
+                }
+            } else if (comboBoxTipoObra.getValue().toString().equalsIgnoreCase("Tesis")) {
+                if (textFieldTitulo.getText().equals("") || fechaIngreso.equals("") || comboBoxAutor.getValue().toString().equals("") || textAreaResumen.getText().equals("")
+                        || textAreaSummary.getText().equals("")) {
+                    labelMensaje.setText("Ingrese todos los datos");
+                } else {
+                    l.agregarTesis(textFieldTitulo.getText(), fechaIngreso.toString(), comboBoxAutor.getValue().toString(), textAreaResumen.getText(), textAreaSummary.getText());
+                    labelMensaje.setText("Obra agregada");
+                    buttonAgregar.setDisable(true);
+                }
+            } else if (comboBoxTipoObra.getValue().toString().equalsIgnoreCase("Periódico")) {
+                if (textFieldTitulo.getText().equals("") || fechaIngreso.equals("") || comboBoxAutor.getValue().toString().equals("") || textFieldIssn.getText().equals("")
+                        || fechaPublicacion.equals("")) {
+                    labelMensaje.setText("Ingrese todos los datos");
+                } else {
+                    l.agregarPeriodico(textFieldTitulo.getText(), fechaIngreso.toString(), comboBoxAutor.getValue().toString(), textFieldIssn.getText(), textFieldEdicion.getText(), fechaPublicacion.toString());
+                    labelMensaje.setText("Obra agregada");
+                    buttonAgregar.setDisable(true);
+                }
+            } else if (comboBoxTipoObra.getValue().toString().equals("Memoria")) {
+                if (textFieldTitulo.getText().equals("") || fechaIngreso.equals("") || comboBoxAutor.getValue().toString().equals("") || textAreaResumen.getText().equals("")
+                        || textAreaSummary.getText().equals("") || textFieldConferencia.getText().equals("")) {
+                    labelMensaje.setText("Ingrese todos los datos");
+                } else {
+                    l.agregarMemoria(textFieldTitulo.getText(), fechaIngreso.toString(), comboBoxAutor.getValue().toString(), textAreaResumen.getText(), textAreaSummary.getText(), textFieldConferencia.getText());
+                    labelMensaje.setText("Obra agregada");
+                    buttonAgregar.setDisable(true);
+                }
             }
-        } else if (comboBoxObra.getValue().toString().equalsIgnoreCase("Revista")){
-            if (txfTitulo.getText().equals("") || fechaIngreso.equals("") || comboBoxAutor.getValue().toString().equals("") || txfISSN.getText().equals("")
-                || txfEdicion.getText().equals("")) {
-            } else {
-                l.agregarRevista(txfTitulo.getText(), fechaIngreso.toString(), comboBoxAutor.getValue().toString(), txfISSN.getText(), txfEdicion.getText());
-                lbMensaje.setText("Obra agregada");
-            btnAgregar.setDisable(true);
-            }           
+        } catch (NullPointerException NPE) {
+            labelMensaje.setText("Ingrese todos los datos.");
         }
-        else if (comboBoxObra.getValue().toString().equalsIgnoreCase("Tesis")) {
-            if (txfTitulo.getText().equals("") || fechaIngreso.equals("") || comboBoxAutor.getValue().toString().equals("") || txaResumen.getText().equals("")
-                || txaSummary.getText().equals("")) {
-            } else {
-            l.agregarTesis(txfTitulo.getText(), fechaIngreso.toString(), comboBoxAutor.getValue().toString(), txaResumen.getText(), txaSummary.getText());
-            lbMensaje.setText("Obra agregada");
-            btnAgregar.setDisable(true);
-            }
-        }
-        else if (comboBoxObra.getValue().toString().equalsIgnoreCase("Periódico")) {
-            if (txfTitulo.getText().equals("") || fechaIngreso.equals("") || comboBoxAutor.getValue().toString().equals("") || txfISSN.getText().equals("") 
-                || fechaPublicacion.equals("")) {    
-            } else {
-            l.agregarPeriodico(txfTitulo.getText(), fechaIngreso.toString(), comboBoxAutor.getValue().toString(), txfISSN.getText(), txfEdicion.getText(), fechaPublicacion.toString());
-            lbMensaje.setText("Obra agregada");
-            btnAgregar.setDisable(true);
-            }
-        }
-        else if (comboBoxObra.getValue().toString().equals("Memoria")) {
-            if (txfTitulo.getText().equals("") || fechaIngreso.equals("") || comboBoxAutor.getValue().toString().equals("") || txaResumen.getText().equals("")
-                || txaSummary.getText().equals("") || txfConferencia.getText().equals("")) {
-            }else {
-            l.agregarMemoria(txfTitulo.getText(), fechaIngreso.toString(), comboBoxAutor.getValue().toString(), txaResumen.getText(), txaSummary.getText(), txfConferencia.getText());
-            lbMensaje.setText("Obra agregada");
-            btnAgregar.setDisable(true);
-            }
-        }   
-        }catch (NullPointerException NPE) {
-        lbMensaje.setText("Ingrese todos los datos.");
-    } 
-}
+    }
     
     @FXML
-    private void btnOk() {
+    private void buttonOk() {
         try {
-        if(comboBoxObra.getValue().equals("Libro")){
-            txfISBN.setDisable(false);
-            txfTema.setDisable(false);
-            txfSubtema.setDisable(false);
-            btnOk.setDisable(true);
+        if(comboBoxTipoObra.getValue().equals("Libro")){
+            textFieldIsbn.setDisable(false);
+            textFieldTema.setDisable(false);
+            textFieldSubtema.setDisable(false);
+            buttonOk.setDisable(true);
         }
-        else if(comboBoxObra.getValue().toString().equals("Revista")) {
-            txfISSN.setDisable(false);
-            txfEdicion.setDisable(false);
-            btnOk.setDisable(true);
+        else if(comboBoxTipoObra.getValue().toString().equals("Revista")) {
+            textFieldIssn.setDisable(false);
+            textFieldEdicion.setDisable(false);
+            buttonOk.setDisable(true);
         }
-        else if(comboBoxObra.getValue().toString().equals("Tesis")) {
-            txaResumen.setDisable(false);
-            txaSummary.setDisable(false);
-            btnOk.setDisable(true);
+        else if(comboBoxTipoObra.getValue().toString().equals("Tesis")) {
+            textAreaResumen.setDisable(false);
+            textAreaSummary.setDisable(false);
+            buttonOk.setDisable(true);
         }
-        else if(comboBoxObra.getValue().toString().equals("Periódico")) {
-            txfISSN.setDisable(false);
-            txfEdicion.setDisable(false);
-            dtFechaPublicacion.setDisable(false);
-            btnOk.setDisable(true);
+        else if(comboBoxTipoObra.getValue().toString().equals("Periódico")) {
+            textFieldIssn.setDisable(false);
+            textFieldEdicion.setDisable(false);
+            datePickerFechaPublicacion.setDisable(false);
+            buttonOk.setDisable(true);
         }
-        else if(comboBoxObra.getValue().toString().equals("Memoria")) {
-            txaResumen.setDisable(false);
-            txaSummary.setDisable(false);
-            txfConferencia.setDisable(false);
-            btnOk.setDisable(true);
+        else if(comboBoxTipoObra.getValue().toString().equals("Memoria")) {
+            textAreaResumen.setDisable(false);
+            textAreaSummary.setDisable(false);
+            textFieldConferencia.setDisable(false);
+            buttonOk.setDisable(true);
         }
         } catch (NullPointerException NPE) {
-            lbMensaje.setText("Ingrese el tipo de obra");
+            labelMensaje.setText("Ingrese el tipo de obra");
         }
     }
     

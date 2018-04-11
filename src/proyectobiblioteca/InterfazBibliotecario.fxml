@@ -41,44 +41,44 @@
          <font>
             <Font name="Times New Roman" size="13.0" />
          </font></Label>
-      <Button fx:id="btnAgregar" alignment="CENTER" layoutX="68.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#accionBoton" prefHeight="87.0" prefWidth="87.0" text="Button">
+      <Button fx:id="buttonAgregarUsuario" alignment="CENTER" layoutX="68.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonAgregarUsuario" prefHeight="87.0" prefWidth="87.0" text="Button">
          <effect>
             <ImageInput />
          </effect></Button>
-      <Button fx:id="btnModificar" layoutX="263.0" layoutY="53.0" mnemonicParsing="false" onAction="#botonModificar" prefHeight="78.0" prefWidth="59.0" text="Button">
+      <Button fx:id="buttonModificarUsuario" layoutX="263.0" layoutY="53.0" mnemonicParsing="false" onAction="#buttonModificarUsuario" prefHeight="78.0" prefWidth="59.0" text="Button">
          <effect>
             <ImageInput />
          </effect></Button>
-      <Button fx:id="btnBorrarUsuario" layoutX="441.0" layoutY="41.0" mnemonicParsing="false" onAction="#botonBorrar" prefHeight="78.0" prefWidth="69.0" text="Button">
+      <Button fx:id="buttonBorrarUsuario" layoutX="441.0" layoutY="41.0" mnemonicParsing="false" onAction="#buttonBorrarUsuario" prefHeight="78.0" prefWidth="69.0" text="Button">
          <effect>
             <ImageInput />
          </effect></Button>
-      <Button fx:id="btnAgregarObra" layoutX="76.0" layoutY="227.0" mnemonicParsing="false" onAction="#agregarObra" prefHeight="78.0" prefWidth="52.0" text="Button">
+      <Button fx:id="buttonAgregarObra" layoutX="76.0" layoutY="227.0" mnemonicParsing="false" onAction="#buttonAgregarObra" prefHeight="78.0" prefWidth="52.0" text="Button">
          <effect>
             <ImageInput />
          </effect>
       </Button>
-      <Button fx:id="btnModificarObra" layoutX="254.0" layoutY="227.0" mnemonicParsing="false" onAction="#botonModificarObra" prefHeight="65.0" prefWidth="52.0" text="Button">
+      <Button fx:id="buttonModificarObra" layoutX="254.0" layoutY="227.0" mnemonicParsing="false" onAction="#buttonModificarObra" prefHeight="65.0" prefWidth="52.0" text="Button">
          <effect>
             <ImageInput />
          </effect>
       </Button>
-      <Button fx:id="btnBorrarObra" layoutX="450.0" layoutY="227.0" mnemonicParsing="false" onAction="#botonBorrarObra" prefHeight="65.0" prefWidth="52.0" text="Button">
+      <Button fx:id="buttonBorrarObra" layoutX="450.0" layoutY="227.0" mnemonicParsing="false" onAction="#buttonBorrarObra" prefHeight="65.0" prefWidth="52.0" text="Button">
          <effect>
             <ImageInput />
          </effect>
       </Button>
-      <Button fx:id="btnPrestarLibro" layoutX="82.0" layoutY="402.0" mnemonicParsing="false" onAction="#botonPrestarLibro" prefHeight="78.0" prefWidth="69.0" text="Button">
+      <Button fx:id="buttonPrestarLibro" layoutX="82.0" layoutY="402.0" mnemonicParsing="false" onAction="#buttonPrestarLibro" prefHeight="78.0" prefWidth="69.0" text="Button">
          <effect>
             <ImageInput />
          </effect>
       </Button>
-      <Button fx:id="btnLista" layoutX="255.0" layoutY="402.0" mnemonicParsing="false" onAction="#botonListas" prefHeight="78.0" prefWidth="69.0" text="Button">
+      <Button fx:id="buttonListas" layoutX="255.0" layoutY="402.0" mnemonicParsing="false" onAction="#buttonListas" prefHeight="78.0" prefWidth="69.0" text="Button">
          <effect>
             <ImageInput />
          </effect>
       </Button>
-      <Button fx:id="salir" layoutX="450.0" layoutY="390.0" mnemonicParsing="false" onAction="#salir" prefHeight="65.0" prefWidth="64.0" text="Button">
+      <Button fx:id="buttonSalir" layoutX="450.0" layoutY="390.0" mnemonicParsing="false" onAction="#buttonSalir" prefHeight="65.0" prefWidth="64.0" text="Button">
          <effect>
             <ImageInput />
          </effect>

@@ -2,10 +2,7 @@ package proyectobiblioteca;
 
 import Dominio.Autor;
 import Dominio.Bibliotecario;
-import Dominio.Cliente;
-import Dominio.Libro;
 import Dominio.Usuario;
-import Dominio.UsuarioLogin;
 import Listas.Listas;
 import static Listas.Listas.clienteLista;
 import java.io.IOException;
@@ -28,13 +25,13 @@ import org.apache.commons.codec.digest.DigestUtils;
 
 public class FXMLDocumentController extends Listas implements Initializable {
 
-    @FXML private TextField txfUsuario;
-    @FXML private PasswordField txfContraseña;
-    @FXML private Label mensaje;
+    @FXML private TextField textFieldUsuario;
+    @FXML private PasswordField textFieldContraseña;
+    @FXML private Label labelMensaje;
     @FXML private ImageView imageViewGif;
     
     @FXML
-    private void handleButtonAction(ActionEvent event) throws IOException {
+    private void buttonIngresar(ActionEvent event) throws IOException {
 
         Logica logica = new Logica();
 
@@ -56,30 +53,32 @@ public class FXMLDocumentController extends Listas implements Initializable {
         Stage ventanaAutor = (Stage) ((Node) event.getSource()).getScene().getWindow();
         ventanaAutor.getIcons().add(new Image("/imagen/libros.png"));
         
-        String contraseñaEncriptada = DigestUtils.md5Hex(txfContraseña.getText());
+        String contraseñaEncriptada = DigestUtils.md5Hex(textFieldContraseña.getText());
         try {
         //Verifica datos del usuario
-        if (logica.verificaUsuario(txfUsuario.getText(), contraseñaEncriptada, "Bibliotecario")) {
+        if (logica.verificaUsuario(textFieldUsuario.getText(), contraseñaEncriptada, "Bibliotecario")) {
             window.setScene(scene);
             window.show();
-        } else if (logica.verificaUsuario(txfUsuario.getText(), contraseñaEncriptada, "Usuario")) {           
+        } else if (logica.verificaUsuario(textFieldUsuario.getText(), contraseñaEncriptada, "Usuario")) {           
             ventanaUsuario.setScene(sceneUsuario);
             ventanaUsuario.show();
-        } else if (logica.verificaUsuario(txfUsuario.getText(), contraseñaEncriptada, "Autor")) {
+        } else if (logica.verificaUsuario(textFieldUsuario.getText(), contraseñaEncriptada, "Autor")) {
             ventanaAutor.setScene(sceneAutor);
             ventanaAutor.show();
         } else {
-            mensaje.setText("Datos inválidos");
-            txfContraseña.setText("");
-            txfUsuario.setText("");
+            
+            labelMensaje.setText("Datos inválidos");
+            textFieldContraseña.setText("");
+            textFieldUsuario.setText("");
             }
         } catch (NullPointerException NPE) {
-            mensaje.setText("Datos inválidos");
-            txfContraseña.setText("");
-            txfUsuario.setText("");
+            
+            labelMensaje.setText("Datos inválidos");
+            textFieldContraseña.setText("");
+            textFieldUsuario.setText("");
         }
        
-        usuarioLogin.add(txfUsuario.getText());
+        usuarioLogin.add(textFieldUsuario.getText());
         System.out.println(usuarioLogin.toString());
         
     }

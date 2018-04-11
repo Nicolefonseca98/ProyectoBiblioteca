@@ -20,18 +20,18 @@ import javafx.stage.Stage;
 
 public class InterfazBibliotecarioController implements Initializable {
 
-    @FXML private Button btnAgregar;
-    @FXML private Button btnModificar;
-    @FXML private Button btnBorrarUsuario;
-    @FXML private Button btnAgregarObra;
-    @FXML private Button btnModificarObra;
-    @FXML private Button btnBorrarObra;
-    @FXML private Button btnPrestarLibro;
-    @FXML private Button btnLista;
-    @FXML private Button salir;
+    @FXML private Button buttonAgregarUsuario;
+    @FXML private Button buttonModificarUsuario;
+    @FXML private Button buttonBorrarUsuario;
+    @FXML private Button buttonAgregarObra;
+    @FXML private Button buttonModificarObra;
+    @FXML private Button buttonBorrarObra;
+    @FXML private Button buttonPrestarLibro;
+    @FXML private Button buttonListas;
+    @FXML private Button buttonSalir;
     
     @FXML
-    private void accionBoton(ActionEvent event) throws IOException {
+    private void buttonAgregarUsuario(ActionEvent event) throws IOException {
         
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazAgregar.fxml"));
         Scene scene = new Scene(parent);
@@ -44,7 +44,7 @@ public class InterfazBibliotecarioController implements Initializable {
     }
     
     @FXML
-    private void botonModificar(ActionEvent event) throws IOException {
+    private void buttonModificarUsuario(ActionEvent event) throws IOException {
         
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazModificar.fxml"));
         Scene scene = new Scene(parent);
@@ -57,7 +57,7 @@ public class InterfazBibliotecarioController implements Initializable {
     }
     
     @FXML
-    private void botonBorrar (ActionEvent event) throws IOException {
+    private void buttonBorrarUsuario (ActionEvent event) throws IOException {
         
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazBorrar.fxml"));
         Scene scene = new Scene(parent);
@@ -70,7 +70,7 @@ public class InterfazBibliotecarioController implements Initializable {
     }
     
     @FXML
-    private void agregarObra (ActionEvent event) throws IOException {
+    private void buttonAgregarObra (ActionEvent event) throws IOException {
         
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazAgregarObra.fxml"));
         Scene scene = new Scene(parent);
@@ -83,7 +83,7 @@ public class InterfazBibliotecarioController implements Initializable {
     }
     
      @FXML
-    private void salir(ActionEvent event) throws IOException {
+    private void buttonSalir(ActionEvent event) throws IOException {
         
         usuarioLogin.remove(0);
         Parent parent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
@@ -96,7 +96,7 @@ public class InterfazBibliotecarioController implements Initializable {
     }
     
     @FXML
-    private void botonModificarObra(ActionEvent event) throws IOException {
+    private void buttonModificarObra(ActionEvent event) throws IOException {
         
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazModificarObra.fxml"));
         Scene scene = new Scene(parent);
@@ -108,7 +108,7 @@ public class InterfazBibliotecarioController implements Initializable {
     }
     
     @FXML
-    private void botonPrestarLibro(ActionEvent event) throws IOException {
+    private void buttonPrestarLibro(ActionEvent event) throws IOException {
         
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazPrestarLibro.fxml"));
         Scene scene = new Scene(parent);
@@ -121,7 +121,7 @@ public class InterfazBibliotecarioController implements Initializable {
         window.show();
     }
     @FXML
-    private void botonBorrarObra(ActionEvent event) throws IOException {
+    private void buttonBorrarObra(ActionEvent event) throws IOException {
         
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazBorrarObra.fxml"));
         Scene scene = new Scene(parent);
@@ -133,7 +133,7 @@ public class InterfazBibliotecarioController implements Initializable {
     }
     
     @FXML
-    private void botonListas(ActionEvent event) throws IOException {
+    private void buttonListas(ActionEvent event) throws IOException {
         
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazListaObras.fxml"));
         Scene scene = new Scene(parent);
@@ -148,15 +148,15 @@ public class InterfazBibliotecarioController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         //Imágenes de los botones
-        btnAgregar.setEffect(new ImageInput(new Image("/imagen/agregar-usuario.png")));
-        btnModificar.setEffect(new ImageInput(new Image("/imagen/usuario.png")));
-        btnBorrarUsuario.setEffect(new ImageInput(new Image("/imagen/borrarUsuario.png")));
-        btnAgregarObra.setEffect(new ImageInput(new Image("/imagen/agregarLibro.png")));
-        btnBorrarObra.setEffect(new ImageInput(new Image("/imagen/eliminarLibro.png")));
-        btnModificarObra.setEffect(new ImageInput(new Image("/imagen/modificarLibro.png")));
-        btnPrestarLibro.setEffect(new ImageInput(new Image("/imagen/estudiar.png")));
-        btnLista.setEffect(new ImageInput(new Image("/imagen/listaLibro.png")));
-        salir.setEffect(new ImageInput(new Image("/imagen/salir.png")));
+        buttonAgregarUsuario.setEffect(new ImageInput(new Image("/imagen/agregar-usuario.png")));
+        buttonModificarUsuario.setEffect(new ImageInput(new Image("/imagen/usuario.png")));
+        buttonBorrarUsuario.setEffect(new ImageInput(new Image("/imagen/borrarUsuario.png")));
+        buttonAgregarObra.setEffect(new ImageInput(new Image("/imagen/agregarLibro.png")));
+        buttonBorrarObra.setEffect(new ImageInput(new Image("/imagen/eliminarLibro.png")));
+        buttonModificarObra.setEffect(new ImageInput(new Image("/imagen/modificarLibro.png")));
+        buttonPrestarLibro.setEffect(new ImageInput(new Image("/imagen/estudiar.png")));
+        buttonListas.setEffect(new ImageInput(new Image("/imagen/listaLibro.png")));
+        buttonSalir.setEffect(new ImageInput(new Image("/imagen/salir.png")));
     }    
     
 }
