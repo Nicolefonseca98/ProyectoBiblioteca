@@ -33,10 +33,17 @@ public class InterfazAgregarController implements Initializable {
     private void agregarUsuario() {
         try {
         Logica l = new Logica();
-        l.agregarUsuario(txfUsuario.getText(), txfContraseña.getText(), txfNombre.getText(),
+            
+               
+                if(l.existeUsuario(txfUsuario.getText())== true){
+                        lbMensaje.setText("Usuario ya existe.");
+                } else {
+                     l.agregarUsuario(txfUsuario.getText(), txfContraseña.getText(), txfNombre.getText(),
                         choiceBox1.getValue().toString(), txfIdentificacion.getText(), choiceBox2.getValue().toString());
-        lbMensaje.setText("Usuario añadido");
-        
+                        lbMensaje.setText("Usuario añadido");
+                        
+                
+            }
         } catch (NullPointerException NPE) {
            lbMensaje.setText("Ingrese todos los datos");
         }

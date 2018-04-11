@@ -6,9 +6,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="419.0" prefWidth="666.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazFuncionUsuarioController">
+<AnchorPane id="AnchorPane" prefHeight="419.0" prefWidth="666.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazFuncionUsuarioController">
    <children>
-      <TableView fx:id="tablaPrestamoUsuario" layoutX="20.0" layoutY="52.0" prefHeight="315.0" prefWidth="325.0">
+      <TableView fx:id="tablaPrestamoUsuario" layoutX="27.0" layoutY="44.0" prefHeight="315.0" prefWidth="325.0">
         <columns>
           <TableColumn fx:id="columnaTitulo" prefWidth="75.0" text="Título" />
             <TableColumn fx:id="columnaPrestamo" prefWidth="129.0" text="Fecha préstamo" />
@@ -17,9 +17,15 @@
       </TableView>
       <Button layoutX="582.0" layoutY="355.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
       <Label layoutX="465.0" layoutY="35.0" text="Información usuario" />
-      <Label layoutX="367.0" layoutY="98.0" text="Nombre de usuario" />
-      <Label fx:id="nombreCompleto" layoutX="493.0" layoutY="98.0" prefHeight="17.0" prefWidth="143.0" />
+      <Label layoutX="367.0" layoutY="98.0" text="Nombre" />
+      <Label fx:id="labelNombreCompleto" layoutX="493.0" layoutY="98.0" prefHeight="17.0" prefWidth="143.0" />
       <Label fx:id="identificacion" layoutX="484.0" layoutY="134.0" prefHeight="17.0" prefWidth="157.0" />
-      <Button layoutX="458.0" layoutY="151.0" mnemonicParsing="false" onAction="#buscar" text="Buscar obras" />
+      <Button layoutX="518.0" layoutY="355.0" mnemonicParsing="false" onAction="#buttonBuscar" text="Buscar " />
+      <Label layoutX="367.0" layoutY="126.0" text="Usuario" />
+      <Label fx:id="labelNombreUnico" layoutX="493.0" layoutY="126.0" prefHeight="17.0" prefWidth="143.0" />
+      <Label layoutX="367.0" layoutY="157.0" text="Identificación" />
+      <Label fx:id="labelIdentificacion" layoutX="491.0" layoutY="157.0" prefHeight="17.0" prefWidth="143.0" />
+      <Label layoutX="367.0" layoutY="193.0" text="Tipo de identificación" />
+      <Label fx:id="labelTipoIdentificacion" layoutX="493.0" layoutY="193.0" prefHeight="17.0" prefWidth="143.0" />
    </children>
 </AnchorPane>

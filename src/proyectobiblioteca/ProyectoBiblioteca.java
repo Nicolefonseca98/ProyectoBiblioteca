@@ -14,7 +14,8 @@ public class ProyectoBiblioteca extends Application {
     public void start(Stage stage) throws Exception {
         
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-        
+        stage.setTitle("Biblioteca");
+        stage.setResizable(false);
         Scene scene = new Scene(root);
         stage.getIcons().add(new Image("/imagen/libros.png")); 
         stage.setScene(scene);

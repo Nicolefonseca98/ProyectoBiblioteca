@@ -22,6 +22,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.apache.commons.codec.digest.DigestUtils;
 
@@ -30,7 +31,8 @@ public class FXMLDocumentController extends Listas implements Initializable {
     @FXML private TextField txfUsuario;
     @FXML private PasswordField txfContraseña;
     @FXML private Label mensaje;
-
+    @FXML private ImageView imageViewGif;
+    
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
 
@@ -99,7 +101,8 @@ public class FXMLDocumentController extends Listas implements Initializable {
         Usuario us = new Usuario("Karla2", contraseñaEncriptada, "Karla Fallas", "Residencia", "109630582", "Usuario");
         clienteLista.add(us);
         
-        
+        Image GifLibros = new Image("/imagen/GifLibros.gif");
+        imageViewGif.setImage(GifLibros);
     }
 
 }

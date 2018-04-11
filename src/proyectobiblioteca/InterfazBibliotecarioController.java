@@ -90,7 +90,7 @@ public class InterfazBibliotecarioController implements Initializable {
         Scene scene = new Scene(parent);
         //Esta linea obtiene la informacion del Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.getIcons().add(new Image("/imagen/libros.png"));       
+        window.getIcons().add(new Image("/imagen/libros.png")); 
         window.setScene(scene);
         window.show();
     }
@@ -102,7 +102,7 @@ public class InterfazBibliotecarioController implements Initializable {
         Scene scene = new Scene(parent);
         //Esta linea obtiene la informacion del Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.getIcons().add(new Image("/imagen/libros.png"));       
+        window.getIcons().add(new Image("/imagen/libros.png"));  
         window.setScene(scene);
         window.show();
     }
@@ -114,7 +114,9 @@ public class InterfazBibliotecarioController implements Initializable {
         Scene scene = new Scene(parent);
         //Esta linea obtiene la informacion del Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.getIcons().add(new Image("/imagen/libros.png"));       
+        window.getIcons().add(new Image("/imagen/libros.png"));
+        window.setTitle("Proyecto Biblioteca");
+        window.setResizable(false);
         window.setScene(scene);
         window.show();
     }
@@ -125,7 +127,7 @@ public class InterfazBibliotecarioController implements Initializable {
         Scene scene = new Scene(parent);
         //Esta linea obtiene la informacion del Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.getIcons().add(new Image("/imagen/libros.png"));       
+        window.getIcons().add(new Image("/imagen/libros.png"));  
         window.setScene(scene);
         window.show();
     }
@@ -137,7 +139,7 @@ public class InterfazBibliotecarioController implements Initializable {
         Scene scene = new Scene(parent);
         //Esta linea obtiene la informacion del Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.getIcons().add(new Image("/imagen/libros.png"));       
+        window.getIcons().add(new Image("/imagen/libros.png")); 
         window.setScene(scene);
         window.show();
     }

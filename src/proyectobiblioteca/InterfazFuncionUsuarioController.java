@@ -1,7 +1,9 @@
 
 package proyectobiblioteca;
+import Dominio.Cliente;
 import Dominio.Obra;
 import Dominio.PrestarLibro;
+import Dominio.Usuario;
 import Dominio.UsuarioLogin;
 import Listas.Listas;
 import static Listas.Listas.librosPrestados;
@@ -9,7 +11,6 @@ import static Listas.Listas.obraLista;
 import static Listas.Listas.usuarioLogin;
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
@@ -34,9 +35,9 @@ public class InterfazFuncionUsuarioController extends Listas implements Initiali
  @FXML private TableColumn columnaTitulo;
  @FXML private TableColumn columnaPrestamo;
  @FXML private TableColumn columnaRetorno;
- @FXML private Label nombreCompleto;
- @FXML private Label identificacion;
- @FXML private Button buscar;
+ @FXML private Label labelNombreCompleto;
+ @FXML private Button buttonBuscar;
+ 
     
     @Override
     public void initialize (URL url, ResourceBundle rb){
@@ -44,9 +45,10 @@ public class InterfazFuncionUsuarioController extends Listas implements Initiali
     }   
     
     @FXML
-    private void buscar(ActionEvent event)  {
+    private void buttonBuscar(ActionEvent event)  {
         
-        nombreCompleto.setText(usuarioLogin.get(0).toString());
+        
+        labelNombreCompleto.setText(usuarioLogin.get(0).toString());
         
         columnaTitulo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("titulo"));
         columnaPrestamo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaPrestamo"));
@@ -70,7 +72,7 @@ public class InterfazFuncionUsuarioController extends Listas implements Initiali
         Scene scene = new Scene(parent);
         //Esta linea obtiene la informacion del Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.getIcons().add(new Image("/imagen/libros.png"));       
+        window.getIcons().add(new Image("/imagen/libros.png")); 
         window.setScene(scene);
         window.show();
         
