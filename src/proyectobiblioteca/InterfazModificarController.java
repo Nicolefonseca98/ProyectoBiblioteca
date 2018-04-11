@@ -21,33 +21,33 @@ import javafx.stage.Stage;
 
 public class InterfazModificarController implements Initializable {
 
-    @FXML private TextField txfBuscar;
-    @FXML private TextField txfNuevoUsuario;
+    @FXML private TextField textFieldBuscar;
+    @FXML private TextField textFieldNuevoUsuario;
     @FXML private PasswordField recibeContraseña;
-    @FXML private Button btnModificar;
-    @FXML private Label lbMensaje;
-    @FXML private Label lbMensaje2;
+    @FXML private Button buttonModificar;
+    @FXML private Label labelMensaje;
+    @FXML private Label labelMensaje2;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        txfNuevoUsuario.setDisable(true);
+        textFieldNuevoUsuario.setDisable(true);
         recibeContraseña.setDisable(true);
-        btnModificar.setDisable(true);
+        buttonModificar.setDisable(true);
     }   
     
     @FXML 
     private void accionBuscar(){
         
         Logica l = new Logica();
-        if(l.existeUsuario(txfBuscar.getText()) == true) {
-            lbMensaje.setText("Usuario encontrado");
-            txfNuevoUsuario.setDisable(false);
+        if(l.existeUsuario(textFieldBuscar.getText()) == true) {
+            labelMensaje.setText("Usuario encontrado");
+            textFieldNuevoUsuario.setDisable(false);
             recibeContraseña.setDisable(false);
-            btnModificar.setDisable(false);
+            buttonModificar.setDisable(false);
         }
         else
-            lbMensaje.setText("Usuario no encontrado");
+            labelMensaje.setText("Usuario no encontrado");
         
     }
     
@@ -55,16 +55,16 @@ public class InterfazModificarController implements Initializable {
     private void accionModificar() {
         
         Logica l = new Logica();
-        if (txfNuevoUsuario.getText().equals("") || recibeContraseña.getText().equals("")) {
-            lbMensaje2.setText("Ingrese todos los datos.");
+        if (textFieldNuevoUsuario.getText().equals("") || recibeContraseña.getText().equals("")) {
+            labelMensaje2.setText("Ingrese todos los datos.");
         } else {
-        l.modificarUsuario(txfBuscar.getText(), txfNuevoUsuario.getText(), recibeContraseña.getText());
-        lbMensaje2.setText("Usuario modificado");
+        l.modificarUsuario(textFieldBuscar.getText(), textFieldNuevoUsuario.getText(), recibeContraseña.getText());
+        labelMensaje2.setText("Usuario modificado");
         }
     }
     
     @FXML
-    private void volverMenu(ActionEvent event) throws IOException {
+    private void buttonVolverMenu(ActionEvent event) throws IOException {
      
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));
         Scene scene = new Scene(parent);

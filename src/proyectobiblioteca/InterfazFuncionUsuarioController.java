@@ -66,7 +66,7 @@ public class InterfazFuncionUsuarioController extends Listas implements Initiali
     }
     
     @FXML
-    private void salir(ActionEvent event) throws IOException {
+    private void buttonSalir(ActionEvent event) throws IOException {
         usuarioLogin.remove(0);
         Parent parent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         Scene scene = new Scene(parent);

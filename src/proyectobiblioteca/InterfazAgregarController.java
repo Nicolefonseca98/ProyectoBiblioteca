@@ -20,32 +20,32 @@ import javafx.stage.Stage;
 
 public class InterfazAgregarController implements Initializable {
 
-    @FXML private AnchorPane anchor;
-    @FXML private ChoiceBox choiceBox1;
-    @FXML private TextField txfUsuario;
-    @FXML private TextField txfContraseña;
-    @FXML private TextField txfNombre;
-    @FXML private TextField txfIdentificacion;
-    @FXML private ChoiceBox choiceBox2;
-    @FXML private Label lbMensaje;
+    @FXML private AnchorPane anchorPaneAgregarusuario;
+    @FXML private ChoiceBox choiceBoxTipoIdentificacion;
+    @FXML private TextField textFieldUsuario;
+    @FXML private TextField textFieldContraseña;
+    @FXML private TextField textFieldNombre;
+    @FXML private TextField textFieldfIdentificacion;
+    @FXML private ChoiceBox choiceBoxTipoUsuario;
+    @FXML private Label labelMensaje;
 
     @FXML
-    private void agregarUsuario() {
+    private void buttonAgregarUsuario() {
         try {
         Logica l = new Logica();
             
                
-                if(l.existeUsuario(txfUsuario.getText())== true){
-                        lbMensaje.setText("Usuario ya existe.");
+                if(l.existeUsuario(textFieldUsuario.getText())== true){
+                        labelMensaje.setText("Usuario ya existe.");
                 } else {
-                     l.agregarUsuario(txfUsuario.getText(), txfContraseña.getText(), txfNombre.getText(),
-                        choiceBox1.getValue().toString(), txfIdentificacion.getText(), choiceBox2.getValue().toString());
-                        lbMensaje.setText("Usuario añadido");
+                     l.agregarUsuario(textFieldUsuario.getText(), textFieldContraseña.getText(), textFieldNombre.getText(),
+                        choiceBoxTipoIdentificacion.getValue().toString(), textFieldfIdentificacion.getText(), choiceBoxTipoUsuario.getValue().toString());
+                        labelMensaje.setText("Usuario añadido");
                         
                 
             }
         } catch (NullPointerException NPE) {
-           lbMensaje.setText("Ingrese todos los datos");
+           labelMensaje.setText("Ingrese todos los datos");
         }
     }
     
@@ -53,18 +53,18 @@ public class InterfazAgregarController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         //Agrega las opciones a escoger a los choiceBox
-        choiceBox1.getItems().add("Nacional");
-        choiceBox1.getItems().add("Extranjero");
+        choiceBoxTipoIdentificacion.getItems().add("Nacional");
+        choiceBoxTipoIdentificacion.getItems().add("Extranjero");
         
-        choiceBox2.getItems().add("Usuario");
-        choiceBox2.getItems().add("Autor");
-        choiceBox2.getItems().add("Bibliotecario");
+        choiceBoxTipoUsuario.getItems().add("Usuario");
+        choiceBoxTipoUsuario.getItems().add("Autor");
+        choiceBoxTipoUsuario.getItems().add("Bibliotecario");
 
         
     }    
     
     @FXML
-    private void volverMenu(ActionEvent event) throws IOException {
+    private void buttonVolverMenu(ActionEvent event) throws IOException {
      
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));
         Scene scene = new Scene(parent);

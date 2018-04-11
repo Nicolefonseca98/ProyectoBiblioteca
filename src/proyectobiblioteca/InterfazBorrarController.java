@@ -19,29 +19,29 @@ import javafx.stage.Stage;
 
 public class InterfazBorrarController implements Initializable {
 
-    @FXML private TextField txfBuscar;
-    @FXML private Label lbMensaje;
+    @FXML private TextField textFieldBuscar;
+    @FXML private Label labelMensaje;
     
     @FXML
-    private void botonB() {
+    private void buttonBorrar() {
        
         Logica l = new Logica();
         
-        if (txfBuscar.getText().equals("")) {
-            lbMensaje.setText("Ingrese un usuario.");
-        }else if (txfBuscar.getText().equals(usuarioLogin.get(0))) { 
-            lbMensaje.setText("No se puede borrar este usuario");
-        } else if(l.borrarMoroso(txfBuscar.getText())){
-            lbMensaje.setText("El usuario está moroso");
+        if (textFieldBuscar.getText().equals("")) {
+            labelMensaje.setText("Ingrese un usuario.");
+        }else if (textFieldBuscar.getText().equals(usuarioLogin.get(0))) { 
+            labelMensaje.setText("No se puede borrar este usuario");
+        } else if(l.borrarMoroso(textFieldBuscar.getText())){
+            labelMensaje.setText("El usuario está moroso");
         } else {  
-            l.borrarUsuario(txfBuscar.getText());
-            lbMensaje.setText("Usuario borrado.");
+            l.borrarUsuario(textFieldBuscar.getText());
+            labelMensaje.setText("Usuario borrado.");
             
         } 
     }
     
      @FXML
-    private void volverMenu(ActionEvent event) throws IOException {
+    private void buttonVolverMenu(ActionEvent event) throws IOException {
      
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));
         Scene scene = new Scene(parent);

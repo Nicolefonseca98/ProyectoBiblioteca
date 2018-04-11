@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="403.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazBorrarController">
+<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="403.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazBorrarController">
    <children>
       <Label layoutX="147.0" layoutY="67.0" text="Borrar Usuario">
          <font>
@@ -16,13 +16,13 @@
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <TextField fx:id="txfBuscar" layoutX="127.0" layoutY="178.0" />
-      <Button layoutX="176.0" layoutY="230.0" mnemonicParsing="false" onAction="#botonB" text="Borrar">
+      <TextField fx:id="textFieldBuscar" layoutX="127.0" layoutY="178.0" />
+      <Button layoutX="176.0" layoutY="230.0" mnemonicParsing="false" onAction="#buttonBorrar" text="Borrar">
          <font>
             <Font name="Times New Roman" size="13.0" />
          </font></Button>
-      <Label fx:id="lbMensaje" layoutX="256.0" layoutY="212.0" prefHeight="17.0" prefWidth="120.0" />
-      <Button layoutX="340.0" layoutY="401.0" mnemonicParsing="false" onAction="#volverMenu" text="Menú">
+      <Label fx:id="labelMensaje" layoutX="256.0" layoutY="212.0" prefHeight="17.0" prefWidth="120.0" />
+      <Button layoutX="340.0" layoutY="401.0" mnemonicParsing="false" onAction="#buttonVolverMenu" text="Menú">
          <font>
             <Font name="Times New Roman" size="13.0" />
          </font></Button>

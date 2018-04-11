@@ -24,16 +24,16 @@ import javafx.stage.Stage;
 
 public class InterfazModificarObraController implements Initializable {
 
-    @FXML private TextField txfBuscar;
-    @FXML private TextField txfTitulo;
+    @FXML private TextField textFieldBuscar;
+    @FXML private TextField textFieldTitulo;
     @FXML private ComboBox comboBoxAutor;
-    @FXML private DatePicker dtFecha;
-    @FXML private Label lbMensaje;
-    @FXML private Button btnModificar;
-    @FXML private Label mensajeModificar;
+    @FXML private DatePicker datePickerFechaPublicacion;
+    @FXML private Label labelMensaje;
+    @FXML private Button buttonModificar;
+    @FXML private Label labelMensajeModificar;
     
      @FXML
-    private void volverMenu(ActionEvent event) throws IOException {
+    private void buttonVolverMenu(ActionEvent event) throws IOException {
      
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));
         Scene scene = new Scene(parent);
@@ -46,32 +46,32 @@ public class InterfazModificarObraController implements Initializable {
     }
     
     @FXML
-    private void btnBuscar() {
+    private void buttonBuscar() {
        
         Logica l = new Logica();
-        if(l.buscarObra(txfBuscar.getText())) {
-            lbMensaje.setText("Obra encontrado");
-            txfTitulo.setDisable(false);
+        if(l.buscarObra(textFieldBuscar.getText())) {
+            labelMensaje.setText("Obra encontrado");
+            textFieldTitulo.setDisable(false);
             comboBoxAutor.setDisable(false);
-            dtFecha.setDisable(false);
-            btnModificar.setDisable(false);
+            datePickerFechaPublicacion.setDisable(false);
+            buttonModificar.setDisable(false);
             
         }
         else
-            lbMensaje.setText("La obra no existe");
+            labelMensaje.setText("La obra no existe");
         
     }
     
     
     @FXML
-    private void btnModificar(){
+    private void buttonModificar(){
         
         try {
             Logica l = new Logica();
-            l.modificarObra(txfBuscar.getText(), txfTitulo.getText(), comboBoxAutor.getValue().toString(), dtFecha.getValue().toString());
-            mensajeModificar.setText("Obra modificada");
+            l.modificarObra(textFieldBuscar.getText(), textFieldTitulo.getText(), comboBoxAutor.getValue().toString(), datePickerFechaPublicacion.getValue().toString());
+            labelMensajeModificar.setText("Obra modificada");
         } catch (NullPointerException NPE) {
-            mensajeModificar.setText("Ingrese todos los datos");
+            labelMensajeModificar.setText("Ingrese todos los datos");
         }
     }
     
@@ -92,10 +92,10 @@ public class InterfazModificarObraController implements Initializable {
             }
         } //Fin for
         
-        txfTitulo.setDisable(true);
+        textFieldTitulo.setDisable(true);
         comboBoxAutor.setDisable(true);
-        dtFecha.setDisable(true);
-        btnModificar.setDisable(true);
+        datePickerFechaPublicacion.setDisable(true);
+        buttonModificar.setDisable(true);
         
     }    
     
