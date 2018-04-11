@@ -23,7 +23,7 @@ public class InterfazModificarController implements Initializable {
 
     @FXML private TextField textFieldBuscar;
     @FXML private TextField textFieldNuevoUsuario;
-    @FXML private PasswordField recibeContraseña;
+    @FXML private PasswordField passwordFieldRecibeContraseña;
     @FXML private Button buttonModificar;
     @FXML private Label labelMensaje;
     @FXML private Label labelMensaje2;
@@ -32,7 +32,7 @@ public class InterfazModificarController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         textFieldNuevoUsuario.setDisable(true);
-        recibeContraseña.setDisable(true);
+        passwordFieldRecibeContraseña.setDisable(true);
         buttonModificar.setDisable(true);
     }   
     
@@ -43,7 +43,7 @@ public class InterfazModificarController implements Initializable {
         if(l.existeUsuario(textFieldBuscar.getText()) == true) {
             labelMensaje.setText("Usuario encontrado");
             textFieldNuevoUsuario.setDisable(false);
-            recibeContraseña.setDisable(false);
+            passwordFieldRecibeContraseña.setDisable(false);
             buttonModificar.setDisable(false);
         }
         else
@@ -55,10 +55,10 @@ public class InterfazModificarController implements Initializable {
     private void accionModificar() {
         
         Logica l = new Logica();
-        if (textFieldNuevoUsuario.getText().equals("") || recibeContraseña.getText().equals("")) {
+        if (textFieldNuevoUsuario.getText().equals("") || passwordFieldRecibeContraseña.getText().equals("")) {
             labelMensaje2.setText("Ingrese todos los datos.");
         } else {
-        l.modificarUsuario(textFieldBuscar.getText(), textFieldNuevoUsuario.getText(), recibeContraseña.getText());
+        l.modificarUsuario(textFieldBuscar.getText(), textFieldNuevoUsuario.getText(), passwordFieldRecibeContraseña.getText());
         labelMensaje2.setText("Usuario modificado");
         }
     }
