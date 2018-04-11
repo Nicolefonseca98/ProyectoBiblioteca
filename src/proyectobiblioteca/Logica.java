@@ -8,7 +8,6 @@ import Dominio.Libro;
 import Dominio.Memoria;
 import Dominio.Obra;
 import Dominio.Periodico;
-import Dominio.PrestarLibro;
 import Dominio.Revista;
 import Dominio.Tesis;
 import Dominio.Usuario;
@@ -83,7 +82,6 @@ public class Logica extends Listas {
             clienteLista.remove(c);
         }
      
-        
     } //Fin borrarUsuario()
  
     public void agregarLibro(String titulo, String fechaIngreso, String autor, String isbn, String tema, String subtema) {
@@ -138,7 +136,7 @@ public class Logica extends Listas {
         return false;
     }
     
-    private Obra getObra(String titulo) {
+    public Obra getObra(String titulo) {
         
         for (int i = 0; i <= obraLista.size() - 1; i++) {
             Obra o = (Obra) obraLista.get(i);

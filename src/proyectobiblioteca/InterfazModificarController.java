@@ -36,30 +36,30 @@ public class InterfazModificarController implements Initializable {
         buttonModificar.setDisable(true);
     }   
     
-    @FXML 
-    private void accionBuscar(){
-        
+    @FXML
+    private void accionBuscar() {
+
         Logica l = new Logica();
-        if(l.existeUsuario(textFieldBuscar.getText()) == true) {
+        if (l.existeUsuario(textFieldBuscar.getText()) == true) {
             labelMensaje.setText("Usuario encontrado");
             textFieldNuevoUsuario.setDisable(false);
             passwordFieldRecibeContraseña.setDisable(false);
             buttonModificar.setDisable(false);
-        }
-        else
+        } else {
             labelMensaje.setText("Usuario no encontrado");
-        
+        }
+
     }
-    
+
     @FXML
     private void accionModificar() {
-        
+
         Logica l = new Logica();
         if (textFieldNuevoUsuario.getText().equals("") || passwordFieldRecibeContraseña.getText().equals("")) {
             labelMensaje2.setText("Ingrese todos los datos.");
         } else {
-        l.modificarUsuario(textFieldBuscar.getText(), textFieldNuevoUsuario.getText(), passwordFieldRecibeContraseña.getText());
-        labelMensaje2.setText("Usuario modificado");
+            l.modificarUsuario(textFieldBuscar.getText(), textFieldNuevoUsuario.getText(), passwordFieldRecibeContraseña.getText());
+            labelMensaje2.setText("Usuario modificado");
         }
     }
     

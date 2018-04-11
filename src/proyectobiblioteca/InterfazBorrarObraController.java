@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
 public class InterfazBorrarObraController implements Initializable {
 
      @FXML private TextField textFieldBuscarObra;
@@ -21,16 +22,17 @@ public class InterfazBorrarObraController implements Initializable {
     
     @FXML
     private void buttonBuscarObra() {
-       Logica logica = new Logica();
-       try {
-        if (logica.buscarObra(textFieldBuscarObra.getText())){
-            logica.borrarObra(textFieldBuscarObra.getText());
-            labelMensaje.setText("Obra borrada");
-        } else
-            labelMensaje.setText("La obra no existe");
-       } catch (NullPointerException NPE) {
-           labelMensaje.setText("Ingrese los datos");
-       }
+        Logica logica = new Logica();
+        try {
+            if (logica.buscarObra(textFieldBuscarObra.getText())) {
+                logica.borrarObra(textFieldBuscarObra.getText());
+                labelMensaje.setText("Obra borrada");
+            } else {
+                labelMensaje.setText("La obra no existe");
+            }
+        } catch (NullPointerException NPE) {
+            labelMensaje.setText("Ingrese los datos");
+        }
     }
     
      @FXML

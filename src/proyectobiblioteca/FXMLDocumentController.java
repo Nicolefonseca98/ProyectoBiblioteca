@@ -59,14 +59,16 @@ public class FXMLDocumentController extends Listas implements Initializable {
         if (logica.verificaUsuario(textFieldUsuario.getText(), contraseñaEncriptada, "Bibliotecario")) {
             window.setScene(scene);
             window.show();
+            usuarioLogin.add(textFieldUsuario.getText());
         } else if (logica.verificaUsuario(textFieldUsuario.getText(), contraseñaEncriptada, "Usuario")) {           
             ventanaUsuario.setScene(sceneUsuario);
             ventanaUsuario.show();
+            usuarioLogin.add(textFieldUsuario.getText());
         } else if (logica.verificaUsuario(textFieldUsuario.getText(), contraseñaEncriptada, "Autor")) {
             ventanaAutor.setScene(sceneAutor);
             ventanaAutor.show();
-        } else {
-            
+            usuarioLogin.add(textFieldUsuario.getText());
+        } else {         
             labelMensaje.setText("Datos inválidos");
             textFieldContraseña.setText("");
             textFieldUsuario.setText("");
@@ -78,7 +80,7 @@ public class FXMLDocumentController extends Listas implements Initializable {
             textFieldUsuario.setText("");
         }
        
-        usuarioLogin.add(textFieldUsuario.getText());
+        
         System.out.println(usuarioLogin.toString());
         
     }
