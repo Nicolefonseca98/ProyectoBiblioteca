@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -22,7 +23,7 @@ public class InterfazModificarController implements Initializable {
 
     @FXML private TextField txfBuscar;
     @FXML private TextField txfNuevoUsuario;
-    @FXML private TextField txfNuevaContraseña;
+    @FXML private PasswordField recibeContraseña;
     @FXML private Button btnModificar;
     @FXML private Label lbMensaje;
     @FXML private Label lbMensaje2;
@@ -31,7 +32,7 @@ public class InterfazModificarController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         txfNuevoUsuario.setDisable(true);
-        txfNuevaContraseña.setDisable(true);
+        recibeContraseña.setDisable(true);
         btnModificar.setDisable(true);
     }   
     
@@ -42,7 +43,7 @@ public class InterfazModificarController implements Initializable {
         if(l.existeUsuario(txfBuscar.getText()) == true) {
             lbMensaje.setText("Usuario encontrado");
             txfNuevoUsuario.setDisable(false);
-            txfNuevaContraseña.setDisable(false);
+            recibeContraseña.setDisable(false);
             btnModificar.setDisable(false);
         }
         else
@@ -54,9 +55,12 @@ public class InterfazModificarController implements Initializable {
     private void accionModificar() {
         
         Logica l = new Logica();
-        l.modificarUsuario(txfBuscar.getText(), txfNuevoUsuario.getText(), txfNuevaContraseña.getText());
+        if (txfNuevoUsuario.getText().equals("") || recibeContraseña.getText().equals("")) {
+            lbMensaje2.setText("Ingrese todos los datos.");
+        } else {
+        l.modificarUsuario(txfBuscar.getText(), txfNuevoUsuario.getText(), recibeContraseña.getText());
         lbMensaje2.setText("Usuario modificado");
-        
+        }
     }
     
     @FXML

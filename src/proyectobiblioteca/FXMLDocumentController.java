@@ -27,12 +27,9 @@ import org.apache.commons.codec.digest.DigestUtils;
 
 public class FXMLDocumentController extends Listas implements Initializable {
 
-    @FXML
-    private TextField txfUsuario;
-    @FXML
-    private PasswordField txfContraseña;
-    @FXML
-    private Label mensaje;
+    @FXML private TextField txfUsuario;
+    @FXML private PasswordField txfContraseña;
+    @FXML private Label mensaje;
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
@@ -42,7 +39,6 @@ public class FXMLDocumentController extends Listas implements Initializable {
         //Ventana función bibliotecario
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));
         Scene scene = new Scene(parent);
-        //Esta linea obtiene la informacion del Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.getIcons().add(new Image("/imagen/libros.png"));
 
@@ -51,35 +47,46 @@ public class FXMLDocumentController extends Listas implements Initializable {
         Scene sceneUsuario = new Scene(parentUsuario);
         Stage ventanaUsuario = (Stage) ((Node) event.getSource()).getScene().getWindow();
         ventanaUsuario.getIcons().add(new Image("/imagen/libros.png"));
+        
+        //Ventana función autor
+        Parent parentAutor = FXMLLoader.load(getClass().getResource("InterfazFuncionAutor.fxml"));
+        Scene sceneAutor = new Scene(parentAutor);
+        Stage ventanaAutor = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        ventanaAutor.getIcons().add(new Image("/imagen/libros.png"));
+        
 
         String contraseñaEncriptada = DigestUtils.md5Hex(txfContraseña.getText());
-           try {
+        try {
         //Verifica datos del usuario
         if (logica.verificaUsuario(txfUsuario.getText(), contraseñaEncriptada, "Bibliotecario")) {
             window.setScene(scene);
             window.show();
-            System.out.println(clienteLista.toString());
-               } else if (logica.verificaUsuario(txfUsuario.getText(), contraseñaEncriptada, "Usuario")) {           
-            UsuarioLogin usuario = new UsuarioLogin(txfUsuario.getText());
-            usuarioLogin.add(usuario);
-            System.out.println(usuarioLogin.toString());
+        } else if (logica.verificaUsuario(txfUsuario.getText(), contraseñaEncriptada, "Usuario")) {           
             ventanaUsuario.setScene(sceneUsuario);
             ventanaUsuario.show();
-             } else if (logica.verificaUsuario(txfUsuario.getText(), contraseñaEncriptada, "Autor")) {
-                      } else {
+        } else if (logica.verificaUsuario(txfUsuario.getText(), contraseñaEncriptada, "Autor")) {
+            ventanaAutor.setScene(sceneAutor);
+            ventanaAutor.show();
+        } else {
             mensaje.setText("Datos inválidos");
             txfContraseña.setText("");
             txfUsuario.setText("");
             }
-          } catch (NullPointerException NPE) {
+        } catch (NullPointerException NPE) {
             mensaje.setText("Datos inválidos");
             txfContraseña.setText("");
             txfUsuario.setText("");
         }
+       
+        usuarioLogin.add(txfUsuario.getText());
+        System.out.println(usuarioLogin.toString());
+        
     }
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         String contraseñaEncriptada = DigestUtils.md5Hex("1234");
         //Autor predeterminado
         Autor a = new Autor("autor1", contraseñaEncriptada, "Ana Rodríguez", "Nacional", "123456789", "Autor");
@@ -96,7 +103,7 @@ public class FXMLDocumentController extends Listas implements Initializable {
         Libro l = new Libro("123", "a", "a", "a", "2018-04-07", "Ana Rodríguez");
         obraLista.add(l);
         libroLista.add(l);
-
+        
     }
 
 }

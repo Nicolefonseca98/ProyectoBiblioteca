@@ -1,6 +1,7 @@
 
 package proyectobiblioteca;
 
+import static Listas.Listas.usuarioLogin;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -83,7 +84,8 @@ public class InterfazBibliotecarioController implements Initializable {
     
      @FXML
     private void salir(ActionEvent event) throws IOException {
-     
+        
+        usuarioLogin.remove(0);
         Parent parent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         Scene scene = new Scene(parent);
         //Esta linea obtiene la informacion del Stage

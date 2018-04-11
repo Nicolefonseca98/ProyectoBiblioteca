@@ -1,7 +1,6 @@
 
 package proyectobiblioteca;
 
-import Dominio.Autor;
 import Dominio.Cliente;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,7 +16,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Point2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyectobiblioteca;
 
 import java.io.IOException;
@@ -26,14 +21,16 @@ public class InterfazBorrarObraController implements Initializable {
     
     @FXML
     private void botonBuscarObra() {
-      
-        if (txfBuscarObra.getText().equals("")) {
-            lbMensajeObra.setText("Ingrese todos los datos");
-        } else {
-            Logica l = new Logica();
-            l.borrarObra(txfBuscarObra.getText());
+       Logica logica = new Logica();
+       try {
+        if (logica.buscarObra(txfBuscarObra.getText())){
+            logica.borrarObra(txfBuscarObra.getText());
             lbMensajeObra.setText("Obra borrada");
-        }
+        } else
+            lbMensajeObra.setText("La obra no existe");
+       } catch (NullPointerException NPE) {
+           lbMensajeObra.setText("Ingrese los datos");
+       }
     }
     
      @FXML

@@ -37,8 +37,8 @@ public class InterfazAgregarController implements Initializable {
                         choiceBox1.getValue().toString(), txfIdentificacion.getText(), choiceBox2.getValue().toString());
         lbMensaje.setText("Usuario añadido");
         
-           } catch (NullPointerException NPE) {
-            lbMensaje.setText("Ingrese todos los datos");
+        } catch (NullPointerException NPE) {
+           lbMensaje.setText("Ingrese todos los datos");
         }
     }
     

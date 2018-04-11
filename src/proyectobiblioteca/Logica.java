@@ -12,6 +12,7 @@ import Dominio.PrestarLibro;
 import Dominio.Revista;
 import Dominio.Tesis;
 import Dominio.Usuario;
+import Dominio.UsuarioLogin;
 import Listas.Listas;
 import org.apache.commons.codec.digest.DigestUtils;
 
@@ -41,25 +42,19 @@ public class Logica extends Listas{
             Cliente c = new Bibliotecario(nombreUnico, contraseñaEncriptada, nombreCompleto, tipoIdentificacion, identificacion, tipoUsuario);
             clienteLista.add(c);
             
-        }
-        
-        System.out.println(clienteLista.toString()); 
-     
+        }      
     }
     
     public void modificarUsuario(String nombreUsuario, String nuevoUsuario, String nuevaContraseña) {
-        
+        String contraseñaEncriptada = DigestUtils.md5Hex(nuevaContraseña);
         if (existeUsuario(nombreUsuario)) {
             
             Cliente nombreViejo = getCliente(nombreUsuario);
             Cliente contraseñaVieja = getCliente(nombreUsuario);
             nombreViejo.setNombreUnico(nuevoUsuario);
-            contraseñaVieja.setContraseña(nuevaContraseña);
+            contraseñaVieja.setContraseña(contraseñaEncriptada);
             
-        }
-        
-        System.out.println(clienteLista.toString());
-
+        } 
     }
     
     public boolean existeUsuario (String nombreUsuario) {
@@ -71,7 +66,6 @@ public class Logica extends Listas{
                 return true;
             }
         }
-        System.out.println(clienteLista.toString());
         return false;
     }
     
@@ -94,9 +88,7 @@ public class Logica extends Listas{
 
             clienteLista.remove(c);
         }
-        
-        
-        System.out.println(clienteLista.toString());
+     
         
     } //Fin borrarUsuario()
  
@@ -105,10 +97,7 @@ public class Logica extends Listas{
         Obra o = new Libro(isbn, tema, subtema, titulo, fechaIngreso, autor);
         libroLista.add(o);
         obraLista.add(o);
-        
-        System.out.println(libroLista.toString());
-        System.out.println(obraLista.toString());
-       
+      
     }
     
     public void agregarRevista(String titulo, String fechaIngreso, String autor, String issn, String edicion) {
@@ -117,8 +106,6 @@ public class Logica extends Listas{
         revistaLista.add(o);
         obraLista.add(o);
         
-        System.out.println(revistaLista.toString());
-        System.out.println(obraLista.toString());
     }
     
     public void agregarTesis(String titulo, String fechaIngreso, String autor, String resumen, String summary) {
@@ -126,10 +113,7 @@ public class Logica extends Listas{
         Obra o = new Tesis(resumen, summary, titulo, fechaIngreso, autor);
         tesisLista.add(o);
         obraLista.add(o);
-        
-        System.out.println(tesisLista.toString());
-        System.out.println(obraLista.toString());
-        
+     
     }
     
     public void agregarPeriodico(String titulo, String fechaIngreso, String autor, String issn, String edicion, String fechapublicacion) {
@@ -137,9 +121,7 @@ public class Logica extends Listas{
         Obra o = new Periodico(issn, edicion, fechapublicacion, titulo, fechaIngreso, autor);
         periodicosLista.add(o);
         obraLista.add(o);
-        
-        System.out.println(periodicosLista.toString());
-        System.out.println(obraLista.toString());
+       
     }
     
     public void agregarMemoria(String titulo, String fechaIngreso, String autor, String resumen, String summary, String conferencia) {
@@ -147,9 +129,6 @@ public class Logica extends Listas{
         Obra o = new Memoria(resumen, summary, conferencia, titulo, fechaIngreso, autor);
         memoriasLista.add(o);
         obraLista.add(o);
-        
-        System.out.println(memoriasLista.toString());
-        System.out.println(obraLista.toString());
         
     }
     
@@ -162,7 +141,6 @@ public class Logica extends Listas{
                 return true;
             }
         }
-        System.out.println(obraLista.toString());
         return false;
     }
     
@@ -174,7 +152,6 @@ public class Logica extends Listas{
                 return o;
             }
         }
-        
         return null;
     }
     
@@ -190,9 +167,7 @@ public class Logica extends Listas{
             autorViejo.setAutor(nuevoAutor);
             fechaVieja.setFechaIngreso(nuevaFecha);
             
-        }
-        
-        System.out.println(obraLista.toString());
+        }    
     }
     
     public boolean existeObra (String nombreObra) {
@@ -204,7 +179,6 @@ public class Logica extends Listas{
                 return true;
             }
         }
-        System.out.println(obraLista.toString());
         return false;
     }
     
@@ -214,10 +188,7 @@ public class Logica extends Listas{
             Obra o = (Obra)getObra(nombreObra);
 
             obraLista.remove(o);
-        }
-        
-        System.out.println(obraLista.toString());
-        
+        }  
     } //Fin borrarObra()
     
       public boolean verificaUsuario(String nombreUsuario, String contraseña, String tipoUsuario) {
@@ -228,13 +199,12 @@ public class Logica extends Listas{
                 return true;
             }
         }
-          
           return false;
       }
       
       public void librosPrestadosUsuario(String nombreUsuario) {
           
-          for (int i = 0; i <= librosPrestados.size() - 1; i++) {
+        for (int i = 0; i <= librosPrestados.size() - 1; i++) {
             PrestarLibro libro = (PrestarLibro )librosPrestados.get(i);
             String usuario = libro.getUsuario();
             if (usuario.equalsIgnoreCase(nombreUsuario)) {
@@ -243,4 +213,15 @@ public class Logica extends Listas{
         }
          
       }
+      
+      public boolean borrarMoroso(String usuario) {
+          boolean moroso = false;
+          for (int i = 0; i <= usuariosMorosos.size()-1; i++) {
+              if (usuariosMorosos.get(i).getUsuario().equals(usuario)) {
+                  moroso = true;
+              } 
+          }
+          return moroso;
+      }
+    
 }

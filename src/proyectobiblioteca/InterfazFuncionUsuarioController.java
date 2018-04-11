@@ -19,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -27,7 +28,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 
-public class InterfazFuncionUsuarioController implements Initializable {
+public class InterfazFuncionUsuarioController extends Listas implements Initializable {
 
  @FXML private TableView<PrestarLibro> tablaPrestamoUsuario;
  @FXML private TableColumn columnaTitulo;
@@ -35,34 +36,36 @@ public class InterfazFuncionUsuarioController implements Initializable {
  @FXML private TableColumn columnaRetorno;
  @FXML private Label nombreCompleto;
  @FXML private Label identificacion;
+ @FXML private Button buscar;
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        System.out.println(usuarioLogin.toString());
+    public void initialize (URL url, ResourceBundle rb){
+       
+    }   
+    
+    @FXML
+    private void buscar(ActionEvent event)  {
+        
+        nombreCompleto.setText(usuarioLogin.get(0).toString());
         
         columnaTitulo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("titulo"));
         columnaPrestamo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaPrestamo"));
         columnaRetorno.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaRetorno"));
         
-        for (int i = 0 ; i <= usuarioLogin.size() -1; i++) {
-            UsuarioLogin usuario = (UsuarioLogin) usuarioLogin.get(i);
-        nombreCompleto.setText(usuario.toString());
         tablaPrestamoUsuario.setItems(librosPrestados);
         FilteredList<PrestarLibro> filteredData = new FilteredList<>(librosPrestados, p -> true);
         tablaPrestamoUsuario.setItems(filteredData);
         filteredData.setPredicate(PrestarLibro -> {  
         String usuarioPrestamo = PrestarLibro.getUsuario().toLowerCase();
-        return usuarioPrestamo.contains(usuario.toString().toLowerCase());
+        return usuarioPrestamo.contains(usuarioLogin.get(0).toString().toLowerCase());
         
         });
         
-        }
-        
-    }    
+    }
     
     @FXML
     private void salir(ActionEvent event) throws IOException {
-     
+        usuarioLogin.remove(0);
         Parent parent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         Scene scene = new Scene(parent);
         //Esta linea obtiene la informacion del Stage

@@ -29,5 +29,5 @@ public class Listas {
 
     public static ObservableList<UsuarioMoroso> usuariosMorosos = FXCollections.observableArrayList();
     
-    public static ObservableList<UsuarioLogin> usuarioLogin = FXCollections.observableArrayList();
+    public static ObservableList<Object> usuarioLogin = FXCollections.observableArrayList();
 }

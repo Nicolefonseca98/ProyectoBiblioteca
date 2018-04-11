@@ -8,7 +8,6 @@ import static Listas.Listas.librosPrestados;
 import static Listas.Listas.obraLista;
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
@@ -39,7 +38,6 @@ public class InterfazListaObrasController implements Initializable {
     @FXML private Label nombreUsuario;
     @FXML private Label fechaPrestamo;
     @FXML private Label fechaRetorno;
-    @FXML private Label mensaje;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -77,7 +75,7 @@ public class InterfazListaObrasController implements Initializable {
             row.setOnMouseClicked(event -> {
                 if (event.getClickCount() == 1 && (!row.isEmpty())) {
                     Obra clickTituloTabla = row.getItem();
-                }
+                } 
                 
                 for (int i = 0; i <= librosPrestados.size() - 1; i++) {
                     
@@ -89,9 +87,7 @@ public class InterfazListaObrasController implements Initializable {
                         nombreUsuario.setText(prestarLibro.getUsuario());
                         fechaPrestamo.setText(prestarLibro.getFechaPrestamo().toString());
                         fechaRetorno.setText(prestarLibro.getFechaRetorno().toString());
-                    } else {
-                        mensaje.setText("El libro no se encuentra prestado");
-                    }
+                    } 
                 }
             });
             return row;

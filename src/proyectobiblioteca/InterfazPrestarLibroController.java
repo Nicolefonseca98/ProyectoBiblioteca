@@ -13,7 +13,6 @@ import static Listas.Listas.usuariosMorosos;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.chrono.ChronoLocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,6 +23,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -36,6 +36,7 @@ public class InterfazPrestarLibroController implements Initializable {
     @FXML private ComboBox comboBoxUsuario;
     @FXML private DatePicker datePickerPrestamo;
     @FXML private DatePicker datePickerRetorno;
+    @FXML private Label mensaje;
     
     @FXML private TableView <PrestarLibro> tablaPrestamos;
     @FXML private TableView <UsuarioMoroso> tablaMorosidad;
@@ -88,7 +89,7 @@ public class InterfazPrestarLibroController implements Initializable {
         for (int i = 0; i <= clienteLista.size() - 1; i++) {
             
             Cliente c = (Cliente) clienteLista.get(i);
-                comboBoxUsuario.getItems().addAll(c.getNombreCompleto());
+                comboBoxUsuario.getItems().addAll(c.getNombreUnico());
                 
         } //Fin for
         
@@ -98,14 +99,14 @@ public class InterfazPrestarLibroController implements Initializable {
     private void botonPrestar() {
         try {
             
-       
         PrestarLibro prestarLibro = new PrestarLibro(comboBoxTitulo.getValue().toString(), comboBoxUsuario.getValue().toString(), 
                                                      datePickerPrestamo.getValue(), datePickerRetorno.getValue());
         librosPrestados.add(prestarLibro);
-        System.out.println(librosPrestados.toString());
-         } catch (NullPointerException NPE) {
-             System.out.println("Ingrese todos los datos.");
-        }
+        mensaje.setText("Libro prestado");
+        
+        } catch (NullPointerException NPE) {
+            mensaje.setText("Ingrese todos los datos.");
+       }
     }
    
     @FXML

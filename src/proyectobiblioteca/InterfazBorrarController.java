@@ -1,6 +1,7 @@
 
 package proyectobiblioteca;
 
+import static Listas.Listas.usuarioLogin;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -25,17 +26,18 @@ public class InterfazBorrarController implements Initializable {
     private void botonB() {
        
         Logica l = new Logica();
-        l.borrarUsuario(txfBuscar.getText());
-      
-        if(txfBuscar.getText().equals("")) {
-            
-          lbMensaje.setText("Ingrese un usuario.");
-          
-        } else {
-            
-        lbMensaje.setText("Usuario borrado.");
         
-        }  
+        if (txfBuscar.getText().equals("")) {
+            lbMensaje.setText("Ingrese un usuario.");
+        }else if (txfBuscar.getText().equals(usuarioLogin.get(0))) { 
+            lbMensaje.setText("No se puede borrar");
+        } else if(l.borrarMoroso(txfBuscar.getText())){
+            lbMensaje.setText("El usuario está moroso");
+        } else {  
+            l.borrarUsuario(txfBuscar.getText());
+            lbMensaje.setText("Usuario borrado.");
+            
+        } 
     }
     
      @FXML

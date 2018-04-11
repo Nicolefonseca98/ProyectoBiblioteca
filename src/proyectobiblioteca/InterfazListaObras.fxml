@@ -51,7 +51,6 @@
                </font>
             </Label>
             <Label fx:id="fechaRetorno" prefHeight="17.0" prefWidth="91.0" />
-            <Label fx:id="mensaje" prefHeight="17.0" prefWidth="135.0" />
          </children>
          <opaqueInsets>
             <Insets />
