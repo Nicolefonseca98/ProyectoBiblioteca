@@ -82,13 +82,14 @@ public class InterfazPrestarLibroController implements Initializable {
             comboBoxTitulo.getItems().addAll(o.getTitulo());
 
         } 
-
+         clienteLista.isEmpty();
         for (int i = 0; i <= clienteLista.size() - 1; i++) {
-
+            
             Cliente c = (Cliente) clienteLista.get(i);
             comboBoxUsuario.getItems().addAll(c.getNombreUnico());
+             
+        }
 
-        } 
     }
 
     @FXML
