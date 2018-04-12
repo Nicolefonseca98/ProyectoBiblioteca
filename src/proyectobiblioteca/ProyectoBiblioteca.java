@@ -1,6 +1,8 @@
-
 package proyectobiblioteca;
-
+/* Proyecto 1 IF3000 Programación II
+ * Nicole Fonseca Marín B62722
+ * WIlmer Mata Camacho B54187
+*/
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
