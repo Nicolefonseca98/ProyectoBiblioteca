@@ -7,16 +7,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="419.0" prefWidth="666.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazFuncionUsuarioController">
+<AnchorPane id="AnchorPane" prefHeight="372.0" prefWidth="641.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazFuncionUsuarioController">
    <children>
-      <TableView fx:id="tablaPrestamoUsuario" layoutX="27.0" layoutY="44.0" prefHeight="315.0" prefWidth="325.0">
+      <TableView fx:id="tablaPrestamoUsuario" layoutX="25.0" layoutY="29.0" prefHeight="315.0" prefWidth="325.0">
         <columns>
           <TableColumn fx:id="columnaTitulo" prefWidth="75.0" text="Título" />
             <TableColumn fx:id="columnaPrestamo" prefWidth="129.0" text="Fecha préstamo" />
           <TableColumn fx:id="columnaRetorno" prefWidth="120.0" text="Fecha retorno" />
         </columns>
       </TableView>
-      <Button layoutX="582.0" layoutY="355.0" mnemonicParsing="false" onAction="#buttonSalir" text="Salir">
+      <Button layoutX="552.0" layoutY="204.0" mnemonicParsing="false" onAction="#buttonSalir" text="Salir">
          <font>
             <Font name="Times New Roman" size="13.0" />
          </font></Button>
@@ -24,35 +24,22 @@
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Label>
-      <Label layoutX="367.0" layoutY="98.0" text="Nombre">
+      <Label layoutX="383.0" layoutY="106.0" text="Usuario">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <Label fx:id="labelNombreCompleto" layoutX="493.0" layoutY="98.0" prefHeight="17.0" prefWidth="143.0">
+      <Label fx:id="labelNombreUsuario" layoutX="476.0" layoutY="107.0" prefHeight="17.0" prefWidth="125.0">
          <font>
             <Font name="Times New Roman" size="12.0" />
          </font></Label>
       <Label fx:id="identificacion" layoutX="484.0" layoutY="134.0" prefHeight="17.0" prefWidth="157.0" />
-      <Button layoutX="518.0" layoutY="355.0" mnemonicParsing="false" onAction="#buttonBuscar" text="Buscar ">
+      <Button layoutX="482.0" layoutY="204.0" mnemonicParsing="false" onAction="#buttonBuscar" text="Buscar ">
          <font>
             <Font name="Times New Roman" size="13.0" />
          </font></Button>
-      <Label layoutX="367.0" layoutY="126.0" text="Usuario">
-         <font>
-            <Font name="Times New Roman" size="15.0" />
-         </font></Label>
-      <Label fx:id="labelNombreUnico" layoutX="493.0" layoutY="126.0" prefHeight="17.0" prefWidth="143.0" />
-      <Label layoutX="367.0" layoutY="157.0" text="Identificación">
-         <font>
-            <Font name="Times New Roman" size="15.0" />
-         </font></Label>
       <Label fx:id="labelIdentificacion" layoutX="491.0" layoutY="157.0" prefHeight="17.0" prefWidth="143.0">
          <font>
             <Font name="Times New Roman" size="12.0" />
-         </font></Label>
-      <Label layoutX="367.0" layoutY="193.0" text="Tipo de identificación">
-         <font>
-            <Font name="Times New Roman" size="15.0" />
          </font></Label>
       <Label fx:id="labelTipoIdentificacion" layoutX="511.0" layoutY="193.0" prefHeight="17.0" prefWidth="125.0" />
    </children>

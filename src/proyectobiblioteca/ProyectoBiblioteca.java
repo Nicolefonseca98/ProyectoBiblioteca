@@ -13,7 +13,7 @@ public class ProyectoBiblioteca extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         
-        Parent root = FXMLLoader.load(getClass().getResource("InterfazLoginUsuario.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         stage.setTitle("Biblioteca");
         stage.setResizable(false);
         Scene scene = new Scene(root);

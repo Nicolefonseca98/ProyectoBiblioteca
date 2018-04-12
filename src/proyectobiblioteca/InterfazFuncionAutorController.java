@@ -25,7 +25,7 @@ public class InterfazFuncionAutorController implements Initializable {
 @FXML private TableView<Obra> tablaObrasAutor;
 @FXML private TableColumn columnaTitulo;
 @FXML private TableColumn columnaFechaIngreso;
-@FXML private Label labelNombreCompleto;
+@FXML private Label labelNombreUsuario;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -35,7 +35,7 @@ public class InterfazFuncionAutorController implements Initializable {
     @FXML
     private void buttonBuscar(ActionEvent event) {
 
-        labelNombreCompleto.setText(usuarioLogin.get(0).toString());
+        labelNombreUsuario.setText(usuarioLogin.get(0).toString());
         columnaTitulo.setCellValueFactory(new PropertyValueFactory<Obra, String>("titulo"));
         columnaFechaIngreso.setCellValueFactory(new PropertyValueFactory<Obra, String>("fechaIngreso"));
 

@@ -7,15 +7,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="422.0" prefWidth="608.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazFuncionAutorController">
+<AnchorPane id="AnchorPane" prefHeight="375.0" prefWidth="585.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazFuncionAutorController">
    <children>
-      <TableView fx:id="tablaObrasAutor" layoutX="14.0" layoutY="38.0" prefHeight="320.0" prefWidth="333.0">
+      <TableView fx:id="tablaObrasAutor" layoutX="14.0" layoutY="27.0" prefHeight="320.0" prefWidth="333.0">
         <columns>
           <TableColumn fx:id="columnaTitulo" prefWidth="169.0" text="Título" />
             <TableColumn fx:id="columnaFechaIngreso" prefWidth="163.0" text="Fecha de ingreso" />
         </columns>
       </TableView>
-      <Button layoutX="527.0" layoutY="358.0" mnemonicParsing="false" onAction="#buttonSalir" text="Salir">
+      <Button layoutX="503.0" layoutY="162.0" mnemonicParsing="false" onAction="#buttonSalir" text="Salir">
          <font>
             <Font name="Times New Roman" size="13.0" />
          </font></Button>
@@ -23,12 +23,12 @@
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Label>
-      <Label fx:id="labelNombreCompleto" layoutX="422.0" layoutY="95.0" prefHeight="17.0" prefWidth="185.0" />
-      <Label layoutX="361.0" layoutY="94.0" text="Nombre:">
+      <Label fx:id="labelNombreUsuario" layoutX="422.0" layoutY="95.0" prefHeight="17.0" prefWidth="185.0" />
+      <Label layoutX="361.0" layoutY="94.0" text="Usuario">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font></Label>
-      <Button layoutX="428.0" layoutY="162.0" mnemonicParsing="false" onAction="#buttonBuscar" text="Buscar obras">
+      <Button layoutX="435.0" layoutY="162.0" mnemonicParsing="false" onAction="#buttonBuscar" text="Buscar">
          <font>
             <Font name="Times New Roman" size="13.0" />
          </font></Button>

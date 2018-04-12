@@ -30,7 +30,7 @@ public class InterfazFuncionUsuarioController extends Listas implements Initiali
  @FXML private TableColumn columnaTitulo;
  @FXML private TableColumn columnaPrestamo;
  @FXML private TableColumn columnaRetorno;
- @FXML private Label labelNombreCompleto;
+ @FXML private Label labelNombreUsuario;
  @FXML private Button buttonBuscar;
  
     
@@ -41,9 +41,8 @@ public class InterfazFuncionUsuarioController extends Listas implements Initiali
     
     @FXML
     private void buttonBuscar(ActionEvent event)  {
-        
-        
-        labelNombreCompleto.setText(usuarioLogin.get(0).toString());
+
+        labelNombreUsuario.setText(usuarioLogin.get(0).toString());
         
         columnaTitulo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("titulo"));
         columnaPrestamo.setCellValueFactory(new PropertyValueFactory<PrestarLibro,String>("fechaPrestamo"));
