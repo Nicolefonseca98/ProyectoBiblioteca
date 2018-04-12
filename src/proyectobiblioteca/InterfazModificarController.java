@@ -25,6 +25,7 @@ public class InterfazModificarController implements Initializable {
     @FXML private TextField textFieldNuevoUsuario;
     @FXML private PasswordField passwordFieldRecibeContraseña;
     @FXML private Button buttonModificar;
+    @FXML private Button buttonBuscar;
     @FXML private Label labelMensaje;
     @FXML private Label labelMensaje2;
     
@@ -42,6 +43,7 @@ public class InterfazModificarController implements Initializable {
         Logica l = new Logica();
         if (l.existeUsuario(textFieldBuscar.getText()) == true) {
             labelMensaje.setText("Usuario encontrado");
+            buttonBuscar.setDisable(true);
             textFieldNuevoUsuario.setDisable(false);
             passwordFieldRecibeContraseña.setDisable(false);
             buttonModificar.setDisable(false);

@@ -94,9 +94,9 @@
                   <Insets left="100.0" right="100.0" />
                </VBox.margin>
             </ChoiceBox>
-            <Label fx:id="labelMensaje" prefHeight="17.0" prefWidth="132.0">
+            <Label fx:id="labelMensaje" prefHeight="17.0" prefWidth="167.0">
                <VBox.margin>
-                  <Insets left="300.0" />
+                  <Insets left="200.0" />
                </VBox.margin>
                <font>
                   <Font name="Times New Roman" size="12.0" />

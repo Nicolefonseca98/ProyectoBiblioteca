@@ -81,29 +81,22 @@ public class FXMLDocumentController extends Listas implements Initializable {
             textFieldUsuario.setText("");
         }
        
-        System.out.println(usuarioLogin.toString());
-        
     }
     
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
+//       
         String contraseñaEncriptada = DigestUtils.md5Hex("1234");
-        //Autor predeterminado
-        Autor a = new Autor("autor1", contraseñaEncriptada, "Ana Rodríguez", "Nacional", "123456789", "Autor");
-        clienteLista.addAll(a);
-
+       
         //Bibliotecario predeterminado
         Bibliotecario bl = new Bibliotecario("bibliotecario01", contraseñaEncriptada, "Juan Solano", "Nacional", "123456789", "Bibliotecario");
         clienteLista.add(bl);
 
-        //Usuario predeterminado
-        Usuario us = new Usuario("Karla2", contraseñaEncriptada, "Karla Fallas", "Residencia", "109630582", "Usuario");
-        clienteLista.add(us);
-        
         Image GifLibros = new Image("/imagen/GifLibros.gif");
         imageViewGif.setImage(GifLibros);
+       
     }
+
 
 }

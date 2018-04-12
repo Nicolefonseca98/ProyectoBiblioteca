@@ -5,6 +5,7 @@ import Dominio.Cliente;
 import Dominio.Libro;
 import Dominio.Obra;
 import Dominio.PrestarLibro;
+import Dominio.Usuario;
 import Dominio.UsuarioMoroso;
 import static Listas.Listas.clienteLista;
 import static Listas.Listas.libroLista;
@@ -63,7 +64,7 @@ public class InterfazPrestarLibroController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        
         //Preparar las columnas en la tabla
         columnaTitulo.setCellValueFactory(new PropertyValueFactory<PrestarLibro, String>("titulo"));
         columnaUsuarioPrestamo.setCellValueFactory(new PropertyValueFactory<PrestarLibro, String>("usuario"));
@@ -82,14 +83,14 @@ public class InterfazPrestarLibroController implements Initializable {
             comboBoxTitulo.getItems().addAll(o.getTitulo());
 
         } 
-         clienteLista.isEmpty();
+         //clienteLista.isEmpty();
+         
         for (int i = 0; i <= clienteLista.size() - 1; i++) {
-            
             Cliente c = (Cliente) clienteLista.get(i);
             comboBoxUsuario.getItems().addAll(c.getNombreUnico());
-             
+            
         }
-
+        
     }
 
     @FXML
