@@ -101,7 +101,6 @@ public class Logica extends Listas {
             clienteLista.remove(c);
         }
      
-        
     } //Fin borrarUsuario()
     
   /*

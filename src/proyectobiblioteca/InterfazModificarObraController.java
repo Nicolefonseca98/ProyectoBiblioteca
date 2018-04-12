@@ -34,38 +34,36 @@ public class InterfazModificarObraController implements Initializable {
     
      @FXML
     private void buttonVolverMenu(ActionEvent event) throws IOException {
-     
+
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));
         Scene scene = new Scene(parent);
-        //Esta linea obtiene la informacion del Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.getIcons().add(new Image("/imagen/libros.png"));       
+        window.getIcons().add(new Image("/imagen/libros.png"));
         window.setScene(scene);
         window.show();
 
     }
-    
+
     @FXML
     private void buttonBuscar() {
-       
+
         Logica l = new Logica();
-        if(l.buscarObra(textFieldBuscar.getText())) {
+        if (l.buscarObra(textFieldBuscar.getText())) {
             labelMensaje.setText("Obra encontrado");
             textFieldTitulo.setDisable(false);
             comboBoxAutor.setDisable(false);
             datePickerFechaPublicacion.setDisable(false);
             buttonModificar.setDisable(false);
-            
-        }
-        else
+
+        } else {
             labelMensaje.setText("La obra no existe");
-        
+        }
+
     }
-    
-    
+
     @FXML
-    private void buttonModificar(){
-        
+    private void buttonModificar() {
+
         try {
             Logica l = new Logica();
             l.modificarObra(textFieldBuscar.getText(), textFieldTitulo.getText(), comboBoxAutor.getValue().toString(), datePickerFechaPublicacion.getValue().toString());
@@ -74,29 +72,24 @@ public class InterfazModificarObraController implements Initializable {
             labelMensajeModificar.setText("Ingrese todos los datos");
         }
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        /*
-       * Busca en la lista los usuarios que son autores
-       * para mostrarlos en el comboBox a la hora de ingresar una nueva obra
-       * y así asignarle a la obra un autor ya registrado en el sistema
-       */
+
         for (int i = 0; i <= clienteLista.size() - 1; i++) {
             Cliente c = (Cliente) clienteLista.get(i);
             if (c.getTipoUsuario().equalsIgnoreCase("Autor")) {
-                
+
                 comboBoxAutor.getItems().addAll(c.getNombreCompleto());
-                
+
             }
-        } //Fin for
-        
+        }
+
         textFieldTitulo.setDisable(true);
         comboBoxAutor.setDisable(true);
         datePickerFechaPublicacion.setDisable(true);
         buttonModificar.setDisable(true);
-        
-    }    
+
+    }
     
 }

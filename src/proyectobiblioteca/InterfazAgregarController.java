@@ -64,7 +64,6 @@ public class InterfazAgregarController implements Initializable {
 
         Parent parent = FXMLLoader.load(getClass().getResource("InterfazBibliotecario.fxml"));
         Scene scene = new Scene(parent);
-        //Esta linea obtiene la informacion del Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.getIcons().add(new Image("/imagen/libros.png"));
         window.setScene(scene);

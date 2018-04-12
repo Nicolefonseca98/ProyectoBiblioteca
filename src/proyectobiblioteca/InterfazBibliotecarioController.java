@@ -86,7 +86,7 @@ public class InterfazBibliotecarioController implements Initializable {
     private void buttonSalir(ActionEvent event) throws IOException {
         
         usuarioLogin.remove(0);
-        Parent parent = FXMLLoader.load(getClass().getResource("InterfazLoginUsuario.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         Scene scene = new Scene(parent);
         //Esta linea obtiene la informacion del Stage
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
