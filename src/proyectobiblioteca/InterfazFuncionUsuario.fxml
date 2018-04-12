@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="372.0" prefWidth="641.0" style="-fx-background-color: #99CCCC;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectobiblioteca.InterfazFuncionUsuarioController">
    <children>
-      <TableView fx:id="tablaPrestamoUsuario" layoutX="25.0" layoutY="29.0" prefHeight="315.0" prefWidth="325.0">
+      <TableView fx:id="tablaPrestamoUsuario" layoutX="22.0" layoutY="47.0" prefHeight="315.0" prefWidth="325.0">
         <columns>
           <TableColumn fx:id="columnaTitulo" prefWidth="75.0" text="Título" />
             <TableColumn fx:id="columnaPrestamo" prefWidth="129.0" text="Fecha préstamo" />
@@ -42,5 +42,10 @@
             <Font name="Times New Roman" size="12.0" />
          </font></Label>
       <Label fx:id="labelTipoIdentificacion" layoutX="511.0" layoutY="193.0" prefHeight="17.0" prefWidth="125.0" />
+      <Label layoutX="34.0" layoutY="14.0" text="Libros prestados">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -105,12 +105,8 @@ public class InterfazPrestarLibroController implements Initializable {
         } catch (NullPointerException NPE) {
             labelMensaje.setText("Ingrese todos los datos.");
         }
-    }
-
-    @FXML
-    private void moroso() {
-
-        LocalDate fechaRetorno;
+        
+                LocalDate fechaRetorno;
         String usuario = "";
         String titulo = "";
 
@@ -126,7 +122,6 @@ public class InterfazPrestarLibroController implements Initializable {
 
             }
         }
-
     }
     
 }

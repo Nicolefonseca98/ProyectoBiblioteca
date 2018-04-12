@@ -31,6 +31,7 @@ public class InterfazModificarObraController implements Initializable {
     @FXML private Label labelMensaje;
     @FXML private Button buttonModificar;
     @FXML private Label labelMensajeModificar;
+    @FXML private Button buttonBuscar;
     
      @FXML
     private void buttonVolverMenu(ActionEvent event) throws IOException {
@@ -54,6 +55,7 @@ public class InterfazModificarObraController implements Initializable {
             comboBoxAutor.setDisable(false);
             datePickerFechaPublicacion.setDisable(false);
             buttonModificar.setDisable(false);
+            buttonBuscar.setDisable(true);
 
         } else {
             labelMensaje.setText("La obra no existe");

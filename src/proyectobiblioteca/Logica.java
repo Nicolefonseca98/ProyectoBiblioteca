@@ -242,6 +242,7 @@ public class Logica extends Listas {
             Obra obra = (Obra) getObra(nombreObra);
 
             obraLista.remove(obra);
+            libroLista.remove(obra);
         }
     }
     
